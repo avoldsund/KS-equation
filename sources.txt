@@ -6,3 +6,6 @@ http://www.math.ntnu.no/emner/TMA4210/2005v/prosjekt/prosj04.imf
 
 Numerical Methods for Stiff Systems, including KS
 http://etheses.nottingham.ac.uk/663/1/Numerical_Methods_for_Stiff_Systems.pdf
+
+About periodic data input
+http://people.maths.ox.ac.uk/trefethen/pdectb/kuramoto2.pdf
