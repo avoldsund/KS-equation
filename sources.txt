@@ -1,4 +1,8 @@
 Prosjektrapport om KS-ligningen, 2004:
 http://www.nambafa.com/depot/fag/ks.pdf
 
+Project description TMA4120 2005
+http://www.math.ntnu.no/emner/TMA4210/2005v/prosjekt/prosj04.imf
 
+Numerical Methods for Stiff Systems, including KS
+http://etheses.nottingham.ac.uk/663/1/Numerical_Methods_for_Stiff_Systems.pdf
