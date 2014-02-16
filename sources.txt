@@ -9,3 +9,6 @@ http://etheses.nottingham.ac.uk/663/1/Numerical_Methods_for_Stiff_Systems.pdf
 
 About periodic data input
 http://people.maths.ox.ac.uk/trefethen/pdectb/kuramoto2.pdf
+
+Explanation why central differences is good:
+https://www.math.ohiou.edu/courses/math3600/lecture27.pdf
