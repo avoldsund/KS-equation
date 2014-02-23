@@ -12,3 +12,7 @@ http://people.maths.ox.ac.uk/trefethen/pdectb/kuramoto2.pdf
 
 Explanation why central differences is good:
 https://www.math.ohiou.edu/courses/math3600/lecture27.pdf
+
+Fourier spectral methods for KS:
+https://www.maths.nottingham.ac.uk/personal/pcm/etd/node2.html
+https://www.maths.nottingham.ac.uk/personal/pcm/etd/node1.html#modode
