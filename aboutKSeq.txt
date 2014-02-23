@@ -1,0 +1,7 @@
+The KS-equation:
+- Because it contains both second- and fourth-order derivatives, it produces complex behaviour.
+- The second-order term acts as an energy source and has a destabilizing effect.
+- The nonlinear term transfers energy from low to high wavenumbers.
+- The fourth-order term has a stabilizing effect.
+- It is a PDE that can exhibit chaotic solutions.
+
