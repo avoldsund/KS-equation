@@ -7,7 +7,7 @@ M = 100;
 x = linspace(0,32*pi,M);
 h = (32*pi)/(M-1);
 k = 0.01;
-N = 10000;
+N = 3000;
 
 % Initializing matrices for equation
 % U(n+1) = U(n) - AxxU(n) - AxxxxU(n) - delta(U(n)^2) :
@@ -38,4 +38,4 @@ for n = 1:N
     U(n+1,:) = (eye(M) - Axx - Axxxx)*(U(n,:)') - D*(U(n,:)'.^2);%
 end
 
- mesh([U U U])
+ mesh(U)
