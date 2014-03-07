@@ -4,12 +4,12 @@ function ks_euler_order
 
 % L = 32*pi
 f = @(x) cos(x/16).*(1+sin(x/16));
-
 % Reference solution:
-it = 5 ;
-M_sol = 2^7+1;    
-k = 0.005;
-N = 3000;
+it = 6;
+M_sol = 2^10+1;
+k = 0.0001;
+T = 10;
+N = floor(T/k);
 u_sol = reference_sol(M_sol, N, k);
 err_norm = zeros(it,1);
 h_p = zeros(it,1);
@@ -45,17 +45,22 @@ for j = 1:it
     
     % Initial value of U:
     U = f(x);
-
     % Time step N iterations:
     for n = 1:N
         U(n+1,:) = (eye(M) - Axx - Axxxx)*(U(n,:)') - D*(U(n,:)'.^2);%
     end
+    mesh(U)
+    pause
 
     error = zeros(1,M);
 
         for i = 0:M-1
-            error(i+1) = U(i+1) - u_sol((M_sol-1)/(M-1)*i+1);
+            error(i+1) = U(N,i+1) - u_sol(N,(M_sol-1)/(M-1)*i+1);
         end
+    
+        
+        
+        
     err_norm(j) = norm(error, Inf);
     h_p(j) = h;
 end
