@@ -16,3 +16,6 @@ https://www.math.ohiou.edu/courses/math3600/lecture27.pdf
 Fourier spectral methods for KS:
 https://www.maths.nottingham.ac.uk/personal/pcm/etd/node2.html
 https://www.maths.nottingham.ac.uk/personal/pcm/etd/node1.html#modode
+
+Different methods used on K-S:
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.83.8204&rep=rep1&type=pdf
