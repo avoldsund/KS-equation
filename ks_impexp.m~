@@ -33,7 +33,6 @@ G = (eye(M)-A-B);
 
 U = f(x);
 
-%plot(x,U)
 % Time step N iterations:
 for n = 1:N
     U(n+1,:) = F\G*(U(n,:)') - F\D*(U(n,:)'.^2);
