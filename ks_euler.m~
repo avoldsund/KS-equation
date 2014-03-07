@@ -3,11 +3,12 @@
 % L = 32*pi
 f = @(x) cos(x/16).*(1+sin(x/16));
 
-M = 100;
+M = 2^6+1;
 x = linspace(0,32*pi,M);
 h = (32*pi)/(M-1);
-k = 0.01;
-N = 5000;
+T = 20;
+k = 0.0001;
+N = ceil(T/k);
 
 % Initializing matrices for equation
 % U(n+1) = U(n) - AxxU(n) - AxxxxU(n) - delta(U(n)^2) :
@@ -32,12 +33,10 @@ D = k/(4*h)*D;
 
 % Initial value of U:
 U = f(x);
-
+%plot(x,U)
 % Time step N iterations:
 for n = 1:N
-    U(n+1,:) = (eye(M) - Axx - Axxxx)*(U(n,:)') - D*(U(n,:)'.^2);%
+    U(n+1,:) = (eye(M) - Axx - Axxxx)*(U(n,:)') - D*(U(n,:)'.^2);
 end
 
-U = [U U];
-
-mesh(U)
+ mesh([U U])
