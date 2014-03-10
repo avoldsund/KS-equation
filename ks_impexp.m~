@@ -2,12 +2,14 @@
 
 f = @(x) cos(x/16).*(1+sin(x/16));
 
-M = 2^7+1;
+M = 128;
 x = linspace(0,32*pi,M);
 h = (32*pi)/(M-1);
-T = 20;
-k = 0.0001;
-N = ceil(T/k);
+k = 0.01;
+N = 8000;
+T = N*k;
+%T = 20;
+%N = ceil(T/k);
 
 % Generating matrices for imp.exp. method
 w = ones(1,M-1);
@@ -38,4 +40,6 @@ for n = 1:N
     U(n+1,:) = F\G*(U(n,:)') - F\D*(U(n,:)'.^2);
 end
 
-
+%mesh(U)
+figure()
+contourf([U U])
