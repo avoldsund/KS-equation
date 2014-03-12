@@ -4,13 +4,14 @@
 f = @(x) cos(x/16).*(1+sin(x/16));
 
 %M = 180;
-M = 2^10+1;
+M = 128;
 h = (32*pi)/(M-1);
-x = linspace(0,32*pi,M);
+%x = linspace(0,32*pi,M)
+x = 32*pi*(1:M)/M;
 %T = 30;
-k = 0.00001;
+k = 0.01;
 %N = ceil(T/k);
-N = 10000;
+N = 15000;
 
 % Initializing matrices for equation
 % U(n+1) = U(n) - AxxU(n) - AxxxxU(n) - delta(U(n)^2) :
@@ -40,5 +41,7 @@ U = f(x);
 for n = 1:N
     U(n+1,:) = (eye(M) - Axx - Axxxx)*(U(n,:)') - D*(U(n,:)'.^2);
 end
+figure
+mesh(U)
 
- mesh(U)
+%contourf(U)

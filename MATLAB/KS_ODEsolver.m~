@@ -1,0 +1,10 @@
+M = 19;
+h = 1/(M+1);
+x = 32*pi*(1:M)'/M;
+a = cos(x/16).*(1+sin(x/16));
+
+
+y0 = [a x];
+tspan = [0 1];
+
+[TOUT,YOUT,TE,YE,IE] = ode15s(ODEFUN,TSPAN,Y0,OPTIONS) 
