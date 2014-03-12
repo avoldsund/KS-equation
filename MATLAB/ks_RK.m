@@ -1,27 +1,34 @@
 % Rk4
 
-
 close all
 clear all
 
 
 f = @(x) cos(x/16).*(1+sin(x/16));
 
+global M k h N
+M = 100;
+h = (32*pi)/(M);
+k = 0.001;
+x = 0:h:32*pi;
+N = 10000;
+T = N*k;
 
-M = 10;
-h = (32*pi)/(M-1);
-k = 0.0001;
+y0 = f(x(2:end));
 
-x = 0:(M-1)*h;
-N = 1000;
+options=odeset('AbsTol',1e-10,'RelTol',1e-9);
+[tt,yy] = ode15s('funcKS',[0 T],y0,options);
 
+%figure
+%for i=1:size(yy,1)
+ %   plot(x,[yy(i,end);yy(i,:)'])
+ %   drawnow
+%end
 
-t = linspace(0,(N+1)*k,N+1);
-U(:,1) = f(x);
+figure
+mesh(x,tt,[yy(:,end) yy])
+xlabel('rom')
+ylabel('tid')
 
-e = ones(M,1);
-
-s = [-1:1 M-1];
-A = spdiags([e, -2*e, e, e], s,M,M);
-p = [M-2 M-1 1
-g = @(U) 
+figure
+contourf(yy)
