@@ -6,7 +6,7 @@ tic
 % Initial values
 length = 32*pi;
 M = 128;
-h = length/(M-1);
+h = length/(M);
 
 time = 300;
 N = 30000;
