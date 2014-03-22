@@ -1,18 +1,23 @@
-% kursiv.m - solution of Kuramoto-Sivashinsky equation by ETDRK4 scheme
+% Ssolution of Kuramoto-Sivashinsky equation by ETDRK4 scheme
 %
 % u_t = -u*u_x - u_xx - u_xxxx, periodic BCs on [0,32*pi]
 % computation is based on v = fft(u), so linear term is diagonal
 % compare p27.m in Trefethen, "Spectral Methods in MATLAB", SIAM 2000
 % AK Kassam and LN Trefethen, July 2002
+% [uu] = ETD_KassamTrefethen(M, h)
+% M is the number of x-points, h is the step length
+
+function [uu] = ETD_KassamTrefethen(N, h)
+
 
 % Spatial grid and initial condition:
-N = 128*64;
+%N = 128;
 x = 32*pi*(1:N)'/N;
 u = cos(x/16).*(1+sin(x/16));
 v = fft(u);
 
 % Precompute various ETDRK4 scalar quantities:
-h = 1/4; % time step
+%h = 1/4; % time step
 k = [0:N/2-1 0 -N/2+1:-1]'/16; % wave numbers
 L = k.^2 - k.^4; % Fourier multipliers
 E = exp(h*L); E2 = exp(h*L/2);
@@ -45,7 +50,7 @@ for n = 1:nmax
 end
 
 % Plot results:
-figure()
+%figure()
 % surf(tt,x,uu), shading interp, lighting phong, axis tight
 % view([-90 90]), colormap(autumn); set(gca,'zlim',[-5 50])
 % light('color',[1 1 0],'position',[-1,2,2])
@@ -53,4 +58,4 @@ figure()
 %mesh(uu')
 % max(max(uu))
 % min(min(uu))
-contourf(uu')
+%contourf(uu')
