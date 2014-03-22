@@ -7,11 +7,11 @@
 % [uu] = ETD_KassamTrefethen(M, h)
 % N is the number of x-points, h is the time step length
 
-%function [uu] = ETD_KassamTrefethen(N, h)
+%function [uu] = ETD_KT(N, h)
 
 
 % Spatial grid and initial condition:
-N = 128;
+N = 2^7;
 x = 32*pi*(1:N)'/N;
 u = cos(x/16).*(1+sin(x/16));
 v = fft(u);
@@ -58,4 +58,4 @@ end
 %mesh(uu')
 % max(max(uu))
 % min(min(uu))
-%contourf(uu')
+contourf(uu')
