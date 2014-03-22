@@ -20,27 +20,27 @@ t = k * (0:N);
 % Boundary conditions
 % u(x,0) = f(x)
 % u(0,t) = u(L,t)
-
+ 
 f = @(x) cos(x/16) .* (1 + sin(x/16));
 
 % Creating the U-matrix and inserting boundary condition
 U = zeros(M, N);
 U(:,1) = f(x');
 
-% Construction of the Axxxx-, Axx- and B-matrix
+% Construction of the A, B and D matrix
 e = ones(M,1);
-diagVecAxxxx = [-M+1 -M+2 -2:2 M-2 M-1];
-Axxxx = (k/(h^4)) * spdiags([-4*e e e -4*e 6*e -4*e e e -4*e], diagVecAxxxx, M, M);
+diagVecA = [-M+1 -M+2 -2:2 M-2 M-1];
+A = (k/(h^4)) * spdiags([-4*e e e -4*e 6*e -4*e e e -4*e], diagVecA, M, M);
 
-diagVecAxx = [-M+1 -1:1 M-1];
-Axx = (k/(h^2)) * spdiags([e e -2*e e e], diagVecAxx, M, M);
+diagVecB = [-M+1 -1:1 M-1];
+B = (k/(h^2)) * spdiags([e e -2*e e e], diagVecB, M, M);
 
-diagVecB = [-M+1 -1 1 M-1];
-B = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecB, M, M);
+diagVecD = [-M+1 -1 1 M-1];
+D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
 
 % Running 
 for i = 1:N
-    U(:,i+1) = U(:,i) - Axxxx*U(:,i) - Axx*U(:,i) - B*(U(:,i).^2);
+    U(:,i+1) = U(:,i) - A*U(:,i) - B*U(:,i) - D*(U(:,i).^2);
 end
 
 figure
