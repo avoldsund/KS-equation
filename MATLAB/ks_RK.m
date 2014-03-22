@@ -7,16 +7,16 @@ clear all
 f = @(x) cos(x/16).*(1+sin(x/16));
 
 global M k h N
-M = 100;
-h = (32*pi)/(M);
-k = 0.001;
+M = 128;
+h = (32*pi)/(M+1);
+k = 0.01;
 x = 0:h:32*pi;
 N = 10000;
 T = N*k;
 
 y0 = f(x(2:end));
 
-options=odeset('AbsTol',1e-10,'RelTol',1e-9);
+options=odeset('AbsTol',1e-3,'RelTol',1e-3);
 [tt,yy] = ode15s('funcKS',[0 T],y0,options);
 
 %figure
