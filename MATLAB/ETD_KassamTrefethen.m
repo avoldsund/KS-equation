@@ -6,7 +6,7 @@
 % AK Kassam and LN Trefethen, July 2002
 
 % Spatial grid and initial condition:
-N = 128*32;
+N = 128*64;
 x = 32*pi*(1:N)'/N;
 u = cos(x/16).*(1+sin(x/16));
 v = fft(u);
@@ -26,7 +26,7 @@ f3 = h*real(mean( (-4-3*LR-LR.^2+exp(LR).*(4-LR))./LR.^3 ,2));
 
 % Main time-stepping loop:
 uu = u; tt = 0;
-tmax = 150; nmax = round(tmax/h); nplt = floor((tmax/100)/h);
+tmax = 300; nmax = round(tmax/h); nplt = floor((tmax/100)/h);
 g = -0.5i*k;
 for n = 1:nmax
     t = n*h;
@@ -46,11 +46,11 @@ end
 
 % Plot results:
 figure()
-%surf(tt,x,uu), shading interp, lighting phong, axis tight
-%view([-90 90]), colormap(autumn); set(gca,'zlim',[-5 50])
-%light('color',[1 1 0],'position',[-1,2,2])
-%material([0.30 0.60 0.60 40.00 1.00]);
-contourf(uu')
+% surf(tt,x,uu), shading interp, lighting phong, axis tight
+% view([-90 90]), colormap(autumn); set(gca,'zlim',[-5 50])
+% light('color',[1 1 0],'position',[-1,2,2])
+% material([0.30 0.60 0.60 40.00 1.00]);
 %mesh(uu')
-max(max(uu))
-min(min(uu))
+% max(max(uu))
+% min(min(uu))
+contourf(uu')
