@@ -6,8 +6,8 @@ M = 128;
 %x = linspace(0,32*pi,M);
 x = 32*pi*(1:M)/M;
 h = (32*pi)/(M-1);
-k = 0.025;
-N = 15000;
+k = 0.01;
+N = 30000;
 T = N*k;
 %T = 20;
 %N = ceil(T/k);
@@ -17,14 +17,14 @@ w = ones(1,M-1);
 A = sparse(-2*eye(M) + diag(w,1) + diag(w,-1));
 A(1,M) = 1;
 A(M,1) = 1;
-A = k/(h^2)*A;
+A = k/(2*h^2)*A;
 
 u = ones(1,M-2);
 v = -4*ones(1,M-1);
 B = sparse(6*eye(M)+diag(v,1)+diag(v,-1)+diag(u,2)+diag(u,-2)+diag([1;1],M-2)+diag([1;1],-M+2));
 B(1,M) = -4;
 B(M,1) = -4;
-B = k/(h^4)*B;
+B = k/(2*h^4)*B;
 
 D = sparse(zeros(M) + diag(w,1) + diag(-w,-1));
 D(M,1) = 1;

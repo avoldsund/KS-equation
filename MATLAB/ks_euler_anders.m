@@ -1,17 +1,20 @@
+tic
 % Implementation of the Kuramoto-Sivashinsky equation
 % u_t + u_xxxx + u_xx + uu_x = 0
 % Central differences in space, forwards in time
 
 % Initial values
 length = 32*pi;
-M = 50;
+M = 128;
 h = length/(M-1);
 
-time = 30;
-N = 500000;
+time = 300;
+N = 30000;
 k = time/N;
 
-x = h * (0:M-1);
+% x = h * (1:M)
+% x = 32*pi/(M-1) * (1:M)
+x = (32*pi)*(1:M)/(M);
 t = k * (0:N);
 
 % Boundary conditions
@@ -40,7 +43,7 @@ for i = 1:N
     U(:,i+1) = U(:,i) - Axxxx*U(:,i) - Axx*U(:,i) - B*(U(:,i).^2);
 end
 
-surfc(t, x, U)
-xlabel('time')
-ylabel('space')
-shading FLAT
+figure
+%contourf(t, x, U)
+contourf(U')
+toc
