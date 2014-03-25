@@ -10,7 +10,7 @@ f = @(x) cos(x/16).*(1+sin(x/16));
 
 global M k h N
 L = 32*pi;
-M = 2^10+1;
+M = 2^10;
 M_sol = M;
 h = L/(M+1);
 k = 0.0001;
@@ -40,7 +40,7 @@ for j = min:max
 
     M = 2^j+1;
     h = L/(M-1);
-    k/(h^2)
+    %k/(h^2) <= 0.0026 for convergence
     % x = h * (1:M)
     % x = 32*pi/(M-1) * (1:M)
     x = (32*pi)*(1:M)/(M);
@@ -74,12 +74,11 @@ for j = min:max
     % error compared to reference solution
     error = zeros(1,M);
     for i = 0:M-1
-        error(i+1) = U(i+1,N/2) - yy((M_sol-1)/(M-1)*i+1,N/2);
+        error(i+1) = U(i+1,N) - yy((M_sol-1)/(M-1)*i+1,N);
     end
 
     error_norm(j-min+1) = norm(error, Inf);
     h_p(j-min+1) = h;
-    size(U)
 end
 
     figure

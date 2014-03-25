@@ -58,4 +58,5 @@ end
 %mesh(uu')
 % max(max(uu))
 % min(min(uu))
+figure
 contourf(uu')

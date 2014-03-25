@@ -14,7 +14,7 @@ T = N*k;
 y0 = f(x(2:end));
 
 options=odeset('AbsTol',1e-3,'RelTol',1e-3);
-[tt,yy] = ode15s('funcKS',[0 T],y0,options);
+[tt,yy] = ode15s('funcKS',[0:k:T],y0,options);
 
 % figure
 % for i=1:size(yy,1)
