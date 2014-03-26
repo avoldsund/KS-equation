@@ -8,17 +8,9 @@ tic
 L = 32*pi;
 M = 128;
 h = L/(M);
-x = h:h:32*pi;
-y = 32*pi*(1:M)'/M;
-size(y)
-size(x)
+x = 0:h:L-h;
 N = 20000;
 k = 0.01;
-
-%h = L/(M+1);
-% x = h * (1:M)
-% x = 32*pi/(M-1) * (1:M)
-%x = (32*pi)*(1:M)/(M);
 
 f = @(x) cos(x/16) .* (1 + sin(x/16));
 
@@ -37,7 +29,6 @@ U(:,1) = f(x');
     diagVecD = [-M+1 -1 1 M-1];
     D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
 
-C = (eye(M)-A-B);
 
 % Running 
 for n = 1:N

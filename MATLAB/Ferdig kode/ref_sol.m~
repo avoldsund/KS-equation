@@ -1,0 +1,8 @@
+function yy = ref_sol
+
+y0 = f(x);
+options=odeset('AbsTol',1e-3,'RelTol',1e-3);
+[tt,yy] = ode15s('funcKS',[0:k:T],y0,options);
+yy = yy';
+
+end

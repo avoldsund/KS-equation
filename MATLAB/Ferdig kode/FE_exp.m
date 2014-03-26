@@ -1,21 +1,21 @@
-function feuler_hardcode
+function FE_exp
 
-global M h L N k
+global Ms h
 f = @(x) cos(x/16) .* (1 + sin(x/16));
-
 L = 32*pi;
+
+Ms = 2^12;  %number of points in reference sol.
+hs = L/Ms;
+
 M = 2^7;
 h = L/(M);
 x = 0:h:L-h;
 
 N = 50000;
 k = 0.01;
-T = N*k;
+T = k*N;
 
-y0 = f(x);
-options=odeset('AbsTol',1e-3,'RelTol',1e-3);
-[tt,yy] = ode15s('funcKS',[0:k:T],y0,options);
-yy = yy';
+yy = ref_sol(k,T,x);
 
 
 U = zeros(M,N);

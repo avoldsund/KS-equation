@@ -10,7 +10,6 @@ M = 128;
 h = L/(M);
 x = h:h:32*pi;
 %x = x(2:end);
-size(x)
 N = 20000;
 k = 0.01;
 
@@ -47,5 +46,5 @@ rho = max(eig(C));
 % figure
 %contourf(t, x, U)
 % contourf(U')
-%mesh(U')
+
 toc
