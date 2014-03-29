@@ -2,27 +2,27 @@ tic
 % Implementation of the Kuramoto-Sivashinsky equation
 % u_t + u_xxxx + u_xx + uu_x = 0
 % Central differences in space, forwards in time
-% U(n+1) = (I - A - B)U(n) - D*(U(n)^2)
-
-% Initial values
-L = 32*pi;
-M = 128;
-h = L/(M);
-x = h:h:32*pi;
-%x = x(2:end);
-N = 20000;
-k = 0.01;
-
-h = L/(M-1);
-% x = h * (1:M)
-% x = 32*pi/(M-1) * (1:M)
-%x = (32*pi)*(1:M)/(M);
+% U(n+1) = (I - A - B)U(n) - D*R(U(n))
 
 f = @(x) cos(x/16) .* (1 + sin(x/16));
 
+% Initial values
+L = 32*pi;
+M = 2^7;
+h = L/(M);
+x = h:h:32*pi;
+
+N = 10000;
+k = 0.01;
+T = 0.1;
+N_time = T/k;
+
+
 % Creating the U-matrix and inserting boundary condition
+
 U = zeros(M, N);
-U(:,1) = f(x');
+U(:,1) = f(x);
+U_R = U;
 
 % Construction of the A-, B- and D-matrix
 e = ones(M,1);
@@ -32,19 +32,49 @@ A = (k/(h^4)) * spdiags([-4*e e e -4*e 6*e -4*e e e -4*e], diagVecA, M, M);
 diagVecB = [-M+1 -1:1 M-1];
 B = (k/(h^2)) * spdiags([e e -2*e e e], diagVecB, M, M);
 
-diagVecB = [-M+1 -1 1 M-1];
-D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecB, M, M);
+diagVecD_R = [-M+1 -1 1 M-1];
+D_R = (k/(2*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD_R, M, M);
 
-C = (eye(M)-A-B-D);
-rho = max(eig(C));
+diagVecD = [-M+1 -1 1 M-1];
+D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
 
-% Running 
-% for n = 1:N
-%     U(:,n+1) = (eye(M) - A - B)*U(:,n) - D*(U(:,n).^2);
-% end
+% C1 = (eye(M)-A-B-D);
+% spectral_radius = max(abs(eig(C1)));
+
+
+
+% Testing out: U(x,0) = -2*U_xx - U_xxxx
+% rho = 1/(2^7)*cos(x/16).*(1 + 4*sin(x/16)) - 1/(2^16)*cos(x/16).*(1+16*sin(x/16));
+% R = spdiags(rho', 0, M, M);
+% 
+
+
+% Finding U(T=20)
+for n = 1:N-1
+    U(:,n+1) = (eye(M) - A - B)*U(:,n) - D*(U(:,n).^2);
+end
+
+R_diag = (U(:,1) + U(:,N_time))/2;
+%R_diag = (U(:,1));
+R = spdiags(R_diag, 0, M, M);
+
+C2 = (eye(M) - A - B - D_R*R);
+spec_C2 = max(abs(eig(C2)));
+
+
+for n = 1:N-1
+    U_R(:,n+1) = (eye(M) - A - B)*U_R(:,n) - D_R*R*(U_R(:,n));
+end
+
+% 
+% C2 = (eye(M) - A - B - D*R);
+% spec_C2 = max(abs(eig(C2)));
+err = (U-U_R);
+norm(err)
 
 % figure
-%contourf(t, x, U)
 % contourf(U')
+% figure
+% contourf(U_R')
 
 toc

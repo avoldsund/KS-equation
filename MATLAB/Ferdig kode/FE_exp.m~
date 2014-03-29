@@ -9,33 +9,23 @@ hs = L/Ms;
 y = 0:hs:L-hs;
 
 M = 2^7;
-h = L/(M);
+h = L/M;
 x = 0:h:L-h;
 
-N = 50000;
+N = 40000;
 k = 0.01;
 T = k*N;
 
 yy = ref_sol(k,T,y);
 
-
 U = zeros(M,N);
 error = zeros(M,N);
 U(:,1) = f(x);
 
-B = second_order_matrix(M,h,k);
-A = k*B*B;
+B = second_order_matrix(M,h);
+A = k*B*B;          % Fourth order matrix
 B = k*B;
-
-     e = ones(M,1);
-%      diagVecA = [-M+1 -M+2 -2:2 M-2 M-1];
-%      A = (k/(h^4)) * spdiags([-4*e e e -4*e 6*e -4*e e e -4*e], diagVecA, M, M);
-% 
-%     diagVecB = [-M+1 -1:1 M-1];
-%     B = (k/(h^2)) * spdiags([e e -2*e e e], diagVecB, M, M);
-% 
-     diagVecD = [-M+1 -1 1 M-1];
-     D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
+D = k*first_order_central_matrix(M,h);
     
 for n = 1:N-1
     U(:,n+1) = (eye(M) - A - B)*U(:,n) - D*(U(:,n).^2);
@@ -48,11 +38,11 @@ end
 % plot(yy(:,N), 'b');
 % hold on
  %plot(U(:,N), 'g');
-
-figure(2)
+norm(error)
+figure
 %meshc(error')
 
-% figure
+
  contourf(U')
 
 

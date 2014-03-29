@@ -10,14 +10,14 @@ L = 32*pi;
 h = (32*pi)/(M);
 x = 0:h:L-h;
 k = 0.01;
-N = 20000;
+N = 50000;
 T = N*k;
 %T = 20;
 %N = ceil(T/k);
 
 y0 = f(x);
 options=odeset('AbsTol',1e-3,'RelTol',1e-3);
-[tt,yy] = ode15s('funcKS',[0:k:T],y0,options);
+[tt,yy] = ode15s('funcKS',0:k:T,y0,options);
 yy = yy';
 
 U = zeros(M,N);
@@ -53,6 +53,7 @@ for n = 1:N-1
     error(:,n+1) = abs(yy(:,n+1)-U(:,n+1));
 end
 
+norm(error)
 % figure
 % err = abs(yy(:,N)-U(:,N));
 % plot(err, 'r');
@@ -62,7 +63,7 @@ end
 % plot(U(:,N), 'g');
 
 figure
-meshc(error')
+%meshc(error')
 %mesh(U)
 %figure()
-%contourf(U)
+contourf(U')

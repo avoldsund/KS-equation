@@ -29,12 +29,15 @@ U(:,1) = f(x);
     diagVecB = [-M+1 -1:1 M-1];
     B = (k/(h^2)) * spdiags([e e -2*e e e], diagVecB, M, M);
 
-    diagVecD = [-M+1 -1 1 M-1];
-    D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
+%     diagVecD = [-M+1 -1 1 M-1];
+%     D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
+    diagVecD = [-1 0 M-1];
+    D = (k/h) * spdiags([-e e e], diagVecD, M, M);
+
     
 for n = 1:N-1
     U(:,n+1) = (eye(M) - A - B)*U(:,n) - D*(U(:,n).^2);
-    error(:,n+1) = abs(yy(:,n+1)-U(:,n+1));
+    %error(:,n+1) = abs(yy(:,n+1)-U(:,n+1));
 end
 % figure(1)
 % err = abs(yy(:,N)-U(:,N));
@@ -44,11 +47,11 @@ end
 % hold on
  %plot(U(:,N), 'g');
 
-figure(2)
-meshc(error')
+%figure(2)
+%meshc(error')
 
-% figure
-% contourf(U')
+figure
+contourf(U')
 
 
 end
