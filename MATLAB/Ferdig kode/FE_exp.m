@@ -1,21 +1,21 @@
-function err = FE_exp
+function [error] = FE_exp
 
 global Ms hs
 f = @(x) cos(x/16) .* (1 + sin(x/16));
 L = 32*pi;
 
-Ms = 2^8;  %number of points in reference sol.
+Ms = 2^10;  %number of points in reference sol.
 hs = L/Ms;
 y = 0:hs:L-hs;
 
-M = 2^7;
+M = 2^8;
 h = L/M;
 x = 0:h:L-h;
 
-N = 10000;
-k = 0.01;
-T = k*N;
-
+N = 2^16;
+T = 100;
+k = T/N;
+t = k*(0:N-1);
 
 yy = ref_sol(k,T,y);
 
@@ -40,13 +40,27 @@ end
 % hold on
  %plot(U(:,N), 'g');
  
-err = norm(error);
+ 
+ % Finding error plot (difference between ref. and our solution)
+ % Using the compress-function
+[errNew, xNew, yNew] = compress(t, x, error, 2000, 2000);
 
-%figure
-meshc(error')
+figure
+mesh(xNew,yNew,errNew')
+view(0,90) %Contour plot
+%view(90,270) Contour plot of the solution
+title('Error plot: approximate solution (M = 256) vs reference solution (M = 1024). N = 2^{18}.')
+ylabel('time')
+xlabel('space [0, 32*pi]')
+axis([0 32*pi 0 100])
+ 
+ 
+% err = norm(error);
+% size(error)
+% mesh(x,t,error')
+% xlabel('space')
+% ylabel('time')
+% view(0,90)
 % contourf(error')
-
-%  contourf(U')
-
 
 end

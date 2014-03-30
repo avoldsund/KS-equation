@@ -1,4 +1,3 @@
-
 function error_norm = FE_exp_space_conv
 % Implementation of the Kuramoto-Sivashinsky equation
 % u_t + u_xxxx + u_xx + uu_x = 0
