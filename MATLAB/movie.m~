@@ -20,7 +20,7 @@ options = odeset('AbsTol', 1e-12, 'RelTol', 1e-12);
 
 figure
 for i=1:size(yy,1)
-    plot(y,[yy(i,end);yy(i,:)'])
+    plot(y,[yy(:,i)'])
     drawnow
 end
 

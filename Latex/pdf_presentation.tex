@@ -1,0 +1,68 @@
+\documentclass[16pt]{article}
+\usepackage{geometry}                
+\geometry{a4paper}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{paralist}
+\usepackage[parfill]{parskip}
+\usepackage{float}
+\usepackage{capt-of}
+
+
+\title{TMA4212 \\ Kuramoto-Sivashinsky equation} 
+\author{Espen, Anders, Elisabeth} 
+\date{\today}
+
+
+\begin{document}
+\huge
+
+\center{The Kuramoto-Sivashinsky equation}
+
+\begin{align*}
+u_t + u_{xx} + u_{xxxx} + uu_x &= 0 \\
+u_t + u_{xx} + u_{xxxx} + \frac{1}{2}(u^2)_x &= 0
+\end{align*}
+
+Difference scheme:
+
+\LARGE
+\begin{align*}
+u_t &\approx \frac{\Delta u}{k} = \frac{u^{n+1}-u^n}{k} \\
+u_{xx} &\approx \frac{\delta^2 u}{h^2} = \frac{u_{m+1}-2u_{m}+u_{m-1}}{h^2} = \frac{1}{h^2}Au \\
+u_{xxxx} &\approx \frac{\delta^4 u}{h^4} = \frac{u_{m+2}-4u_{m+1}+6u_m-4u_{m-1}+u_{m-2}}{h^4} = \frac{1}{h^4}AAu\\
+(u^2)_{x} &\approx \frac{\mu \delta u^2}{h} = \frac{(u_{m+1})^2-(u_{m-1})^2}{2h} = \frac{1}{2h}D\\
+\end{align*}
+
+\begin{align*}
+U^{n+1} = U^n - \frac{k}{h^2}AU^n - \frac{k}{h^4}AAU^n - \frac{k}{4h}D(U^{n}\odot U^n)
+\end{align*}
+
+$\odot =$ Element-wise multiplication
+
+\newpage
+
+Consistency
+
+\begin{align*}
+u_t= \frac{\Delta u}{k} + O(k) \\
+u_{xx} = \frac{\delta^2 u}{h^2} + O(h^2) \\
+u_{xxxx} = \frac{\delta^4 u}{h^4} + O(h^2) \\
+\mu \delta [u(x)^2] = \mu[u(x+\frac{h}{2}^2) - u(x - \frac{h}{2})^2] \\
+= 2huu_{x} + O(h^3) \\
+uu_{x} = \frac{\mu \delta u^2}{4h} + O(h^2) \\
+\end{align*}
+
+Local Truncation Error
+
+\begin{equation}
+\tau ^n = O(h^2) + O(k) \xrightarrow{k,h \to 0} 0
+\end{equation}
+
+$\Rightarrow$ Consistent
+
+
+
+
+\end{document}

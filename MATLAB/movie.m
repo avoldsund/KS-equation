@@ -5,12 +5,12 @@ global Ms hs
 f = @(x) cos(x/16) .* (1 + sin(x/16));
 L = 32*pi;
 
-Ms = 2^8;  %number of points in reference sol.
+Ms = 128;  %number of points in reference sol.
 hs = L/Ms;
 y = 0:hs:L-hs;
 
 N = 10000;
-k = 0.01;
+k = 0.1;
 T = k*N;
 
 
@@ -20,11 +20,7 @@ options = odeset('AbsTol', 1e-12, 'RelTol', 1e-12);
 
 figure
 for i=1:size(yy,1)
-    plot(y,[yy(i,end);yy(i,:)'])
+    plot(y,yy(i,:)')
+    axis([0 L min(min(yy)) max(max(yy))])
     drawnow
 end
-
-figure
-mesh(y,tt,[yy(:,end) yy])
-xlabel('rom')
-ylabel('tid')
