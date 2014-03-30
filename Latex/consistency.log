@@ -1,0 +1,308 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  30 MAR 2014 20:27
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**consistency.tex
+(./consistency.tex
+LaTeX2e <2011/06/27>
+Babel <3.9g> and hyphenation patterns for 78 languages loaded.
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 C
+     onsistency
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no C in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no y in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--2
+[] 
+ []
+
+
+! LaTeX Error: Environment align* undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \begin{align*}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 u
+     _t= \frac{\Delta u}{k} + O(k) \\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no u in font nullfont!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4 u_
+      t= \frac{\Delta u}{k} + O(k) \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 4.
+
+! LaTeX Error: \begin{document} ended by \end{align*}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 \end{align*}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.10 \end{align*}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (34.07635pt too wide) in paragraph at lines 4--11
+[]$[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (21.47533pt too wide) in paragraph at lines 4--11
+[] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (21.2042pt too wide) in paragraph at lines 4--11
+\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 k\OT1/cmr/m/n/10 )[] 
+ []
+
+
+Overfull \hbox (25.84955pt too wide) in paragraph at lines 4--11
+\OML/cmm/m/it/10 u[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (22.69724pt too wide) in paragraph at lines 4--11
+[] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (25.93106pt too wide) in paragraph at lines 4--11
+\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 )[] 
+ []
+
+
+Overfull \hbox (34.919pt too wide) in paragraph at lines 4--11
+\OML/cmm/m/it/10 u[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (22.69724pt too wide) in paragraph at lines 4--11
+[] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (25.93106pt too wide) in paragraph at lines 4--11
+\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 )[] 
+ []
+
+
+Overfull \hbox (50.66325pt too wide) in paragraph at lines 4--11
+\OML/cmm/m/it/10 ^^V^^N\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 u\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 x\OT1/cmr/m/n/10 )[]] =
+ []
+
+
+Overfull \hbox (31.90982pt too wide) in paragraph at lines 4--11
+\OML/cmm/m/it/10 ^^V\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 u\OT1/cmr/m/n/10 (\OML/cm
+m/m/it/10 x \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (23.23457pt too wide) in paragraph at lines 4--11
+[][]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (23.10655pt too wide) in paragraph at lines 4--11
+\OML/cmm/m/it/10 u\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (18.23456pt too wide) in paragraph at lines 4--11
+[]\OT1/cmr/m/n/10 )[]][] 
+ []
+
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 4--11
+\OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (35.02328pt too wide) in paragraph at lines 4--11
+\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 huu[] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (25.93106pt too wide) in paragraph at lines 4--11
+\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 )[] 
+ []
+
+
+Overfull \hbox (27.0394pt too wide) in paragraph at lines 4--11
+\OML/cmm/m/it/10 uu[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (27.55956pt too wide) in paragraph at lines 4--11
+[] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (25.93106pt too wide) in paragraph at lines 4--11
+\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 )[] 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 L
+      ocal Truncation Error
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no L in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 12--13
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \begin{equation}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 14--14
+[] 
+ []
+
+! Undefined control sequence.
+l.15 \tau ^n = O(h^2) + O(k) \xrightarrow
+                                         {k,h \to 0} 0
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (120.47539pt too wide) detected at line 16
+\OML/cmm/m/it/10 ^^\[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (\OM
+L/cmm/m/it/10 h[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (\OML/cm
+m/m/it/10 k\OT1/cmr/m/n/10 )[]0
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 $
+      \Rightarrow$ Consistent
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no C in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+)
+! Emergency stop.
+<*> consistency.tex
+                   
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 10 strings out of 493308
+ 189 string characters out of 6140929
+ 53269 words of memory out of 5000000
+ 3569 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 18i,3n,12p,89b,79s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!
