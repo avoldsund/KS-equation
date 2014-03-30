@@ -1,0 +1,48 @@
+close all
+clear all
+
+
+f = @(x) cos(x/16).*(1+sin(x/16));
+
+global M k h N
+M = 128;
+h = (32*pi)/(M);
+k = 0.01;
+x = 0:h:32*pi;
+N = 20000;
+T = N*k;
+
+y0 = f(x(2:end));
+
+options=odeset('AbsTol',1e-3,'RelTol',1e-3);
+[tt,yy] = ode15s('funcKS',[0 T],y0,options);
+
+% figure('Renderer','zbuffer')
+% Z = peaks;
+% surf(Z); 
+% axis tight manual
+% set(gca,'NextPlot','replaceChildren');
+% % Preallocate the struct array for the struct returned by getframe
+% F(20) = struct('cdata',[],'colormap',[]);
+% % Record the movie
+% for j = 1:20 
+%     surf(.01+sin(2*pi*j/20)*Z,Z)
+%     F(j) = getframe;
+% end
+
+
+movie(yy)
+
+% figure
+% for i=1:size(yy,1)
+%     plot(x,[yy(i,end);yy(i,:)'])
+%     drawnow
+% end
+% 
+% figure
+% mesh(x,tt,[yy(:,end) yy])
+% xlabel('rom')
+% ylabel('tid')
+
+figure
+contourf(yy)
