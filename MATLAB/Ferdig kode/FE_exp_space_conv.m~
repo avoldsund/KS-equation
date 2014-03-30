@@ -5,25 +5,24 @@ function error_norm = FE_exp_space_conv
 % Central differences in space, forwards in time
 % Reference solution with ode15
 
+    % Boundary conditions
+    % u(x,0) = f(x)
+    % u(0,t) = u(L,t)
 
 f = @(x) cos(x/16).*(1+sin(x/16));
 
-global Ms k h N
+global Ms hs
 L = 32*pi;
-Ms = 2^10;
-M_sol = M;
-h = L/(M);
+Ms = 2^11;
+hs = L/Ms;
+
 k = 0.0001;
-x0 = 0:h:L-h;
-N = 500000;
+y = 0:hs:L-hs;
+N = 10000;
 T = N*k;
 %size(x0)
-y0 = f(x0);
 
-
-options=odeset('AbsTol',1e-3,'RelTol',1e-3);
-[tt,yy] = ode15s('funcKS',0:k:T,y0,options);
-yy = yy';
+yy = ref_sol(k,T,y);
 
 min = 5;
 max = 9;
@@ -37,32 +36,30 @@ for j = min:max
     M = 2^j;
     h = L/(M);
     %k/(h^2) <= 0.0026 for convergence
-    % x = h * (1:M)
-    % x = 32*pi/(M-1) * (1:M)
     x = 0:h:L-h;
-    
-    
-    % Boundary conditions
-    % u(x,0) = f(x)
-    % u(0,t) = u(L,t)
 
-    f = @(x) cos(x/16) .* (1 + sin(x/16));
 
     % Creating the U-matrix and inserting boundary condition
     U = zeros(M, N);
     U(:,1) = f(x');
 
     % Construction of matrices for U(n+1) = (I - A - B)*U(n) - D*(U(n)).^2 
-    e = ones(M,1);
-    diagVecA = [-M+1 -M+2 -2:2 M-2 M-1];
-    A = (k/(h^4)) * spdiags([-4*e e e -4*e 6*e -4*e e e -4*e], diagVecA, M, M);
+%     e = ones(M,1);
+%     diagVecA = [-M+1 -M+2 -2:2 M-2 M-1];
+%     A = (k/(h^4)) * spdiags([-4*e e e -4*e 6*e -4*e e e -4*e], diagVecA, M, M);
+% 
+%     diagVecB = [-M+1 -1:1 M-1];
+%     B = (k/(h^2)) * spdiags([e e -2*e e e], diagVecB, M, M);
+% 
+%     diagVecD = [-M+1 -1 1 M-1];
+%     D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
 
-    diagVecB = [-M+1 -1:1 M-1];
-    B = (k/(h^2)) * spdiags([e e -2*e e e], diagVecB, M, M);
+    A = k/(2*h^2)*second_order_matrix(M);
 
-    diagVecD = [-M+1 -1 1 M-1];
-    D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
+    B = k/(2*h^4)*second_order_matrix(M)*second_order_matrix(M);
 
+    D = k/(4*h)*first_order_central_matrix(M);
+    
     % Iteration over time
     for n = 1:N
         U(:,n+1) = (eye(M)-A-B)*U(:,n) - D*(U(:,n).^2);

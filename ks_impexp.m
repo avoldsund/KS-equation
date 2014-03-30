@@ -2,15 +2,31 @@
 
 f = @(x) cos(x/16).*(1+sin(x/16));
 
+<<<<<<< HEAD
 M = 10;
+=======
+global M h L N k
+
+M = 128;
+L = 32*pi;
+>>>>>>> e2353afd7aac04306d2fed57cbf092bf11bffd30
 %x = linspace(0,32*pi,M);
-x = 32*pi*(1:M)/M;
-h = (32*pi)/(M-1);
+h = (32*pi)/(M);
+x = 0:h:L-h;
 k = 0.01;
+<<<<<<< HEAD
 N = 300;
+=======
+N = 20000;
+>>>>>>> e2353afd7aac04306d2fed57cbf092bf11bffd30
 T = N*k;
 %T = 20;
 %N = ceil(T/k);
+
+y0 = f(x);
+options=odeset('AbsTol',1e-3,'RelTol',1e-3);
+[tt,yy] = ode15s('funcKS',[0:k:T],y0,options);
+yy = yy';
 
 % Generating matrices for imp.exp. method
 w = ones(1,M-1);
@@ -41,6 +57,11 @@ for n = 1:N
     U(n+1,:) = F\G*(U(n,:)') - F\D*(U(n,:)'.^2);
 end
 
+figure
+err = abs(yy(:,N)-U(:,N));
+plot(err, 'r');
+
+
 %mesh(U)
-figure()
-contourf(U)
+%figure()
+%contourf(U)

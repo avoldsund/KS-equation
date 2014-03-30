@@ -13,10 +13,10 @@ f = @(x) cos(x/16).*(1+sin(x/16));
 
 global Ms hs
 L = 32*pi;
-Ms = 2^14;
+Ms = 2^10;
 hs = L/Ms;
 
-k = 0.0001;
+k = 0.001;
 y = 0:hs:L-hs;
 N = 50000;
 T = N*k;
@@ -24,7 +24,7 @@ T = N*k;
 
 yy = ref_sol(k,T,y);
 
-min = 5;
+min = 6;
 max = 9;
 num = max-min+1;
 error_norm = zeros(num,1);
@@ -44,27 +44,27 @@ for j = min:max
     U(:,1) = f(x');
 
     % Construction of matrices for U(n+1) = (I - A - B)*U(n) - D*(U(n)).^2 
-    e = ones(M,1);
-    diagVecA = [-M+1 -M+2 -2:2 M-2 M-1];
-    A = (k/(h^4)) * spdiags([-4*e e e -4*e 6*e -4*e e e -4*e], diagVecA, M, M);
 
-    diagVecB = [-M+1 -1:1 M-1];
-    B = (k/(h^2)) * spdiags([e e -2*e e e], diagVecB, M, M);
-
-    diagVecD = [-M+1 -1 1 M-1];
-    D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
-
+    A = k/(2*h^2)*second_order_matrix(M);
+    B = k/(2*h^4)*second_order_matrix(M)*second_order_matrix(M);
+    D = k/(4*h)*first_order_central_matrix(M);
+    
+    F = (speye(M)+A+B);
+    G = (speye(M)-A-B);
+    
     % Iteration over time
     for n = 1:N
-        U(:,n+1) = (eye(M)-A-B)*U(:,n) - D*(U(:,n).^2);
+        %U(:,n+1) = (eye(M)-A-B)*U(:,n) - D*(U(:,n).^2);
+        U(:,n+1) = F\G*(U(:,n)) - F\D*(U(:,n).^2);
     end
 
 
     % error compared to reference solution
-    error = zeros(1,M);
-    for i = 0:M-1
-        error(i+1) = U(i+1,N) - yy((Ms)/(M)*i+1,N);
-    end
+%     error = zeros(1,M);
+%     for i = 0:M-1
+%         error(i+1) = U(i+1,N) - yy((Ms)/(M)*i+1,N);
+%     end
+    error = (yy(1:Ms/M:Ms,N)-U(:,N));
     error_norm(j-min+1) = norm(error, Inf);
     h_p(j-min+1) = h;
 end

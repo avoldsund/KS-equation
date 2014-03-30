@@ -13,10 +13,11 @@ h = L/(M);
 x = h:h:32*pi;
 
 N = 5000;
-k = 0.01;
+k = 0.05;
 T = 5;
 N_time = T/k;
 
+r = k/(h^4)
 
 % Creating the U-matrix and inserting boundary condition
 
@@ -35,10 +36,10 @@ B = (k/(h^2)) * spdiags([e e -2*e e e], diagVecB, M, M);
 diagVecD_R = [-M+1 -1 1 M-1];
 D_R = (k/(2*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD_R, M, M);
 
-diagVecD = [-M+1 -1 1 M-1];
-D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
+% diagVecD = [-M+1 -1 1 M-1];
+% D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
 
-% C1 = (eye(M)-A-B-D);
+
 % spectral_radius = max(abs(eig(C1)));
 
 
@@ -50,20 +51,24 @@ D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
 
 
 % Finding U(T=20)
-for n = 1:N-1
-    U(:,n+1) = (eye(M) - A - B)*U(:,n) - D*(U(:,n).^2);
-end
+% for n = 1:N-1
+%     U(:,n+1) = (eye(M) - A - B)*U(:,n) - D*(U(:,n).^2);
+% end
 
 R_diag = (U(:,1) + U(:,N_time))/2;
-%R_diag = (U(:,1));
+% R_diag = (U(:,1));
 R = spdiags(R_diag, 0, M, M);
-
-C2 = (eye(M) - A - B - D_R*R);
-spec_C2 = max(abs(eig(C2)));
+% 
+C = (eye(M) - A - B - D_R*R); 
+% C1 = (eye(M)-A-B-D);
+% C2 = (eye(M)-A-B);
+eigen_C = (eig(C));
+% plot(eig(C2), '*')
+% spec_C2 = max(abs(eig(C2)));
 
 
 for n = 1:N-1
-    U_R(:,n+1) = (eye(M) - A - B)*U_R(:,n) - D_R*R*(U_R(:,n));
+    U_R(:,n+1) = (eye(M) - A - B)*U_R(:,n) - 0.5*D_R*R*(U_R(:,n));
 end
 
 % 
@@ -72,9 +77,9 @@ end
 % err = (U-U_R);
 % norm(err)
 
-figure
+figure(1)
 contourf(U')
-figure
+figure(2)
 contourf(U_R')
 
 toc

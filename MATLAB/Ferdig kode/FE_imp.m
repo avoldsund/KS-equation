@@ -8,18 +8,18 @@ Ms = 2^10;  %number of points in reference sol.
 hs = L/Ms;
 y = 0:hs:L-hs;
 
-M = 2^7;
+M = 2^6;
 h = L/M;
 x = 0:h:L-h;
 
-N = 20000;
-k = 0.01;
+N = 400;
+k = 0.1;
 T = k*N;
 
-yy = ref_sol(k,T,y);
+%yy = ref_sol(k,T,y);
 
 U = zeros(M,N);
-error = zeros(M,N);
+%error = zeros(M,N);
 U(:,1) = f(x);
 
 %Generating matrices for imp.exp. method
@@ -41,8 +41,9 @@ for n = 1:N-1
 end
 
 %err = norm(error);
-err = norm(yy(1:Ms/M:Ms,N)-U(:,N));
-%contourf(U')
-
+%err = norm(yy(1:Ms/M:Ms,N)-U(:,N));
+contourf(U')
+max(U)
+min(U)
 
 end

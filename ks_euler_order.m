@@ -6,11 +6,11 @@ function ks_euler_order
 f = @(x) cos(x/16).*(1+sin(x/16));
 % Reference solution:
 it = 7;
-M_sol = 2^10+1;
-k = 0.00001;
+M_sol = 2^8+1;
+k = 0.0001;
 %T = 10;
 %N = floor(T/k);
-N = 20000;
+N = 10000;
 u_sol = reference_sol(M_sol, N, k);
 err_norm = zeros(it-2,1);
 h_p = zeros(it-2,1);
@@ -105,4 +105,6 @@ function U = reference_sol(M, N, k)
     end
     %mesh(U)
     %pause
+    contourf(U)
+    pause
 end
