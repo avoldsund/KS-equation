@@ -1,0 +1,45 @@
+\documentclass[16pt]{article}
+\usepackage{geometry}                
+\geometry{a4paper}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{paralist}
+\usepackage[parfill]{parskip}
+\usepackage{float}
+\usepackage{capt-of}
+
+
+\title{TMA4212 \\ Kuramoto-Sivashinsky equation} 
+\author{Espen, Anders, Elisabeth} 
+\date{\today}
+
+
+\begin{document}
+\huge
+
+\center{The Kuramoto-Sivashinsky equation}
+
+\begin{align*}
+u_t + u_{xx} + u_{xxxx} + uu_x &= 0 \\
+u_t + u_{xx} + u_{xxxx} + \frac{1}{2}(u^2)_x &= 0
+\end{align*}
+
+Difference scheme:
+
+\LARGE
+\begin{align*}
+u_t &\approx \frac{\Delta u}{k} = \frac{U^{n+1}-U^n}{k} \\
+u_{xx} &\approx \frac{\delta^2 u}{h^2} = \frac{U_{m+1}-2U_{m}+U_{m-1}}{h^2} = \frac{1}{h^2}A \\
+u_{xxxx} &\approx \frac{\delta^4 u}{h^4} = \frac{U_{m+2}-4U_{m+1}+6U_m-4U_{m-1}+U_{m-2}}{h^4} = \frac{1}{h^4}AA\\
+u^2_{x} &\approx \frac{\mu \delta u^2}{h} = \frac{(U_{m+1})^2-(U_{m-1})^2}{2h} = \frac{1}{2h}D\\
+\end{align*}
+
+\begin{align*}
+U^{n+1} = U^n - \frac{k}{h^2}AU^n_m - \frac{k}{h^4}AAU^n_m - \frac{k}{4h}D(U_m^2+
+\end{align*}
+
+
+
+
+\end{document}
