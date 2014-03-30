@@ -11,18 +11,24 @@ function error_norm = FE_exp_space_conv
 f = @(x) cos(x/16).*(1+sin(x/16));
 
 global Ms hs
+
+% Constants
 L = 32*pi;
+T = 10;
+% N = 2^14;
+% k = T/N;
+k = 10^(-4);
+N = T/k;
+y = 0:hs:L-hs;
+
+% Reference solution
 Ms = 2^10;
 hs = L/Ms;
-
-k = 0.001;
-y = 0:hs:L-hs;
-N = 50000;
-T = N*k;
-%size(x0)
-
 yy = ref_sol(k,T,y);
 
+disp('done')
+
+% Parameters for for loop
 min = 6;
 max = 9;
 num = max-min+1;
@@ -31,12 +37,11 @@ h_p = zeros(num,1);
 
 
 for j = min:max
-
+    j
     M = 2^j;
     h = L/(M);
     %k/(h^2) <= 0.0026 for convergence
     x = 0:h:L-h;
-
 
     % Creating the U-matrix and inserting boundary condition
     U = zeros(M, N);
@@ -48,13 +53,13 @@ for j = min:max
     B = k/(2*h^4)*second_order_matrix(M)*second_order_matrix(M);
     D = k/(4*h)*first_order_central_matrix(M);
     
-    F = (speye(M)+A+B);
-    G = (speye(M)-A-B);
+%     F = (speye(M)+A+B);
+%     G = (speye(M)-A-B);
     
     % Iteration over time
     for n = 1:N
-        %U(:,n+1) = (eye(M)-A-B)*U(:,n) - D*(U(:,n).^2);
-        U(:,n+1) = F\G*(U(:,n)) - F\D*(U(:,n).^2);
+        U(:,n+1) = (eye(M)-A-B)*U(:,n) - D*(U(:,n).^2);
+%         U(:,n+1) = F\G*(U(:,n)) - F\D*(U(:,n).^2);
     end
 
 
@@ -69,6 +74,6 @@ for j = min:max
 end
 
 figure
-    loglog(h_p, error_norm, 'r', h_p, h_p, 'b', h_p, h_p.^2, 'g');
+    loglog(h_p, error_norm, 'ro-', h_p, h_p, 'b', h_p, h_p.^2, 'g');
     
 end
