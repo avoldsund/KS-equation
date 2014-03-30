@@ -42,7 +42,7 @@ end
 figure
 mesh(xa,ya,V')
 %view(230,45)
-view(340,60)
+view(230,45)
 %view(90,270) Contour plot of the solution
 title('Numerical solution of the KS-eq: M = 128, N = 2^{16}')
 ylabel('time')
