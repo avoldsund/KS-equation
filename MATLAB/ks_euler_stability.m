@@ -8,14 +8,14 @@ f = @(x) cos(x/16) .* (1 + sin(x/16));
 
 % Initial values
 L = 32*pi;
-M = 2^7;
+M = 2^3;
 h = L/(M);
-x = h:h:32*pi;
+x = 0:h:32*pi-h;
 
-N = 5000;
-k = 0.05;
+N = 50;
+k = 0.01;
 T = 5;
-N_time = T/k;
+% N_time = T/k;
 
 r = k/(h^4)
 
@@ -34,7 +34,7 @@ diagVecB = [-M+1 -1:1 M-1];
 B = (k/(h^2)) * spdiags([e e -2*e e e], diagVecB, M, M);
 
 diagVecD_R = [-M+1 -1 1 M-1];
-D_R = (k/(2*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD_R, M, M);
+D = (k/(2*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD_R, M, M);
 
 % diagVecD = [-M+1 -1 1 M-1];
 % D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
@@ -55,21 +55,25 @@ D_R = (k/(2*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD_R, M, M);
 %     U(:,n+1) = (eye(M) - A - B)*U(:,n) - D*(U(:,n).^2);
 % end
 
-R_diag = (U(:,1) + U(:,N_time))/2;
-% R_diag = (U(:,1));
+% R_diag = (U(:,1) + U(:,N_time))/2;
+R_diag = (U(:,1));
 R = spdiags(R_diag, 0, M, M);
 % 
-C = (eye(M) - A - B - D_R*R); 
+C = (eye(M) - A - B); 
+
+E = full(D*R);
+plot(eig(E), '*');
+
 % C1 = (eye(M)-A-B-D);
 % C2 = (eye(M)-A-B);
 eigen_C = (eig(C));
 % plot(eig(C2), '*')
 % spec_C2 = max(abs(eig(C2)));
-
-
-for n = 1:N-1
-    U_R(:,n+1) = (eye(M) - A - B)*U_R(:,n) - 0.5*D_R*R*(U_R(:,n));
-end
+% 
+% 
+% for n = 1:N-1
+%     U_R(:,n+1) = (eye(M) - A - B)*U_R(:,n) - 0.5*D*R*U_R(:,n);
+% end
 
 % 
 % C2 = (eye(M) - A - B - D*R);
@@ -77,9 +81,9 @@ end
 % err = (U-U_R);
 % norm(err)
 
-figure(1)
-contourf(U')
-figure(2)
-contourf(U_R')
+% figure(1)
+% contourf(U')
+% figure(2)
+% contourf(U_R')
 
 toc

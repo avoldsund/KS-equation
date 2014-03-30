@@ -8,11 +8,11 @@ Ms = 2^10;  %number of points in reference sol.
 hs = L/Ms;
 y = 0:hs:L-hs;
 
-M = 2^6;
+M = 2^10;
 h = L/M;
 x = 0:h:L-h;
 
-N = 200;
+N = 1000;
 k = 0.1;
 T = k*N;
 
@@ -43,6 +43,7 @@ end
 %err = norm(error);
 %err = norm(yy(1:Ms/M:Ms,N)-U(:,N));
 contourf(U')
-
+max(max(U))
+min(min(U))
 
 end

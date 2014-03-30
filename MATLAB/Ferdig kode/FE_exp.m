@@ -4,7 +4,7 @@ global Ms hs
 f = @(x) cos(x/16) .* (1 + sin(x/16));
 L = 32*pi;
 
-Ms = 2^10;  %number of points in reference sol.
+Ms = 2^8;  %number of points in reference sol.
 hs = L/Ms;
 y = 0:hs:L-hs;
 
@@ -12,7 +12,7 @@ M = 2^7;
 h = L/M;
 x = 0:h:L-h;
 
-N = 100000;
+N = 10000;
 k = 0.01;
 T = k*N;
 
@@ -33,21 +33,20 @@ for n = 1:N-1
     error(:,n+1) = abs(yy(1:Ms/M:Ms,n+1)-U(:,n+1));
 end
 % figure(1)
- err = norm(yy(1:Ms/M:Ms,N)-U(:,N));
+%  err = norm(yy(1:Ms/M:Ms,N)-U(:,N));
 % plot(err, 'r');
 % hold on
 % plot(yy(:,N), 'b');
 % hold on
  %plot(U(:,N), 'g');
  
- 
-%err = norm(error);
+err = norm(error);
 
 %figure
-%meshc(error')
-contourf(error')
+meshc(error')
+% contourf(error')
 
- %contourf(U')
+%  contourf(U')
 
 
 end
