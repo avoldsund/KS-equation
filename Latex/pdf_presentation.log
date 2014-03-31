@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  31 MAR 2014 17:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  31 MAR 2014 18:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -628,33 +628,38 @@ Overfull \hbox (36.89473pt too wide) in paragraph at lines 16--16
  [] 
  []
 
-) (./consistency.tex [7{/usr/lib/texlive/texmf-var/fonts/map/pdftex/updmap/pdft
-ex.map}]) (./stability_presentation.tex [8]
-Overfull \hbox (5.86166pt too wide) in paragraph at lines 39--39
+[7{/usr/lib/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (21.90503pt too wide) in paragraph at lines 36--36
  [] 
  []
 
-[9]) [10] (./pdf_presentation.aux) ) 
+) (./consistency.tex) [8] (./stability_presentation.tex [9]
+Overfull \hbox (5.86166pt too wide) in paragraph at lines 41--41
+ [] 
+ []
+
+[10]) [11] (./pdf_presentation.aux) ) 
 Here is how much of TeX's memory you used:
- 4345 strings out of 493308
- 61069 string characters out of 6140929
- 138455 words of memory out of 5000000
- 7710 multiletter control sequences out of 15000+600000
- 11183 words of font info for 44 fonts, out of 8000000 for 9000
+ 4346 strings out of 493308
+ 61086 string characters out of 6140929
+ 137455 words of memory out of 5000000
+ 7711 multiletter control sequences out of 15000+600000
+ 11482 words of font info for 45 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  41i,18n,45p,248b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/lib/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmex10.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi10.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.
-pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lib/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lib/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on pdf_presentation.pdf (10 pages, 1656319 bytes).
+</usr/lib/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmex10.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12
+.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lib/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lib/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lib/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on pdf_presentation.pdf (11 pages, 1665323 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 208 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -19,4 +19,23 @@ u_{xxxx} &\approx \frac{\delta^4 u}{h^4} = \frac{u_{m+2}-4u_{m+1}+6u_m-4u_{m-1}+
 U^{n+1} = U^n - \frac{k}{h^2}AU^n - \frac{k}{h^4}AAU^n - \frac{k}{4h}D(U^{n}\odot U^n)
 \end{align*}
 
+\begin{align*}
+U^{n+1} = (I - A - B)U^n - \frac{1}{2} D(U^{n}\odot U^n)
+\end{align*}
+
 $\odot =$ Element-wise multiplication
+
+\Huge
+Implicit scheme: 
+
+\Large
+Crank-Nicholson on $u_{xx}$ and $u_{xxxx}$
+
+\begin{align*}
+(I + \frac{k}{2h^2}A + \frac{k}{2h^4}AA)U^{n+1} = (I - \frac{k}{2h^2}A - \frac{k}{2h^4}AA)U^n - \frac{k}{4h}D(U^{n}\odot U^n)
+\end{align*}
+
+
+\begin{align*}
+(I + A + B)U^{n+1} = (I - A - B)U^n - \frac{1}{2}D(U^{n}\odot U^n)
+\end{align*}

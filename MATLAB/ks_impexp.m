@@ -2,18 +2,22 @@
 
 f = @(x) cos(x/16).*(1+sin(x/16));
 
-global M h L N k
+global Ms hs L N k
 
-M = 128;
+Ms = 2^7;
+M = Ms;
+
 L = 32*pi;
 %x = linspace(0,32*pi,M);
-h = (32*pi)/(M);
+hs = (32*pi)/(Ms);
+h = hs;
 x = 0:h:L-h;
-k = 0.01;
-N = 50000;
+k = 0.03;
+N = 1000;
 T = N*k;
 %T = 20;
 %N = ceil(T/k);
+r = k/h^4
 
 y0 = f(x);
 options=odeset('AbsTol',1e-3,'RelTol',1e-3);
