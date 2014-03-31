@@ -122,6 +122,86 @@ uu_{x} = \frac{\mu \delta u^2}{4h} + O(h^2) \\
 
 \end{frame}
 
+\begin{frame}
+
+\frametitle{Local Truncation Error}
+
+\begin{align*}
+\tau ^n = O(h^2) + O(k) \xrightarrow{k,h \to 0} 0
+\end{align*}
+\begin{align*}
+\Rightarrow \textrm{Consistent}
+\end{align*}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Stability analysis - implicit linearized scheme}
+\begin{itemize}
+\item Von Neumann on linearized equation \\
+\item $\frac{1}{2}(u^2)_x \approx \frac{1}{2}(\rho(x)u)_x$ \\
+\item $\rho(x) = U^0_m = \xi^0 e^{i\beta x_m}$ 
+\end{itemize}
+
+
+\begin{align*}
+|\xi |^2 &\le \left(\frac{1+rh^4/8}{1-rh^4/8}\right)^2 + k\frac{rh^2}{4}
+\end{align*}
+Not stable unless $r = \frac{k}{h^4}= 0$
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Stability analysis - explicit linearized scheme}
+\begin{align*}
+|\xi |^2 =  \left(1+4rh^2\alpha-16r\alpha^2\right)^2 + k\left(\frac{rh^2}{4}\sin^2(2\beta h)\right)
+\end{align*}
+
+\begin{itemize}
+\item $\alpha = \sin^2(\frac{\beta h}{2})$
+\item Assume: $(1 \le 16r\alpha \le 2)$ and $(4rh^2\alpha <= 1)$
+\end{itemize}
+
+\begin{align*}
+ \left| 1+4rh^2\alpha -16r\alpha^2\right| \le 1 \underset{0\le \alpha\le 1}{\implies} \left(1/16 \le r \le 1/8 \right)
+\end{align*} 
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Stability analysis - explicit linearized scheme}
+
+Using $r = 1/8$ 
+
+\begin{align*}
+|\xi |^2 &\le \left(1 + \frac{h^4}{32}\right)^2 + k\frac{h^2}{32} 
+\end{align*}
+
+\begin{itemize}
+\item Not stable
+\item $r < 1/8$ yields stability for non-linearized explicit scheme
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Convergence of explicit scheme}
+
+\begin{itemize}
+\item $\tau ^n = O(h^2) + O(k) $
+\item $|\xi |^2 \le \left(\frac{1+rh^4/8}{1-rh^4/8}\right)^2 + k\frac{rh^2}{4}$
+\item Experimentally the scheme is stable
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+
+
+\end{frame}
 
 \end{document}
 
