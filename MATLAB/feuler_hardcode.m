@@ -12,10 +12,10 @@ N = 50000;
 k = 0.01;
 T = N*k;
 
-y0 = f(x);
-options=odeset('AbsTol',1e-3,'RelTol',1e-3);
-[tt,yy] = ode15s('funcKS',[0:k:T],y0,options);
-yy = yy';
+% y0 = f(x);
+% options=odeset('AbsTol',1e-3,'RelTol',1e-3);
+% [tt,yy] = ode15s('funcKS',[0:k:T],y0,options);
+% yy = yy';
 
 
 U = zeros(M,N);
@@ -34,10 +34,10 @@ U(:,1) = f(x);
     
     eig(eye(M) - A - B)
     
-for n = 1:N-1
-    U(:,n+1) = (eye(M) - A - B)*U(:,n) - D*(U(:,n).^2);
-    error(:,n+1) = abs(yy(:,n+1)-U(:,n+1));
-end
+% for n = 1:N-1
+%     U(:,n+1) = (eye(M) - A - B)*U(:,n) - D*(U(:,n).^2);
+%     error(:,n+1) = abs(yy(:,n+1)-U(:,n+1));
+% end
 % figure(1)
 % err = abs(yy(:,N)-U(:,N));
 % plot(err, 'r');

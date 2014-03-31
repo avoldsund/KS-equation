@@ -8,13 +8,12 @@ function error_norm = space_convergence
 
 f = @(x) cos(x/16).*(1+sin(x/16));
 
-global M k h N
+global Ms hs
 L = 32*pi;
-M = 2^10;
-M_sol = M;
-h = L/(M);
+Ms = 2^10;
+hs = L/(Ms);
 k = 0.0001;
-x0 = 0:h:L-h;
+x0 = 0:hs:L-hs;
 N = 500000;
 T = N*k;
 %size(x0)
@@ -29,12 +28,16 @@ options=odeset('AbsTol',1e-3,'RelTol',1e-3);
 %contourf(yy);
 yy = yy';
 
-min = 5;
+min = 6;
 max = 9;
 num = max-min+1;
 error_norm = zeros(num,1);
 h_p = zeros(num,1);
 
+% figure
+% contourf(yy')
+% pause
+% close all
 
 for j = min:max
 
@@ -72,11 +75,15 @@ for j = min:max
         U(:,n+1) = (eye(M)-A-B)*U(:,n) - D*(U(:,n).^2);
     end
 
+%     figure
+%     contourf(U')
+%     pause
+%     close all
 
     % error compared to reference solution
     error = zeros(1,M);
     for i = 0:M-1
-        error(i+1) = U(i+1,N) - yy((M_sol)/(M)*i+1,N);
+        error(i+1) = U(i+1,N) - yy((Ms)/(M)*i+1,N);
     end
     error_norm(j-min+1) = norm(error, Inf);
     h_p(j-min+1) = h;

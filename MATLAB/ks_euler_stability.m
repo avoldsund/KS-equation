@@ -8,11 +8,11 @@ f = @(x) cos(x/16) .* (1 + sin(x/16));
 
 % Initial values
 L = 32*pi;
-M = 2^3;
+M = 2^7;
 h = L/(M);
 x = 0:h:32*pi-h;
 
-N = 50;
+N = 5000;
 k = 0.01;
 T = 5;
 % N_time = T/k;
@@ -36,6 +36,7 @@ B = (k/(h^2)) * spdiags([e e -2*e e e], diagVecB, M, M);
 diagVecD_R = [-M+1 -1 1 M-1];
 D = (k/(2*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD_R, M, M);
 
+% D = spdiags([1*e -1*e 1*e -1*e], diagVecD_R, M, M)*D;
 % diagVecD = [-M+1 -1 1 M-1];
 % D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
 
@@ -62,7 +63,7 @@ R = spdiags(R_diag, 0, M, M);
 C = (eye(M) - A - B); 
 
 E = full(D*R);
-plot(eig(E), '*');
+% plot(eig(E), '*');
 
 % C1 = (eye(M)-A-B-D);
 % C2 = (eye(M)-A-B);
@@ -71,9 +72,9 @@ eigen_C = (eig(C));
 % spec_C2 = max(abs(eig(C2)));
 % 
 % 
-% for n = 1:N-1
-%     U_R(:,n+1) = (eye(M) - A - B)*U_R(:,n) - 0.5*D*R*U_R(:,n);
-% end
+for n = 1:N-1
+    U_R(:,n+1) = (eye(M) - A - B)*U_R(:,n) - 0.5*D*R*U_R(:,n);
+end
 
 % 
 % C2 = (eye(M) - A - B - D*R);
@@ -84,6 +85,6 @@ eigen_C = (eig(C));
 % figure(1)
 % contourf(U')
 % figure(2)
-% contourf(U_R')
+contourf(U_R')
 
 toc

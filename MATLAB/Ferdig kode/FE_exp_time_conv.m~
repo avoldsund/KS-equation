@@ -7,15 +7,15 @@ length = 32*pi;
 h = length/M;
 x = h * (0:M-1);
 hs = h;
-Ms = M;
+Ms =
 
 time = 10;
-N_sol = 2^14;
+N_sol = 2^12;
 k_sol = time/N_sol;
 U_sol = ref_sol(k_sol, time, x);
 
 low = 7;
-high = 12;
+high = 10;
 
 error_norm = zeros(high-low+1, 1);
 error_norm_unscaled = zeros(high-low+1, 1);
@@ -47,8 +47,8 @@ for j = low:high
     kVec(j-low+1, 1) = k;   
     
     error = U(:,end) - U_sol(:,end);
-%     error_norm_unscaled(j-low+1, 1) = norm(error,Inf);
-    error_norm(j-low+1, 1) = norm(error,Inf);
+    error_norm_unscaled(j-low+1, 1) = norm(error,2);
+    error_norm(j-low+1, 1) = sqrt(k) * norm(error,2);
     
 end
 
