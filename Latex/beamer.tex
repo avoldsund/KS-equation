@@ -1,0 +1,133 @@
+\documentclass[screen]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{paralist}
+\usepackage[parfill]{parskip}
+\usepackage{float}
+\usepackage{capt-of}
+\usepackage{pdfpages}
+
+
+% Bruk NTNU-temaet for beamer (her i bokmålvariant), alternativer er
+% ntnunynorsk og ntnuenglish.
+
+ 
+% Angi tittelen, vi gir også en kortere variant som brukes nederst på
+% hver slide:
+\title[Kuramoto-Sivashinsky]%
+{Kuramoto-Sivashinsky equation}
+
+% Datoen blir også trykket på forsida. 
+\date{2. April 2014}
+%\date{} % Bruk denne hvis du ikke vil ha noe dato på forsida.
+
+% Fra her av begynner selve dokumentet
+\begin{document}
+
+% Siden NTNU-malen har en annen bakgrunn på forsida, må dette gjøres
+% i en egen kommando, ikke på vanlig beamer-måte:
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Her begynner første slide/frame, (nummer to etter forsida). 
+\begin{frame}
+\frametitle{Kuramoto-Sivashinsky equation}
+\Large
+\begin{align*}
+u_t + u_{xx} + u_{xxxx} + uu_x = 0 \\
+u_t + u_{xx} + u_{xxxx} + \frac{1}{2}(u^2)_x = 0
+\end{align*}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{About Kuramato-Sivashinsky equation}
+\begin{itemize}
+\item Stiff
+\item Firefronts
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Forward and central difference}
+\begin{align*}
+u_t &\approx \frac{\Delta u}{k} = \frac{u^{n+1}-u^n}{k} \\
+u_{xx} &\approx \frac{\delta^2 u}{h^2} = \frac{u_{m+1}-2u_{m}+u_{m-1}}{h^2} &= \frac{1}{h^2}Au \\
+u_{xxxx} &\approx \frac{\delta^4 u}{h^4} = \frac{u_{m+2}-4u_{m+1}+6u_m-4u_{m-1}+u_{m-2}}{h^4} &= \frac{1}{h^4}A^2u\\
+(u^2)_{x} &\approx \frac{\mu \delta u^2}{h} = \frac{(u_{m+1})^2-(u_{m-1})^2}{2h} &= \frac{1}{2h}D\\
+\end{align*}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Explicit scheme}
+\flushright
+
+\begin{align*}
+U^{n+1} = U^n - \frac{k}{h^2}AU^n - \frac{k}{h^4}A^2U^n - \frac{k}{4h}D(U^{n}\odot U^n)
+\end{align*}
+$\odot =$ Element-wise multiplication
+\begin{itemize}
+\item Unstable for $k > r \cdot h^4$
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Crank-Nicolson}
+\small
+\begin{align*}
+ \left[\frac{U^{n+1} - U^n}{k} =
+- \frac{1}{2h^2}A(U^{n+1}+U^n) - \frac{1}{2h^4}A^2(U^{n+1}+U^n) \right] - \frac{1}{4h}D(U^{n}\odot U^n)
+\end{align*}
+\begin{itemize}
+\normalsize
+\item Not applied to non-linear term
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implicit scheme}
+\begin{align*}
+(I + \frac{k}{2h^2}A + \frac{k}{2h^4}A^2)U^{n+1}
+= (I - \frac{k}{2h^2}A - \frac{k}{2h^4}A^2)U^n - \frac{k}{4h}D(U^{n}\odot U^n)
+\end{align*}
+
+\begin{itemize}
+\item Crank-Nicholson
+\item Explicit non-linear term
+\item Stable
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Consistency}
+\begin{align*}
+u_t= \frac{\Delta u}{k} + O(k) \\
+u_{xx} = \frac{\delta^2 u}{h^2} + O(h^2) \\
+u_{xxxx} = \frac{\delta^4 u}{h^4} + O(h^2) \\
+\mu \delta \left[u(x)^2\right] = \mu\left[u(x+\frac{h}{2}^2) - u(x - \frac{h}{2})^2\right] 
++ O(h^3) \\
+uu_{x} = \frac{\mu \delta u^2}{4h} + O(h^2) \\
+\end{align*}
+
+\end{frame}
+
+
+\end{document}
+
+
+
+
+
+
+
