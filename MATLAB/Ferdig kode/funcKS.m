@@ -11,7 +11,5 @@ function F = funcKS(~,y)
     diagVecD = [-Ms+1 -1 1 Ms-1];
     C = (1/(4*hs)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, Ms, Ms);
 
-
     F = - (A*y + B*y + C*y.^2);
- 
 end

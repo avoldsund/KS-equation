@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  31 MAR 2014 10:32
+=======
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  30 MAR 2014 22:21
+>>>>>>> 69e181fd6c2b5fb0f8c2108a257366d08dc5f654
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -173,6 +177,56 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 (/usr/lib/texlive/texmf-dist/tex/latex/capt-of/capt-of.sty
 Package: capt-of 2009/12/29 v0.2 standard captions outside of floats
 )
+(/usr/lib/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
+
+(/usr/lib/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/lib/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count104
+\calc@Bcount=\count105
+\calc@Adimen=\dimen122
+\calc@Bdimen=\dimen123
+\calc@Askip=\skip50
+\calc@Bskip=\skip51
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count106
+\calc@Cskip=\skip52
+)
+(/usr/lib/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
+
+(/usr/lib/texlive/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+)
+(/usr/lib/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/lib/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+(/usr/lib/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box30
+\AM@toc@title=\toks25
+\c@AM@survey=\count107
+\AM@templatesizebox=\box31
+)
 
 LaTeX Warning: Unused global option(s):
     [16pt].
@@ -229,17 +283,17 @@ LaTeX Font Info:    ... okay on input line 18.
 
 (/usr/lib/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count104
-\scratchdimen=\dimen122
-\scratchbox=\box30
-\nofMPsegments=\count105
-\nofMParguments=\count106
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count107
-\MPscratchDim=\dimen123
-\MPnumerator=\count108
-\makeMPintoPDFobject=\count109
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count108
+\scratchdimen=\dimen124
+\scratchbox=\box32
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen125
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks27
 ) (/usr/lib/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -284,19 +338,301 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-(./DifferenceScheme.tex
+\AtBeginShipoutBox=\box33
+
+(./pdfs.tex
+<./PDFs/FE_exp_surface_M128_N65536_T100.pdf, id=1, 449.68pt x 337.26pt>
+File: ./PDFs/FE_exp_surface_M128_N65536_T100.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_surface_M128_N65536_T100.pdf>
+Package pdftex.def Info: ./PDFs/FE_exp_surface_M128_N65536_T100.pdf used on inp
+ut line 1.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+File: ./PDFs/FE_exp_surface_M128_N65536_T100.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_surface_M128_N65536_T100.pdf>
+Package pdftex.def Info: ./PDFs/FE_exp_surface_M128_N65536_T100.pdf used on inp
+ut line 1.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+
+<./PDFs/FE_exp_surface_M128_N65536_T100.pdf, id=4, page=1, 449.68pt x 337.26pt>
+File: ./PDFs/FE_exp_surface_M128_N65536_T100.pdf Graphic file (type pdf)
+<use ./PDFs/FE_exp_surface_M128_N65536_T100.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_surface_M128_N65536_T100.pdf, page1 used
+ on input line 1.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+File: ./PDFs/FE_exp_surface_M128_N65536_T100.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_surface_M128_N65536_T100.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_surface_M128_N65536_T100.pdf, page1 used
+ on input line 1.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/FE_exp_surface_M128_N65536_T100.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_surface_M128_N65536_T100.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_surface_M128_N65536_T100.pdf, page1 used
+ on input line 1.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/FE_exp_surface_M128_N65536_T100.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_surface_M128_N65536_T100.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_surface_M128_N65536_T100.pdf, page1 used
+ on input line 1.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/FE_exp_surface_M128_N65536_T100.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_surface_M128_N65536_T100.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_surface_M128_N65536_T100.pdf, page1 used
+ on input line 1.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+ [1
+
+ <./PDFs/FE_exp_surface_M128_N65536_T100.pdf>]
+<./PDFs/FE_exp_surface_M128_N65536_T500.pdf, id=28, 449.68pt x 337.26pt>
+File: ./PDFs/FE_exp_surface_M128_N65536_T500.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_surface_M128_N65536_T500.pdf>
+Package pdftex.def Info: ./PDFs/FE_exp_surface_M128_N65536_T500.pdf used on inp
+ut line 3.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+File: ./PDFs/FE_exp_surface_M128_N65536_T500.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_surface_M128_N65536_T500.pdf>
+Package pdftex.def Info: ./PDFs/FE_exp_surface_M128_N65536_T500.pdf used on inp
+ut line 3.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+
+<./PDFs/FE_exp_surface_M128_N65536_T500.pdf, id=31, page=1, 449.68pt x 337.26pt
+>
+File: ./PDFs/FE_exp_surface_M128_N65536_T500.pdf Graphic file (type pdf)
+ <use ./PDFs/FE_exp_surface_M128_N65536_T500.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_surface_M128_N65536_T500.pdf, page1 used
+ on input line 3.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+File: ./PDFs/FE_exp_surface_M128_N65536_T500.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_surface_M128_N65536_T500.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_surface_M128_N65536_T500.pdf, page1 used
+ on input line 3.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/FE_exp_surface_M128_N65536_T500.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_surface_M128_N65536_T500.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_surface_M128_N65536_T500.pdf, page1 used
+ on input line 3.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/FE_exp_surface_M128_N65536_T500.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_surface_M128_N65536_T500.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_surface_M128_N65536_T500.pdf, page1 used
+ on input line 3.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/FE_exp_surface_M128_N65536_T500.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_surface_M128_N65536_T500.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_surface_M128_N65536_T500.pdf, page1 used
+ on input line 3.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+ [2 <./PDFs/FE_exp_surface_M128_N65536_T500.pdf>]
+<./PDFs/FE_exp_contour_M128_N65536_T100.pdf, id=53, 449.68pt x 337.26pt>
+File: ./PDFs/FE_exp_contour_M128_N65536_T100.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_contour_M128_N65536_T100.pdf>
+Package pdftex.def Info: ./PDFs/FE_exp_contour_M128_N65536_T100.pdf used on inp
+ut line 5.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+File: ./PDFs/FE_exp_contour_M128_N65536_T100.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_contour_M128_N65536_T100.pdf>
+Package pdftex.def Info: ./PDFs/FE_exp_contour_M128_N65536_T100.pdf used on inp
+ut line 5.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+
+<./PDFs/FE_exp_contour_M128_N65536_T100.pdf, id=56, page=1, 449.68pt x 337.26pt
+>
+File: ./PDFs/FE_exp_contour_M128_N65536_T100.pdf Graphic file (type pdf)
+ <use ./PDFs/FE_exp_contour_M128_N65536_T100.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_contour_M128_N65536_T100.pdf, page1 used
+ on input line 5.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+File: ./PDFs/FE_exp_contour_M128_N65536_T100.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_contour_M128_N65536_T100.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_contour_M128_N65536_T100.pdf, page1 used
+ on input line 5.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/FE_exp_contour_M128_N65536_T100.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_contour_M128_N65536_T100.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_contour_M128_N65536_T100.pdf, page1 used
+ on input line 5.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/FE_exp_contour_M128_N65536_T100.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_contour_M128_N65536_T100.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_contour_M128_N65536_T100.pdf, page1 used
+ on input line 5.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/FE_exp_contour_M128_N65536_T100.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_contour_M128_N65536_T100.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_contour_M128_N65536_T100.pdf, page1 used
+ on input line 5.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+ [3 <./PDFs/FE_exp_contour_M128_N65536_T100.pdf>]
+<./PDFs/FE_exp_contour_M128_N65536_T500.pdf, id=78, 449.68pt x 337.26pt>
+File: ./PDFs/FE_exp_contour_M128_N65536_T500.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_contour_M128_N65536_T500.pdf>
+Package pdftex.def Info: ./PDFs/FE_exp_contour_M128_N65536_T500.pdf used on inp
+ut line 7.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+File: ./PDFs/FE_exp_contour_M128_N65536_T500.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_contour_M128_N65536_T500.pdf>
+Package pdftex.def Info: ./PDFs/FE_exp_contour_M128_N65536_T500.pdf used on inp
+ut line 7.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+
+<./PDFs/FE_exp_contour_M128_N65536_T500.pdf, id=81, page=1, 449.68pt x 337.26pt
+>
+File: ./PDFs/FE_exp_contour_M128_N65536_T500.pdf Graphic file (type pdf)
+ <use ./PDFs/FE_exp_contour_M128_N65536_T500.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_contour_M128_N65536_T500.pdf, page1 used
+ on input line 7.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+File: ./PDFs/FE_exp_contour_M128_N65536_T500.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_contour_M128_N65536_T500.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_contour_M128_N65536_T500.pdf, page1 used
+ on input line 7.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/FE_exp_contour_M128_N65536_T500.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_contour_M128_N65536_T500.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_contour_M128_N65536_T500.pdf, page1 used
+ on input line 7.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/FE_exp_contour_M128_N65536_T500.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_contour_M128_N65536_T500.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_contour_M128_N65536_T500.pdf, page1 used
+ on input line 7.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/FE_exp_contour_M128_N65536_T500.pdf Graphic file (type pdf)
+
+<use ./PDFs/FE_exp_contour_M128_N65536_T500.pdf, page 1>
+Package pdftex.def Info: ./PDFs/FE_exp_contour_M128_N65536_T500.pdf, page1 used
+ on input line 7.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+ [4 <./PDFs/FE_exp_contour_M128_N65536_T500.pdf>]
+<./PDFs/errPlot_M128_M512_N262144.pdf, id=103, 449.68pt x 337.26pt>
+File: ./PDFs/errPlot_M128_M512_N262144.pdf Graphic file (type pdf)
+
+<use ./PDFs/errPlot_M128_M512_N262144.pdf>
+Package pdftex.def Info: ./PDFs/errPlot_M128_M512_N262144.pdf used on input lin
+e 9.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+File: ./PDFs/errPlot_M128_M512_N262144.pdf Graphic file (type pdf)
+
+<use ./PDFs/errPlot_M128_M512_N262144.pdf>
+Package pdftex.def Info: ./PDFs/errPlot_M128_M512_N262144.pdf used on input lin
+e 9.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+
+<./PDFs/errPlot_M128_M512_N262144.pdf, id=106, page=1, 449.68pt x 337.26pt>
+File: ./PDFs/errPlot_M128_M512_N262144.pdf Graphic file (type pdf)
+
+<use ./PDFs/errPlot_M128_M512_N262144.pdf, page 1>
+Package pdftex.def Info: ./PDFs/errPlot_M128_M512_N262144.pdf, page1 used on in
+put line 9.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+File: ./PDFs/errPlot_M128_M512_N262144.pdf Graphic file (type pdf)
+
+<use ./PDFs/errPlot_M128_M512_N262144.pdf, page 1>
+Package pdftex.def Info: ./PDFs/errPlot_M128_M512_N262144.pdf, page1 used on in
+put line 9.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/errPlot_M128_M512_N262144.pdf Graphic file (type pdf)
+
+<use ./PDFs/errPlot_M128_M512_N262144.pdf, page 1>
+Package pdftex.def Info: ./PDFs/errPlot_M128_M512_N262144.pdf, page1 used on in
+put line 9.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/errPlot_M128_M512_N262144.pdf Graphic file (type pdf)
+
+<use ./PDFs/errPlot_M128_M512_N262144.pdf, page 1>
+Package pdftex.def Info: ./PDFs/errPlot_M128_M512_N262144.pdf, page1 used on in
+put line 9.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/errPlot_M128_M512_N262144.pdf Graphic file (type pdf)
+
+<use ./PDFs/errPlot_M128_M512_N262144.pdf, page 1>
+Package pdftex.def Info: ./PDFs/errPlot_M128_M512_N262144.pdf, page1 used on in
+put line 9.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+ [5 <./PDFs/errPlot_M128_M512_N262144.pdf>]
+<./PDFs/errPlot_M256_M512_N262144.pdf, id=128, 449.68pt x 337.26pt>
+File: ./PDFs/errPlot_M256_M512_N262144.pdf Graphic file (type pdf)
+
+<use ./PDFs/errPlot_M256_M512_N262144.pdf>
+Package pdftex.def Info: ./PDFs/errPlot_M256_M512_N262144.pdf used on input lin
+e 11.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+File: ./PDFs/errPlot_M256_M512_N262144.pdf Graphic file (type pdf)
+
+<use ./PDFs/errPlot_M256_M512_N262144.pdf>
+Package pdftex.def Info: ./PDFs/errPlot_M256_M512_N262144.pdf used on input lin
+e 11.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+
+<./PDFs/errPlot_M256_M512_N262144.pdf, id=131, page=1, 449.68pt x 337.26pt>
+File: ./PDFs/errPlot_M256_M512_N262144.pdf Graphic file (type pdf)
+
+<use ./PDFs/errPlot_M256_M512_N262144.pdf, page 1>
+Package pdftex.def Info: ./PDFs/errPlot_M256_M512_N262144.pdf, page1 used on in
+put line 11.
+(pdftex.def)             Requested size: 449.6789pt x 337.25917pt.
+File: ./PDFs/errPlot_M256_M512_N262144.pdf Graphic file (type pdf)
+
+<use ./PDFs/errPlot_M256_M512_N262144.pdf, page 1>
+Package pdftex.def Info: ./PDFs/errPlot_M256_M512_N262144.pdf, page1 used on in
+put line 11.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/errPlot_M256_M512_N262144.pdf Graphic file (type pdf)
+
+<use ./PDFs/errPlot_M256_M512_N262144.pdf, page 1>
+Package pdftex.def Info: ./PDFs/errPlot_M256_M512_N262144.pdf, page1 used on in
+put line 11.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/errPlot_M256_M512_N262144.pdf Graphic file (type pdf)
+
+<use ./PDFs/errPlot_M256_M512_N262144.pdf, page 1>
+Package pdftex.def Info: ./PDFs/errPlot_M256_M512_N262144.pdf, page1 used on in
+put line 11.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+File: ./PDFs/errPlot_M256_M512_N262144.pdf Graphic file (type pdf)
+
+<use ./PDFs/errPlot_M256_M512_N262144.pdf, page 1>
+Package pdftex.def Info: ./PDFs/errPlot_M256_M512_N262144.pdf, page1 used on in
+put line 11.
+(pdftex.def)             Requested size: 598.40996pt x 448.80746pt.
+ [6 <./PDFs/errPlot_M256_M512_N262144.pdf>]) (./DifferenceScheme.tex
 LaTeX Font Info:    Try loading font information for U+msa on input line 3.
- (/usr/lib/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/usr/lib/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 3.
- (/usr/lib/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+
+(/usr/lib/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Overfull \hbox (36.89473pt too wide) in paragraph at lines 16--16
  [] 
  []
 
+<<<<<<< HEAD
 ) (./consistency.tex [1
 
 {/usr/lib/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./Stability.
@@ -334,6 +670,28 @@ Output written on pdf_presentation.pdf (4 pages, 119251 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
+=======
+) (./consistency.tex [7{/usr/lib/texlive/texmf-var/fonts/map/pdftex/updmap/pdft
+ex.map}]) [8] (./pdf_presentation.aux) ) 
+Here is how much of TeX's memory you used:
+ 4336 strings out of 493308
+ 60942 string characters out of 6140929
+ 135455 words of memory out of 5000000
+ 7707 multiletter control sequences out of 15000+600000
+ 10537 words of font info for 41 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 41i,18n,45p,248b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/lib/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx12.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi12.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
+sr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on pdf_presentation.pdf (8 pages, 1624636 bytes).
+PDF statistics:
+ 187 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
+>>>>>>> 69e181fd6c2b5fb0f8c2108a257366d08dc5f654
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

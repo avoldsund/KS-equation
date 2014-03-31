@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 
-function [error_norm h_p] = FE_exp_space_conv
-=======
-function error_norm = FE_exp_space_conv
->>>>>>> 69e181fd6c2b5fb0f8c2108a257366d08dc5f654
+function [error_norm h_p] = FE_exp_space_conv2
 % Implementation of the Kuramoto-Sivashinsky equation
 % u_t + u_xxxx + u_xx + uu_x = 0
 % Central differences in space, forwards in time
@@ -16,7 +12,6 @@ function error_norm = FE_exp_space_conv
 f = @(x) cos(x/16).*(1+sin(x/16));
 
 global Ms hs
-<<<<<<< HEAD
 L = 32*pi;
 Ms = 2^11;
 hs = L/Ms;
@@ -33,45 +28,20 @@ yy = ref_sol(k,T,xx);
 
 min = 7;
 max = 10;
-=======
-
-% Constants
-L = 32*pi;
-T = 10;
-% N = 2^14;
-% k = T/N;
-k = 10^(-4);
-N = T/k;
-y = 0:hs:L-hs;
-
-% Reference solution
-Ms = 2^10;
-hs = L/Ms;
-yy = ref_sol(k,T,y);
-
-disp('done')
-
-% Parameters for for loop
-min = 6;
-max = 9;
->>>>>>> 69e181fd6c2b5fb0f8c2108a257366d08dc5f654
 num = max-min+1;
 error_norm = zeros(num,1);
 h_p = zeros(num,1);
 
 
 for j = min:max
-    j
+
     M = 2^j;
     h = L/(M);
     %k/(h^2) <= 0.0026 for convergence
     x = 0:h:L-h;
 
-<<<<<<< HEAD
     
 
-=======
->>>>>>> 69e181fd6c2b5fb0f8c2108a257366d08dc5f654
     % Creating the U-matrix and inserting boundary condition
     U = zeros(M, N);
     U(:,1) = f(x');
@@ -82,7 +52,6 @@ for j = min:max
     B = k/(h^4)*second_order_matrix(M)*second_order_matrix(M);
     D = k/(4*h)*first_order_central_matrix(M);
     
-<<<<<<< HEAD
     F = (speye(M)+A/2+B/2);
     G = (speye(M)-A/2-B/2);
     
@@ -90,15 +59,6 @@ for j = min:max
     for n = 1:N
 %         U(:,n+1) = (eye(M)-A-B)*U(:,n) - D*(U(:,n).^2);
         U(:,n+1) = F\G*(U(:,n)) - F\D*(U(:,n).^2);
-=======
-%     F = (speye(M)+A+B);
-%     G = (speye(M)-A-B);
-    
-    % Iteration over time
-    for n = 1:N
-        U(:,n+1) = (eye(M)-A-B)*U(:,n) - D*(U(:,n).^2);
-%         U(:,n+1) = F\G*(U(:,n)) - F\D*(U(:,n).^2);
->>>>>>> 69e181fd6c2b5fb0f8c2108a257366d08dc5f654
     end
     
     
@@ -113,6 +73,6 @@ for j = min:max
 end
 
 figure
-    loglog(h_p, error_norm, 'ro-', h_p, h_p, 'b', h_p, h_p.^2, 'g');
+    loglog(h_p, error_norm, 'r', h_p, h_p, 'b', h_p, h_p.^2, 'g');
     
 end

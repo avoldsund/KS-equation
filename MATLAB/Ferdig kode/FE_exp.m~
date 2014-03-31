@@ -1,10 +1,10 @@
-function err = FE_exp
+function [error] = FE_exp
 
 global Ms hs
 f = @(x) cos(x/16) .* (1 + sin(x/16));
 L = 32*pi;
 
-Ms = 2^10;  %number of points in reference sol.
+Ms = 2^9;  %number of points in reference sol.
 hs = L/Ms;
 y = 0:hs:L-hs;
 
@@ -12,12 +12,12 @@ M = 2^7;
 h = L/M;
 x = 0:h:L-h;
 
-N = 1000;
-k = 0.01;
+N = 100000;
+k = 0.001;
 T = k*N;
+t = k*(0:N-1);
 
-
-% yy = ref_sol(k,T,y);
+yy = ref_sol(k,T,y);
 
 U = zeros(M,N);
 error = zeros(M,N);
@@ -30,7 +30,7 @@ D = k/(2*h)*first_order_central_matrix(M);
     
 for n = 1:N-1
     U(:,n+1) = (eye(M) - A - B)*U(:,n) - 0.5*D*(U(:,n).^2);
-%     error(:,n+1) = abs(yy(1:Ms/M:Ms,n+1)-U(:,n+1));
+    error(:,n+1) = abs(yy(1:Ms/M:Ms,n+1)-U(:,n+1));
 end
 % figure(1)
 %  err = norm(yy(1:Ms/M:Ms,N)-U(:,N));
@@ -40,13 +40,27 @@ end
 % hold on
  %plot(U(:,N), 'g');
  
-%err = norm(error);
+ 
+ % Finding error plot (difference between ref. and our solution)
+ % Using the compress-function
+[errNew, xNew, yNew] = compress(t, x, error, 2000, 2000);
 
-%figure
-%meshc(error')
+figure
+mesh(xNew,yNew,errNew')
+view(0,90) %Contour plot
+%view(90,270) Contour plot of the solution
+title('Error plot, ')
+ylabel('time')
+xlabel('space [0, 32*pi]')
+ 
+ 
+ 
+% err = norm(error);
+% size(error)
+% mesh(x,t,error')
+% xlabel('space')
+% ylabel('time')
+% view(0,90)
 % contourf(error')
-
- contourf(U')
-
 
 end
