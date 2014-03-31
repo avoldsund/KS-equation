@@ -1,0 +1,57 @@
+
+Stability analysis of the KS-equation
+
+Von Neumann stability analysis on a linearized version. \\
+$\frac{1}{2}(u^2)_x \approx \frac{1}{2}(\rho(x)u)_x$. $\rho(x) = U^0$ is the initial condition $f(x,0)$. 
+$U_m^n = \xi^n e^{i \beta x_m}$ \\
+$U_{m}^0 = \xi^0 e^{i\beta x_m} = e^{i\beta x_m}$.
+
+\huge
+Implicit scheme:
+
+\Large
+\begin{align*}
+\left( I + \frac{k}{h^2}A + \frac{k}{h^4}A^2\right) U^{n+1} = \left( I - \frac{k}{h^2}A - \frac{k}{h^4}A^2 - \frac{k}{4h} DR \right)U^{n}
+\end{align*}
+
+
+\begin{align*}
+|\xi |^2 &\le \left(\frac{1+rh^4/8}{1-rh^4/8}\right)^2 + k\frac{rh^2}{4}
+\end{align*}
+
+Not stable unless $r=0$.
+
+
+\huge
+
+Explicit scheme:
+
+\Large
+\begin{align*}
+U^{n+1} = \left(I - \frac{k}{h^2}A - \frac{k}{h^4}A^2 - \frac{k}{4h} DR\right)U^{n} 
+\end{align*}
+
+
+
+
+\begin{align*}
+|\xi |^2 &=  \left(1+4rh^2\sin^2\left(\frac{\beta h}{2}\right)-16r\sin^4\left(\frac{\beta h}{2}\right)\right)^2 + k\left(\frac{rh^2}{4}\sin^2(2\beta h)\right)
+\end{align*}
+
+For the case $(1 \le 16r\alpha \le 2)$ where $\alpha = \sin^2(\frac{\beta h}{2})$
+
+\begin{align*}
+ \left| 1+4rh^2\alpha -16r\alpha^2\right| \le 1 \underset{0\le \alpha\le 1}{\implies} \left(1/16 \le r \le 1/8 \right)
+\end{align*} 
+
+Assuming $(1 \le 16rq^2 \le 2)$ and $r = 1/8$, 
+
+\begin{align*}
+|\xi |^2 &\le \left(1 + \frac{4}{8}\alpha h^2 - \frac{16}{8}\alpha^2\right)^2 + k\frac{h^2}{4\cdot 8}\sin(2\beta h) \\
+ &\le \left(1 + \frac{h^4}{32}\right)^2 + k\frac{h^2}{32} &\text{ } ( \alpha = \frac{h^2}{8} )\\
+\end{align*}
+
+Not stable, which was expected. But parallels can be drawn to the nonlinear scheme, which numerically gives an upper bound of $r = k/h^4 = 1/8$. 
+
+
+
