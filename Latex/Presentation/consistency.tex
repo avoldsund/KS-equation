@@ -1,0 +1,18 @@
+Consistency
+
+\begin{align*}
+u_t= \frac{\Delta u}{k} + O(k) \\
+u_{xx} = \frac{\delta^2 u}{h^2} + O(h^2) \\
+u_{xxxx} = \frac{\delta^4 u}{h^4} + O(h^2) \\
+\mu \delta [u(x)^2] = \mu[u(x+\frac{h}{2}^2) - u(x - \frac{h}{2})^2] \\
+= 2huu_{x} + O(h^3) \\
+uu_{x} = \frac{\mu \delta u^2}{4h} + O(h^2) \\
+\end{align*}
+
+Local Truncation Error
+
+\begin{equation}
+\tau ^n = O(h^2) + O(k) \xrightarrow{k,h \to 0} 0
+\end{equation}
+
+$\Rightarrow$ Consistent
