@@ -1,4 +1,5 @@
 function [] = IMEX_plot()
+profile ON
 % Function to plot different plots
 
 % The function ref_sol needs the global variables to work
@@ -13,13 +14,13 @@ M = 2^9;
 h = L/M;
 x = 0:h:L-h;
 
-N = 2^16;
-T = 98;
+N = 2^14;
+T = 100;
 k = T/N;
 t = k*(0:N);
 
 %Reference solution: Must be included for error plots!
-Ms = 2^10;  %number of points in reference sol.
+Ms = 2^9;  %number of points in reference sol.
 hs = L/Ms;
 x_ref = 0:hs:L-hs;
 U_ref = ref_sol(k,T,x_ref);
@@ -39,8 +40,7 @@ for n = 1:N
     U(:,n+1) = F\G*(U(:,n)) - F\D*(U(:,n).^2);
     %error(:,n+1) = abs(U_ref(1:Ms/M:Ms,n+1)-U(:,n+1));
 end
-max(max(U))
-min(min(U))
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Contour plot (mesh) of the solution
 %  figure
@@ -83,14 +83,15 @@ min(min(U))
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Comparison of the reference solution and the numerical approx. at time T
-figure
-plot(x, U_ref(1:Ms/M:Ms,end),'r', x, U(:,end),'linewidth', 2.5)
-str = sprintf('Comparison: Numerical solution (h = %0.3f) vs reference solution (h = %0.3f) at time %d. k = %0.3f.',h,hs,T,k);
-title(str);
-xlabel('Space [0, 32*pi]')
-ylabelStr = sprintf('U(x,%d)',T);
-ylabel(ylabelStr)
-axis([0 32*pi -4 4])
-legend('Reference solution', 'Numerical solution')
-
+% figure
+% plot(x, U_ref(1:Ms/M:Ms,end),'r', x, U(:,end),'linewidth', 2.5)
+% str = sprintf('Comparison: Numerical solution (h = %0.3f) vs reference solution (h = %0.3f) at time %d. k = %0.3f.',h,hs,T,k);
+% title(str);
+% xlabel('Space [0, 32*pi]')
+% ylabelStr = sprintf('U(x,%d)',T);
+% ylabel(ylabelStr)
+% axis([0 32*pi -4 4])
+% legend('Reference solution', 'Numerical solution')
+profile OFF
+profile viewer
 end
