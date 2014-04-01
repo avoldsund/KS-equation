@@ -2,25 +2,25 @@ function [error] = FE_exp
 
 global Ms hs
 %f = @(x) cos(x/16) .* (1 + sin(x/16));
-f = @(x) (1/sqrt(2))*sin(x) -(1/8)*sin(2*x)
-L = 32*pi
+f = @(x) (1/sqrt(2))*sin(x) -(1/8)*sin(2*x);
+L = 32*pi;
 %L = 32*pi;
 
 Ms = 2^10;  %number of points in reference sol.
 hs = L/Ms;
 y = 0:hs:L-hs;
 
-M = 2^6;
-h = L/M
+M = 2^7;
+h = L/M;
 x = 0:h:L-h;
 
-N = 2^18;
-T = 3.05;
-k = T/N
-t = k*(0:N-1);
-r = (k/h^4)
+N = 10000;
+T = k*N;
+% k = T/N;
 
-% yy = ref_sol(k,T,y);
+% r = (k/h^4);
+
+yy = ref_sol(k,T,y);
 
 U = zeros(M,N);
 % error = zeros(M,N);
@@ -31,17 +31,16 @@ A = (k/h^4)*B*B;          % Fourth order matrix
 B = (k/(h^2))*B;
 D = k/(2*h)*first_order_central_matrix(M);
     
+tic
 for n = 1:N-1
     U(:,n+1) = (eye(M) - A - B)*U(:,n) - 0.5*D*(U(:,n).^2);
 %     error(:,n+1) = abs(yy(1:Ms/M:Ms,n+1)-U(:,n+1));
 end
-
-figure
-[UNew, xNew, yNew] = compress(t, x, U, 500, 500);
- mesh(UNew)
-disp('lol')
+toc
+% figure
+% [UNew, xNew, yNew] = compress(t, x, U, 500, 500);
 % figure(1)
-%  err = norm(yy(1:Ms/M:Ms,N)-U(:,N));
+error = norm(yy(1:Ms/M:Ms,N)-U(:,N));
 % plot(err, 'r');
 % hold on
 % plot(yy(:,N), 'b');

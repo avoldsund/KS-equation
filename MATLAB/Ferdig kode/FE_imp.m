@@ -8,15 +8,15 @@ Ms = 2^10;  %number of points in reference sol.
 hs = L/Ms;
 y = 0:hs:L-hs;
 
-M = 2^10;
+M = 2^7;
 h = L/M;
 x = 0:h:L-h;
 
-N = 1000;
+N = 10000;
 k = 0.1;
 T = k*N;
 
-%yy = ref_sol(k,T,y);
+yy = ref_sol(k,T,y);
 
 U = zeros(M,N);
 %error = zeros(M,N);
@@ -33,17 +33,17 @@ D = k/(4*h)*first_order_central_matrix(M);
 F = (speye(M)+A+B);
 G = (speye(M)-A-B);
 
-
+tic
 % Time step N iterations:
 for n = 1:N-1
     U(:,n+1) = F\G*(U(:,n)) - F\D*(U(:,n).^2);
     %error(:,n+1) = abs(yy(1:Ms/M:Ms,n+1)-U(:,n+1));
 end
-
+toc
 %err = norm(error);
-%err = norm(yy(1:Ms/M:Ms,N)-U(:,N));
-contourf(U')
-max(max(U))
-min(min(U))
+err = norm(yy(1:Ms/M:Ms,N)-U(:,N));
+% contourf(U')
+% max(max(U))
+% min(min(U))
 
 end
