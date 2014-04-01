@@ -1,0 +1,117 @@
+
+
+Von Neumann stability analysis is a method based on Fourier decomposition of numerical error, and is used to check the stability of linear pde-s. Since the KS-equation has a non-linear term, $\frac{1}{2}(u^2)_x$, this has to be linearized before the method is applied. The KS-equation is stiff, and the non-linear term stabilizes the equation. Replacing it by $\frac{1}{2}(\rho(x)u)_x$, where $\rho(x) \approx u(x)$ is constant in time, we obtain 
+
+\begin{equation}
+u_t  = - u_{xx} - u_{xxxx} - \frac{1}{2}\left(\rho(x)u\right)_x.
+\end{equation}
+
+Choosing $\rho(x) = f(x,0)$, where $f(x,0) = U^0$, we obtain the linearized scheme
+
+
+\begin{align*}
+\left( I + \frac{k}{h^2}A + \frac{k}{h^4}A^2\right) U^{n+1} = \left( I - \frac{k}{h^2}A - \frac{k}{h^4}A^2 - \frac{k}{4h} DR \right)U^{n},
+\end{align*}
+
+which written out becomes
+
+\begin{align*}
+U^{n+1}_m + \frac{k}{h^2}(U_{m+1}^{n+1}-2U_{m}^{n+1}+U_{m-1}^{n+1}) + \frac{k}{h^4}(U_{m+2}^{n+1}-4U_{m+1}^{n+1}+6U_m^{n+1}-4U_{m-1}^{+1}n+U_{m-2}^{n+1}) \\
+ = U^n_m - \frac{k}{h^2}(U_{m+1}^n-2U_{m}^n+U_{m-1}^n)
+- \frac{k}{h^4}(U_{m+2}^n-4U_{m+1}^n+6U_m^n-4U_{m-1}^n+U_{m-2}^n) \\
+- \frac{k}{4h}(U_{m+1}^0 U_{m+1}^n-U_{m-1}^0 U_{m-1}^n) 
+\end{align*}
+
+Let $U_m^n = \xi^n e^{i \beta x_m}$ and $U_{m}^0 = \xi^0 e^{i\beta x_m} = e^{i\beta x_m}$ such that
+
+\begin{align*}
+\xi (1 + \frac{k}{h^2}(e^{i\beta h}-2+e^{-i\beta h}) + \frac{k}{h^4}(e^{2i\beta h}-4e^{i\beta h}+6-4e^{-i\beta h}+e^{-2i\beta h}) \\
+ = 1 - \frac{k}{h^2}(e^{i\beta h}-2+e^{-i\beta h}) - \frac{k}{h^4}(e^{2i\beta h}-4e^{i\beta h}+6-4e^{-i\beta h}+e^{-2i\beta h}) \\
+ - \frac{k}{4h}(e^{i\beta h}e^{i\beta h} - e^{-i\beta h}e^{-i\beta h})
+ \end{align*}
+ 
+ 
+ \begin{align*}
+\xi &= \frac{1-\frac{k}{h^2}(\cos(\beta h)-1) - \frac{k}{2h^4}(6-8\cos(\beta h)+\cos(2\beta h)) - \frac{k}{2h}i\sin(2\beta h)}{1+\frac{k}{h^2}(\cos(\beta h)-1)+\frac{k}{2h^4}(6-8\cos(\beta h)+2\cos(2\beta h))} \\
+&= \frac{1+\frac{2k}{h^2}\sin^2\left(\frac{\beta h}{2}\right)-\frac{8k}{h^4}\sin^4\left(\frac{\beta h}{2}\right)- \frac{k}{2h}\sin^2(2\beta h)}{1 - \frac{2k}{h^2}\sin^2\left(\frac{\beta h}{2}\right) + \frac{8k}{h^4}\sin^4\left(\frac{\beta h}{2}\right)}
+\end{align*}
+
+Let $q = \sin^2(\frac{\beta h}{2})$ and $r = \frac{k}{h^4}$. The Von Neumann's stability criterion claims there is a constant $\mu \ge 0$ such that $|\xi| \le 1+ \mu k$. 
+
+% Norm of \xi squared
+\begin{align*}
+|\xi|^2 &= \left(\frac{1+2rq(h^2-4q)}{1 - 2rq(h^2-4q)}\right)^2 + \frac{1}{4}\frac{krh^2\sin^2(2\beta h)}{\left(1 - 2rq(h^2-4q)\right)^2}
+\end{align*}
+
+Maximizing $-2rq(4q-h^2)$ wrt $q$ gives $q = h^2/8$, which replaced in the equation gives
+
+\begin{align*}
+|\xi |^2 &\le \left(\frac{1+rh^4/8}{1-rh^4/8}\right)^2 + \frac{1}{4}kh^2r \frac{\sin(2\beta h)}{(1-rh^4/8)^2} \\
+&\le \left(\frac{1+rh^4/8}{1-rh^4/8}\right)^2 + k\frac{rh^2}{4}
+\end{align*}
+
+This expression is dependent on both $k$ and $h$, so the method is not stable. This is expected, since the linearized KS-equation is unstable in numerical experiments. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\large
+\begin{align*}
+U^{n+1} = (I - \frac{k}{h^2}A - \frac{k}{h^4}A^2 - \frac{k}{4h} D(RU^{n})) 
+\end{align*}
+
+\begin{align*}
+U^{n+1}_m = U^n_m - \frac{k}{h^2}(U_{m+1}^n-2U_{m}^n+U_{m-1}^n)
+- \frac{k}{h^4}(U_{m+2}^n-4U_{m+1}^n+6U_m^n-4U_{m-1}^n+U_{m-2}^n) \\
+- \frac{k}{4h}(U_{m+1}^0 U_{m+1}^n-U_{m-1}^0 U_{m-1}^n) 
+\end{align*}
+
+Let $U_m^n = \xi^n e^{i \beta x_m}$ and $U_{m}^0 = \xi^0 e^{i\beta x_m} = e^{i\beta x_m}$ s.t.
+
+\begin{align*}
+\xi = 1 - \frac{k}{h^2}(e^{i\beta h}-2+e^{-i\beta h}) - \frac{k}{h^4}(e^{2i\beta h}-4e^{i\beta h}+6-4e^{-i\beta h}+e^{-2i\beta h}) \\
+ - \frac{k}{4h}(e^{i\beta h}e^{i\beta h} - e^{-i\beta h}e^{-i\beta h})\\
+ = 1-\frac{2k}{h^2}(\cos(\beta h)-1) - \frac{k}{h^4}(6-8\cos(\beta h)+2\cos(2\beta h)) - \frac{k}{4h}2i\sin(2\beta h)
+\end{align*}
+
+The Von Neumann's stability criterion claims there is a constant $\mu \ge 0$ such that $|\xi| \le 1+ \mu k$. Let $r = r/k^4$.
+
+\begin{align*}
+|\xi |^2 &= (1-4rh^2(\cos(\beta h)-1)-2r(3-4\cos(\beta h)+\cos(2\beta h)))^2 + k\frac{rh^2}{4}\sin^2(2\beta h) \\
+&= \left(1+4rh^2\sin^2\left(\frac{\beta h}{2}\right)-16r\sin^4\left(\frac{\beta h}{2}\right)\right)^2 + k\left(\frac{rh^2}{4}\sin^2(2\beta h)\right)
+\end{align*}
+
+We want $|\xi| \le 1+ \mu k$, so we need $\psi = |1+4rh^2\sin^2\left(\frac{\beta h}{2}\right)-16r\sin^4\left(\frac{\beta h}{2}\right)| \le 1 + \tilde{\mu}k$. Let $q = \sin^2\left(\frac{\beta h}{2}\right)$. \\For the case $(1 \le 16rq^2 \le 2)$ we achieve
+
+\begin{align*}
+\psi = \left| 1+4rh^2q -16rq^2\right| \le 1 \underset{0\le x\le 1}{\implies} \left(1/16 \le r \le 1/8 \right)
+\end{align*} 
+
+For the case $(0 \le 16rq^2 \le 1)$ we get no furher result. Let us now assume that $(1 \le 16rq^2 \le 2)$ and $r = 1/8$. 
+
+\begin{align*}
+|\xi |^2 &= \left(1 + \frac{4}{8}qh^2 - \frac{16}{8}q^2\right)^2 + k\frac{h^2}{4\cdot 8}\sin(2\beta h) \\
+\textrm{max}\left(1 + \frac{xh^2}{2} - 2x^2\right) | (0 \le x \le 1) \textrm{gives } x = \frac{h^2}{8} \\
+&= 
+\end{align*}
+
+
+
+
+
+
