@@ -1,18 +1,23 @@
+\subsection*{Initial conditions}
 In the solution of the KS-equation we had periodic boundary conditions, i.e. $u(0,t) = u(L,t)$. We also used L-periodic initial conditions. We experienced that a common initial condition used in several other reports was
 
-\begin{equation*}
+\begin{equation}
+\label{initialCondition}
 u(x,0) = \cos(\frac{x}{16})(1 + \sin(\frac{x}{16}).
-\end{equation*}
+\end{equation}
 
 We also tried the initial condition
 
-\begin{equation*}
+\begin{equation}
+\label{initialCondition2}
 u(x,0) = \frac{1}{\sqrt{2}} \sin(x) - \frac{1}{8}\sin(2x),
-\end{equation*}
+\end{equation}
 
-which worked well. \cite{periodicInitial} states that the L-periodic initial conditions is customarily taken to satisfy
+which worked well. The L-periodic initial conditions is customarily taken \cite{periodicInitial} to satisfy
 
 \begin{equation}
 \int_0^L\! f(x)\,\textrm{d}x = 0,
 \end{equation}
-which both of our initial conditions satisfy. The same article also states that there exists a bound
+which both of our initial conditions satisfy. The same article also states that for L-periodic initial data, a unique solution for \eqref{KSeq} exits, and is bounded as $t\rightarrow\infty$. The bound has been proven to be smaller than $O(L^{8/5})$. In our numerical tests, with $t=5000$, the initial condition \eqref{initialCondition} did indeed not exceed the bound, nor did \eqref{initialCondition2}.
+
+

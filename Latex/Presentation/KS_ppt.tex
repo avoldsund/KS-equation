@@ -21,7 +21,7 @@
 {Kuramoto-Sivashinsky equation}
 
 \author[Author, Anders] % (optional, for multiple authors)
-{Anders Voldsund \\Espen Johansen Velsvik \\Elisabeth Skaar Hasund}
+{Anders Opskar Voldsund \\Espen Johansen Velsvik \\Elisabeth Skaar Hasund}
 % Datoen blir også trykket på forsida. 
 \date{2. April 2014}
 %\date{} % Bruk denne hvis du ikke vil ha noe dato på forsida.
@@ -103,7 +103,7 @@ $\odot =$ Element-wise multiplication
 \small
 \begin{align*}
  \left[\frac{U^{n+1} - U^n}{k} =
-- \frac{1}{2h^2}A(U^{n+1}+U^n) - \frac{1}{2h^4}A^2(U^{n+1}+U^n) \right] - \frac{1}{4h}D(U^{n}\odot U^n)
+- \frac{1}{2h^2}A(U^n+U^{n+1}) - \frac{1}{2h^4}A^2(U^n + U^{n+1}) \right] - \frac{1}{4h}D(U^{n}\odot U^n)
 \end{align*}
 
 \end{frame}
@@ -213,7 +213,7 @@ uu_{x} = \frac{\mu \delta u^2}{4h} + &O(h^2) \\
 
 \begin{frame}
 
-\frametitle{Stability analysis - implicit linearized scheme}
+\frametitle{Stability analysis - linearized implicit scheme}
 \begin{itemize}
 \item Von Neumann on linearized equation \\
 \item $\frac{1}{2}(u^2)_x \approx \frac{1}{2}(\rho(x)u)_x$ \\
@@ -230,7 +230,7 @@ Linearized scheme not stable
 
 
 \begin{frame}
-\frametitle{Stability analysis - explicit linearized scheme}
+\frametitle{Stability analysis - linearized explicit scheme}
 %\begin{align*}
 %|\xi |^2 =  \left(1+4rh^2\alpha-16r\alpha^2\right)^2 + k\left(\frac{rh^2}{4}\sin^2(2\beta h)\right)
 %\end{align*}

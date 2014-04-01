@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  1 APR 2014 08:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  1 APR 2014 09:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -298,11 +298,11 @@ tr/fulltext/u2/a228590.pdf,
 
 [2] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 2494 strings out of 493308
- 32665 string characters out of 6140929
- 93633 words of memory out of 5000000
- 5909 multiletter control sequences out of 15000+600000
- 11841 words of font info for 46 fonts, out of 8000000 for 9000
+ 2497 strings out of 493308
+ 32717 string characters out of 6140929
+ 93649 words of memory out of 5000000
+ 5912 multiletter control sequences out of 15000+600000
+ 12148 words of font info for 47 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  37i,6n,24p,672b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
@@ -316,7 +316,7 @@ nts/type1/public/amsfonts/cm/cmr12.pfb></usr/lib/texlive/texmf-dist/fonts/type1
 msfonts/cm/cmr7.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr9.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on report.pdf (2 pages, 132604 bytes).
+Output written on report.pdf (2 pages, 134064 bytes).
 PDF statistics:
  59 PDF objects out of 1000 (max. 8388607)
  42 compressed objects within 1 object stream
