@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  1 APR 2014 17:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  1 APR 2014 18:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -374,11 +374,7 @@ Underfull \hbox (badness 6625) in paragraph at lines 62--65
 tr/fulltext/u2/a228590.pdf,
  []
 
-[7] (./report.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[7] (./report.aux) ) 
 Here is how much of TeX's memory you used:
  3632 strings out of 493308
  53511 string characters out of 6140929
@@ -387,22 +383,22 @@ Here is how much of TeX's memory you used:
  13394 words of font info for 52 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,11n,38p,672b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
-lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/lib/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/lib/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/lib/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi5.pfb></usr/lib/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi7.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi9.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
-fb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
-lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/lib/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lib/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/lib/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/lib/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy7.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmti10.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msbm10.pfb>
+</usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmbx12.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.p
+fb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
+/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/lib/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/lib/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lib/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi9.pfb></usr/lib/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr10.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr12.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr17.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pf
+b></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/li
+b/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/lib/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lib/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/lib/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmti10.pfb></usr/lib/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/symbols/msbm10.pfb>
 Output written on report.pdf (7 pages, 1044471 bytes).
 PDF statistics:
  177 PDF objects out of 1000 (max. 8388607)
