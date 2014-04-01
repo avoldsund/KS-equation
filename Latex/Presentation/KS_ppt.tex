@@ -42,7 +42,9 @@
 \Large
 \begin{align*}
 u_t + u_{xx} + u_{xxxx} + uu_x = 0 \\
-u_t + u_{xx} + u_{xxxx} + \frac{1}{2}(u^2)_x = 0
+u_t + u_{xx} + u_{xxxx} + \frac{1}{2}(u^2)_x = 0 \\
+u(x,0) = f(x) \\
+u(0,t) = u(L,t) \\
 \end{align*}
 \end{frame}
 
@@ -124,6 +126,14 @@ $\odot =$ Element-wise multiplication
 
 \end{frame}
 
+\begin{frame}
+\frametitle{Numerical conditions}
+\begin{itemize}
+\item Initial Condition: f(x) = $\cos(\frac{x}{16})(1+\sin(\frac{x}{16}))$
+\item Interval of length: $L = 32\pi$
+\end{itemize}
+\end{frame}
+
 
 
 
@@ -185,8 +195,11 @@ $\odot =$ Element-wise multiplication
 
 \begin{frame}
 \frametitle{Consistency}
+\begin{itemize}
+
+\item Space discretizations
+\end{itemize}
 \begin{align*}
-u_t= \frac{\Delta u}{k} + &O(k) \\
 u_{xx} = \frac{\delta^2 u}{h^2} + &O(h^2) \\
 u_{xxxx} = \frac{\delta^4 u}{h^4} + &O(h^2) \\
 uu_{x} = \frac{\mu \delta u^2}{4h} + &O(h^2) \\
@@ -198,6 +211,7 @@ uu_{x} = \frac{\mu \delta u^2}{4h} + &O(h^2) \\
 
 \frametitle{Consistency}
 \begin{itemize}
+\item Trapezoidal rule in time with explicit nonlinear term:  O(k)
 \item Local truncation error
 \end{itemize}
 
@@ -283,10 +297,3 @@ Linearized scheme not stable
 \end{frame}
 
 \end{document}
-
-
-
-
-
-
-
