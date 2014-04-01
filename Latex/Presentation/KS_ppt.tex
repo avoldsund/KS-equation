@@ -112,7 +112,7 @@ $\odot =$ Element-wise multiplication
 
 
 \begin{frame}
-\frametitle{Implicit scheme}
+\frametitle{Implicit-Explicit scheme}
 \begin{align*}
 (I + \frac{k}{2h^2}A + \frac{k}{2h^4}A^2)U^{n+1}
 = (I - \frac{k}{2h^2}A - \frac{k}{2h^4}A^2)U^n - \frac{k}{4h}D(U^{n}\odot U^n)
@@ -227,7 +227,7 @@ uu_{x} = \frac{\mu \delta u^2}{4h} + &O(h^2) \\
 
 \begin{frame}
 
-\frametitle{Stability analysis - linearized implicit scheme}
+\frametitle{Stability analysis - linearized IMEX scheme}
 \begin{itemize}
 \item Von Neumann on linearized equation \\
 \item $\frac{1}{2}(u^2)_x \approx \frac{1}{2}(\rho(x)u)_x$ \\
@@ -269,7 +269,7 @@ Linearized scheme not stable
 
 
 \begin{frame}
-\frametitle{Convergence of implicit scheme}
+\frametitle{Convergence of IMEX scheme}
 
 \begin{itemize}
 \item Lax' equivalence theorem
