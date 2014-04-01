@@ -1,12 +1,4 @@
-<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  1 APR 2014 14:10
-=======
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  1 APR 2014 13:55
-=======
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  1 APR 2014 13:46
->>>>>>> 34c326b07c96f69c0b091d32c7cd2bbc64a921f6
->>>>>>> 731a6e7752f5c23a712e12af1a69fd3e6d095c34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -259,16 +251,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (./introduction.tex)
 (./numerical.tex [1
 
-<<<<<<< HEAD
-{/usr/lib/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./stability.
-tex
-Overfull \hbox (37.71664pt too wide) in paragraph at lines 27--27
-[] 
- []
-
-[2]
-Overfull \hbox (6.30435pt too wide) in paragraph at lines 81--81
-=======
 {/usr/lib/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <PDFs/IMEX/KS_
 plot_surface.pdf, id=14, 449.68pt x 337.26pt>
 File: PDFs/IMEX/KS_plot_surface.pdf Graphic file (type pdf)
@@ -320,26 +302,14 @@ Overfull \hbox (37.71664pt too wide) in paragraph at lines 23--23
 
 [4 <./PDFs/IMEX/comp_num_ref_t100.pdf>]
 Overfull \hbox (92.06758pt too wide) in paragraph at lines 82--82
->>>>>>> 34c326b07c96f69c0b091d32c7cd2bbc64a921f6
 [] 
  []
 
-[3])
-Underfull \hbox (badness 10000) in paragraph at lines 43--46
-[]\OT1/cmr/m/n/10 Scott Arthur Gas-ner, Fall 2004, \OT1/cmr/m/it/10 In-te-grat-
-ing the Kuramoto-
+
+Overfull \hbox (28.73021pt too wide) in paragraph at lines 90--90
+[] 
  []
 
-<<<<<<< HEAD
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--46
-\OT1/cmr/m/it/10 Sivashinsky equa-tion: A sim-u-la-tion of the hop-ping state
- []
-
-
-Overfull \hbox (43.6981pt too wide) in paragraph at lines 43--46
-\OT1/cmr/m/n/10 http://terminus.sdsu.edu/thesis[]repository/ScottGasner[]2004[]
-=======
 [5]
 Overfull \hbox (66.69261pt too wide) in paragraph at lines 97--97
 [] 
@@ -358,20 +328,10 @@ Underfull \hbox (badness 2418) in paragraph at lines 46--49
 
 Overfull \hbox (110.70169pt too wide) in paragraph at lines 46--49
 \OT1/cmr/m/n/12 http://terminus.sdsu.edu/thesis[]repository/ScottGasner[]2004[]
->>>>>>> 34c326b07c96f69c0b091d32c7cd2bbc64a921f6
 Fall[]MS[]Comp[]Sci.pdf,
  []
 
 
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 48--51
-[]\OT1/cmr/m/n/10 Mehrdad Lakestani and Mehdi De-hghan, Febru-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--51
-\OT1/cmr/m/n/10 ary 2012, \OT1/cmr/m/it/10 Nu-mer-i-cal so-lu-tions of the gen-
-=======
 Underfull \hbox (badness 10000) in paragraph at lines 51--54
 []\OT1/cmr/m/n/12 Mehrdad Lakestani and Mehdi De-hghan, Febru-
  []
@@ -379,44 +339,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--54
 
 Underfull \hbox (badness 10000) in paragraph at lines 51--54
 \OT1/cmr/m/n/12 ary 2012, \OT1/cmr/m/it/12 Nu-mer-i-cal so-lu-tions of the gen-
->>>>>>> 34c326b07c96f69c0b091d32c7cd2bbc64a921f6
 er-al-ized
  []
 
 
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 48--51
-\OT1/cmr/m/it/10 Kuramoto-Sivashinsky equa-tion us-ing B-spline func-tions\OT1/
-cmr/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--51
-\OT1/cmr/m/n/10 http://www.sciencedirect.com/science/article/pii/S0307904X11004
-082,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--57
-[]\OT1/cmr/m/n/10 Marjan Ud-din and Sar-dar Ali, Jan-uary 2013, \OT1/cmr/m/it/1
-0 RBF-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--57
-\OT1/cmr/m/it/10 PS method and Fourier Pseu-dospec-tral method for
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--57
-\OT1/cmr/m/it/10 solv-ing stiff non-lin-ear par-tial dif-fer-en-tial equa-tions
-\OT1/cmr/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--57
-\OT1/cmr/m/n/10 http://www.naturalspublishing.com/files/published/ed38fj6n3xt18
-=======
 Underfull \hbox (badness 10000) in paragraph at lines 51--54
 \OT1/cmr/m/it/12 Kuramoto-Sivashinsky equa-tion us-ing B-spline func-tions\OT1/
 cmr/m/n/12 ,
@@ -448,16 +374,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--60
 
 Overfull \hbox (44.09045pt too wide) in paragraph at lines 56--60
 \OT1/cmr/m/n/12 http://www.naturalspublishing.com/files/published/ed38fj6n3xt18
->>>>>>> 34c326b07c96f69c0b091d32c7cd2bbc64a921f6
 7.pdf,
  []
 
 
-<<<<<<< HEAD
-Underfull \hbox (badness 6625) in paragraph at lines 59--62
-\OT1/cmr/m/it/10 chaotic so-lu-tions\OT1/cmr/m/n/10 , http://www.dtic.mil/dtic/
-tr/fulltext/u2/a228590.pdf,
-=======
 Underfull \hbox (badness 10000) in paragraph at lines 62--65
 []\OT1/cmr/m/n/12 Andrew Sprat-ley, March 2010, \OT1/cmr/m/it/12 Kuramoto-
  []
@@ -471,38 +391,10 @@ m/n/12 ,
 
 Underfull \hbox (badness 10000) in paragraph at lines 62--65
 \OT1/cmr/m/n/12 http://www.dtic.mil/dtic/tr/fulltext/u2/a228590.pdf, 03/31-
->>>>>>> 34c326b07c96f69c0b091d32c7cd2bbc64a921f6
  []
 
 [7] (./report.aux) ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 2500 strings out of 493308
- 32754 string characters out of 6140929
- 101649 words of memory out of 5000000
- 5912 multiletter control sequences out of 15000+600000
- 12148 words of font info for 47 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 37i,11n,24p,672b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/lib/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx12.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
-x9.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/lib
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/lib/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lib/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lib/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr12.pfb></usr/lib/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr17.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr5.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7
-.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr
-/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lib/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/lib/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on report.pdf (5 pages, 175148 bytes).
-PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
-=======
  3632 strings out of 493308
  53511 string characters out of 6140929
  122129 words of memory out of 5000000
@@ -534,7 +426,6 @@ Output written on report.pdf (7 pages, 1093487 bytes).
 PDF statistics:
  197 PDF objects out of 1000 (max. 8388607)
  96 compressed objects within 1 object stream
->>>>>>> 34c326b07c96f69c0b091d32c7cd2bbc64a921f6
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
