@@ -20,6 +20,8 @@
 \title[Kuramoto-Sivashinsky]%
 {Kuramoto-Sivashinsky equation}
 
+\author[Author, Anders] % (optional, for multiple authors)
+{Anders Voldsund \\Espen Johansen Velsvik \\Elisabeth Skaar Hasund}
 % Datoen blir også trykket på forsida. 
 \date{2. April 2014}
 %\date{} % Bruk denne hvis du ikke vil ha noe dato på forsida.
@@ -31,6 +33,7 @@
 % i en egen kommando, ikke på vanlig beamer-måte:
 \begin{frame}
 \titlepage
+
 \end{frame}
 
 % Her begynner første slide/frame, (nummer to etter forsida). 
@@ -47,8 +50,18 @@ u_t + u_{xx} + u_{xxxx} + \frac{1}{2}(u^2)_x = 0
 \begin{frame}
 \frametitle{About Kuramato-Sivashinsky equation}
 \begin{itemize}
+\item Kuramoto - Japan 1977
+\begin{itemize}
+\item reaction-diffusion
+\end{itemize}
+
+\item Sivashinsky - Israel 1977
+\begin{itemize}
+\item flame fronts
+\end{itemize}
+\item Chaos
 \item Stiff
-\item Firefronts
+
 \end{itemize}
 
 \end{frame}
@@ -137,7 +150,7 @@ $\odot =$ Element-wise multiplication
 \begin{itemize}
 \item No analytic solution
 \item MATLAB ode15s
-\item semi discretization and stiff system
+\item Semi discretization and stiff system
 \end{itemize}
 \end{frame}
 
@@ -183,7 +196,10 @@ uu_{x} = \frac{\mu \delta u^2}{4h} + &O(h^2) \\
 
 \begin{frame}
 
-\frametitle{Local Truncation Error}
+\frametitle{Consistency}
+\begin{itemize}
+\item Local truncation error
+\end{itemize}
 
 \begin{align*}
 \tau ^n = O(h^2) + O(k) \xrightarrow{k,h \to 0} 0
@@ -208,7 +224,7 @@ uu_{x} = \frac{\mu \delta u^2}{4h} + &O(h^2) \\
 \begin{align*}
 |\xi |^2 &\le \left(\frac{1+k/8}{1-k/8}\right)^2 + \frac{k}{4h^2}k
 \end{align*}
-Not stable
+Linearized scheme not stable
 
 \end{frame}
 
@@ -232,7 +248,7 @@ Not stable
 \end{align*}
 
 \begin{itemize}
-\item Not stable
+\item Linearized scheme not stable
 \item experimentally $r < 1/8$ stable for non-linear scheme
 \end{itemize}
 \end{frame}
@@ -242,6 +258,7 @@ Not stable
 \frametitle{Convergence of implicit scheme}
 
 \begin{itemize}
+\item Lax' equivalence theorem
 \item $\tau ^n = O(h^2) + O(k) $
 \item $|\xi |^2 \le \left(\frac{1+rh^4/8}{1-rh^4/8}\right)^2 + k\frac{rh^2}{4}$
 \item Experimentally the scheme is stable
