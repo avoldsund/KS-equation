@@ -5,11 +5,11 @@ f = @(x) cos(x/16).*(1+sin(x/16));
 
 global Ms hs
 L = 32*pi;
-Ms = 2^9;
+Ms = 2^12;
 hs = L/Ms;
 
 % Reference solution
-k = 0.005;
+k = 0.01;
 xx = 0:hs:L-hs;
 N = 5000;
 T = N*k;
@@ -17,7 +17,7 @@ yy = ref_sol(k,T,xx);
 
 % M values increasing by a factor 2: 2^j
 min = 7;
-max = 9;
+max = 10;
 num = max-min+1;
 error_norm = zeros(num,1);
 h_p = zeros(num,1);
@@ -54,8 +54,8 @@ end
 
 % Loglog-plot of the error
 figure
-loglog(h_p, error_norm, 'r', h_p, h_p, 'b', h_p, h_p.^2, 'g');
-xlabel('Log of the time steps k')
+loglog(h_p, error_norm, 'ro', h_p, h_p, 'b');
+xlabel('Log of the space steps k')
 ylabel('Log of the error norm')
 title('Loglog-plot of the error norm')
 legend('Infinity-norm','Slope 1','location','SouthEast')

@@ -4,19 +4,25 @@ global Ms hs
 f = @(x) cos(x/16) .* (1 + sin(x/16));
 L = 32*pi;
 
-Ms = 2^10;  %number of points in reference sol.
-hs = L/Ms;
-y = 0:hs:L-hs;
+Ms = 2^11;  %number of points in reference sol.
+% hs = L/Ms;
+% y = 0:hs:L-hs;
 
-M = 2^7;
+M = 2^14;
 h = L/M;
 x = 0:h:L-h;
 
-N = 10000;
-k = 0.1;
-T = k*N;
+N = 50;
+k = 1/3;
+% T = k*N;
 
-yy = ref_sol(k,T,y);
+% par = 6*k/h^4-k/h^2
+% par = 2*abs(k/h^2-4*k/h^4) + 2*abs(k/h^4)
+% dom = abs(1-2*k/h^2+6*k/h^4)
+
+k/h
+
+% yy = ref_sol(k,T,y);
 
 U = zeros(M,N);
 %error = zeros(M,N);
@@ -41,9 +47,11 @@ for n = 1:N-1
 end
 toc
 %err = norm(error);
-err = norm(yy(1:Ms/M:Ms,N)-U(:,N));
-% contourf(U')
+% err = norm(yy(1:Ms/M:Ms,N)-U(:,N));
+%contourf(U')
 % max(max(U))
 % min(min(U))
+[U_plot, t0,x0] = compress(k*(0:N-1)',x', U, 1000,100);
+contourf(U_plot')
 
 end

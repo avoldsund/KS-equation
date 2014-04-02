@@ -19,6 +19,8 @@ k = 0.001;
 
 r = k/(h^4)
 
+par = 6*k/h^4-k/h^2
+
 % Creating the U-matrix and inserting boundary condition
 
 U = zeros(M, N);
