@@ -1,26 +1,30 @@
-\subsection*{Initial conditions}
-In the solution of the KS-equation we had periodic boundary conditions, i.e. $u(0,t) = u(L,t)$. We also used L-periodic initial conditions. We experienced that a common initial condition used in several other reports was
+\subsection{Initial conditions}
+In the solution of the KS-equation periodic boundary conditions was implemented, i.e. $u(0,t) = u(L,t)$, as well as $L$-periodic initial conditions. A common initial condition used in several other reports was
 
 \begin{equation}
 \label{initialCondition}
-u(x,0) = \cos(\frac{x}{16})(1 + \sin(\frac{x}{16}).
+u(x,0) = \cos(\frac{x}{16})(1 + \sin(\frac{x}{16}),
 \end{equation}
 
-We also tried the initial condition
+where $x = [0, 32\pi]$ was the space-interval. Another initial condition tested was the initial condition
 
 \begin{equation}
 \label{initialCondition2}
 u(x,0) = \frac{1}{\sqrt{2}} \sin(x) - \frac{1}{8}\sin(2x),
 \end{equation}
 
-which worked well. The L-periodic initial conditions is customarily taken \cite{periodicInitial} to satisfy
+where the space-interval was $x = [0, 2\pi]$ which worked well. The L-periodic initial conditions is customarily taken \cite{periodicInitial} to satisfy
 
 \begin{equation}
 \int_0^L\! f(x)\,\textrm{d}x = 0,
 \end{equation}
-which both of our initial conditions satisfy. The same article also states that for L-periodic initial data, a unique solution for \eqref{KSeq} exits, and is bounded as $t\rightarrow\infty$. The bound has been proven to be smaller than $O(L^{8/5})$. In our numerical tests, with $t=5000$, the initial condition \eqref{initialCondition} did indeed not exceed the bound, nor did \eqref{initialCondition2}.
+which both \eqref{initialCondition} and \eqref{initialCondition2} satisfy. The same article also states that for L-periodic initial data, a unique solution for \eqref{KSeq} exits, and is bounded as $t\rightarrow\infty$. The bound has been proven to be smaller than $O(L^{8/5})$. In our numerical tests, with $t=5000$, the initial condition \eqref{initialCondition} did indeed not exceed the bound, nor did \eqref{initialCondition2}.
 
-\subsection*{Plots of the function}
+\subsection{Reference solution}
+As the Kuramoto-Sivashinsky equation does not have an analytical solution, a reference solution was implemented using the ODE15s-solver in Matlab. This solver is especially good for solving stiff differential equations, and it uses an implicit method. ODE15s use a semi-discretized version of our scheme, where it is discretized in space, but not in time. Hence the length of the time steps varies. The time steps are small when the solution changes rapidly, and larger when the changes in the solution are small. Because the solution is needed at given times to be able to compare it with our schemes, we specify the time vector. That does not mean that the solver takes a step length $k$, but rather that it gives us the solution at the times with the same accuracy as the computed time points. \cite{ode15s}
+
+
+\subsection{Plots of the function}
 The IMEX method produced figure \ref{fig:surface}.
 
 \begin{figure}[H]
@@ -72,10 +76,16 @@ As we can see, the error decreases when the $h$-value is decreased. A plot of th
 \label{fig:errTime}
 \end{figure}
 
+\subsection{Convergence}
+\subsubsection{Explicit}
+\subsubsection{Implicit}
 
-\subsection*{Running time}
+\subsection{Running time}
+In the implementations of both the implicit and the explicit scheme all matrices were implemented using the spdiags-function in MATLAB, which creates sparse band matrices. This is memory efficient, as MATLAB only stores the non-zero elements and their indices. In addition to this, the operations are more computationally efficient than operations on full matrices. \cite{sparse}
 
-The implicit and explicit scheme both have negative and positive properties. While the explicit scheme is about 10 times faster than the implicit scheme, as shown in Figure \ref{fig:runTime}, it is has a restriction on the time step. In addition, it seems that the error is larger in the explicit scheme than the implicit scheme, independent on the number of time steps. 
+To solve the system (WHAT SYSTEM??????????), the backslash operator in MATLAB was used. This is possibly the best way to solve a linear system in MATLAB.  In a linear equation $Ax = b$, the backslash operator runs a number of tests to check the structure of the matrix $A$. I.e. if the matrix is sparse and banded, a banded solver is run.
+
+The implicit and explicit scheme both have negative and positive properties. While the explicit scheme is about 10 times faster than the implicit scheme, as shown in Figure \ref{fig:runTime}, it has a restriction on the time step that makes it very hard to work with. In addition, it seems that the error is larger in the explicit scheme than the implicit scheme, independent of the number of time steps.
 
 \begin{figure}[H]
 \centering
