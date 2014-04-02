@@ -1,5 +1,6 @@
 function [] = IMEX_plot()
 profile ON
+tic
 % Function to plot different plots
 
 % The function ref_sol needs the global variables to work
@@ -10,22 +11,25 @@ L = 32*pi;
 %L = 2*pi;
 
 
-M = 2^9;
+M = 2^8;
 h = L/M;
 x = 0:h:L-h;
 
-N = 2^14;
+N = 2^12;
 T = 100;
 k = T/N;
 t = k*(0:N);
 
 %Reference solution: Must be included for error plots!
-Ms = 2^9;  %number of points in reference sol.
+Ms = 2^8;  %number of points in reference sol.
 hs = L/Ms;
 x_ref = 0:hs:L-hs;
 U_ref = ref_sol(k,T,x_ref);
 
+
+%U = spalloc(M,N,M*N);
 U = zeros(M,N);
+
 U(:,1) = f(x);
 
 % IMEX-scheme
@@ -94,4 +98,5 @@ end
 % legend('Reference solution', 'Numerical solution')
 profile OFF
 profile viewer
+toc
 end

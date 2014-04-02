@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  1 APR 2014 18:49
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  2 APR 2014 10:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -382,7 +382,7 @@ Here is how much of TeX's memory you used:
  7027 multiletter control sequences out of 15000+600000
  13394 words of font info for 52 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,11n,38p,672b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,38p,684b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmbx12.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.p
 fb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
@@ -399,7 +399,7 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lib/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/lib/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmti10.pfb></usr/lib/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on report.pdf (7 pages, 1044471 bytes).
+Output written on report.pdf (7 pages, 1044696 bytes).
 PDF statistics:
  177 PDF objects out of 1000 (max. 8388607)
  81 compressed objects within 1 object stream
