@@ -1,0 +1,14 @@
+The KS-equation:
+- Because it contains both second- and fourth-order derivatives, it produces complex behaviour.
+- The second-order term acts as an energy source and has a destabilizing effect.
+- The nonlinear term transfers energy from low to high wavenumbers.
+- The fourth-order term has a stabilizing effect.
+- It is a PDE that can exhibit chaotic solutions.
+- Possible to use a EDTRK4 method to solve the problem, i.e. Expoential Time Differencing Runge-Kutta 4 method. Solving the problem in the Fourier space.
+- RK4 is considered THE Runge-Kutta method. It is a fourth order method, i.e. the local truncation error is on the order O(h^5), while the total accumulated error is order O(h^4).
+- "The authors found that the higher order ETD based schemes can be several orders
+of magnitude faster than low-order Implicit-Explicit (IMEX) [87] methods." Nottingham thesis.
+- "The Kuramoto-Sivashinsky equation, which we will refer to as the K-S equation, is
+one of the simplest PDEs capable of describing complex (chaotic) behavior in both
+time and space." Nottingham
+- "In physical terms, this equation describes reaction diffusion problems, and the dynamics of viscous-fluid films flowing along walls, and was introduced by Sivashinsky [74] as a model of laminar flame-front instabilities and by Kuramoto [50] as a model of phase turbulence in chemical oscillations." Nottingham
