@@ -1,5 +1,7 @@
 report.pdf
 
+.nfs*	
+
 *.aux
 *.glo
 *.idx
