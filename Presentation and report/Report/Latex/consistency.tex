@@ -1,0 +1,82 @@
+The truncation error imposed by the discretization in space is proven by taylor expansions. By using the central difference operator on itself the following expression arises,
+
+\begin{align*}
+\delta \delta u = \delta (u_{m+\frac{1}{2}}^n - u_{m-\frac{1}{2}}^ {n}) \\
+= u_{m+1}^n -2u_m^n + u_{m-1}^n, \\
+\end{align*}
+and by taylor expanding the terms,
+
+\begin{align*}
+u_{m \pm 1}^n = u_m^n \pm h\partial_xu_m^n + \frac{h^2}{2}\partial_x^2u_m^n \pm \frac{h^3}{6}\partial_x^3u_m^n + O(h^4). \\
+\end{align*}
+This leads to
+
+\begin{align*}
+\delta^2 u_m^n = \frac{h^2}{2}\partial_x^2 u_m^n + O(h^4), \\
+\end{align*}
+and it is seen that the $\delta^2$-operator approximates the $\partial^2$-operator with an error of order $h^4$. The discretization of the $u_{xxxx}$-term is derived the same way, but with the $\delta^4$-operator approximating the $\partial^4$-operator:
+
+\begin{align*}
+\delta^4 u_m^n = \frac{h^4}{2}\partial_x^4 u_m^n + O(h^6)
+\end{align*}
+The spatial discretization of the $uu_{x}$-term is derived by defining $v(x,t) = u(x,t)^2$. Using the central difference on $v_{m}^n$,
+
+\begin{align*}
+\delta v_m^n = v_{m+\frac{1}{2}}^n - v_{m-\frac{1}{2}}^n, \\
+\end{align*}
+and then the mean operator $\mu$,
+\begin{align*}
+\mu\delta v_m^n = \frac{1}{2}(v_{m+1}^n - v_{m-1}^n). \\
+\end{align*}
+It is seen from taylor expanding the terms that,
+
+\begin{align*}
+v_{m \pm 1}^n = v_m^n \pm h\partial_xv_m^n + \frac{h^2}{2}\partial_x^2v_m^n \pm \frac{h^3}{6}\partial_x^3v_m^n + O(h^4), \\
+\end{align*}
+which by the substitution $2u\partial_xu = \partial_xv$ gives
+\begin{align*}
+v_{m \pm 1}^n = (u_m^n)^2 \pm 2hu_m^n\partial_xu_m^n + \frac{h^2}{2}\partial_x^2(u_m^n)^2 \pm \frac{h^3}{6}\partial_x^3(u_m^n)^2 + O(h^4), \\
+\mu \delta v_m^n = 2hu_m^n\partial_xu_m^n + \frac{h^3}{6}\partial_{x}^3(v_m^n) + O(h^5). \\
+\end{align*}
+
+By the derivations above, we have the following discretizations with errors in space:
+\begin{align*}
+u_{xx} = \frac{\delta^2 u}{h^2} - \frac{h^2}{12}\partial_{x}^2u_m^n + O(h^3) \\
+u_{xxxx} = \frac{\delta^4 u}{h^4} - \frac{h^2}{6}\partial_{x}^6u_m^n + O(h^4) \\
+uu_{x} = \frac{\mu \delta u^2}{2h} - \frac{h^3}{12}\partial_{x}^3(u_m^n)^2 + O(h^5) \\
+\end{align*}
+That is, each term gives a contribution of $O(h)$ to the local truncation error.
+
+For the explicit method, forward difference was used to discretize in time:
+\begin{align*}
+\Delta u = u_m^{n+1}-u_m^n \\
+\end{align*}
+And by taylor expanding,
+\begin{align*}
+u_m^{n+1} = u_m^n + k\partial_tu_m^n + \frac{k^2}{2}\partial_t^2u_m^n + O(k^3),
+\end{align*}
+an expression for the time derivative is seen to be:
+\begin{align*}
+u_t = \frac{\Delta u}{k} - \frac{k}{2}\partial_t^2u_m^n + O(k^2)
+\end{align*}
+That is, a contribution of $O(k)$ to the local truncation error.
+
+For the implicit method, the trapezoidal rule is used to discretize in time:
+\begin{align*}
+u_{m}^{n+1} - u_m^n = \int\limits_{t_{n}}^{t_{n+1}} u_{t}(x_{m},t_{n})\, \mathrm{d}t = \frac{k}{2}(u_t(x_m,t_n) + u_t(x_m,t_{n+1})) - \frac{k^3}{12}u_{ttt}(x_m,t_{n+\frac{1}{2}}) + O(k^5)
+\end{align*}
+
+By using the space discretizations derived above in the approximation for the derivative in time, an expression with a nonlinear term for the time step $t=t_{n+1}$ is derived. This nonlinear implicit term is approximated by a first order taylor expansion around $t=t_{n}$:
+\begin{align*}
+(u_m^{n+1})^2 = (u_m^n)^2 + 2ku_m^n\partial_tu_m^n + O(k^2).
+\end{align*}
+That is, a contribution of $O(k)$ to the local truncation error.
+
+By the above expressions we finally arrive at the conclusion of this section. The local truncation error,$\tau_m^n$, for the both the exlicit and the imlicit method is of same order in both time and space:
+
+\begin{align*}
+\tau_m^n = O(k + h^2)
+\end{align*}
+Since $\tau_m^n \xrightarrow{k,h \to 0} 0$, we conclude that both the explicit and the implicit methods are consistent of order 1 in time and 2 in space.
+
+%hei%
