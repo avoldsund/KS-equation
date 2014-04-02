@@ -1,26 +1,24 @@
 
 
-Von Neumann stability analysis is a method based on Fourier decomposition of numerical error, and is used to check the stability of linear pde-s. Since the KS-equation has a non-linear term, $\frac{1}{2}(u^2)_x$, this has to be linearized before the method is applied. The KS-equation is stiff, and the non-linear term stabilizes the equation. Replacing it by $\frac{1}{2}(\rho(x)u)_x$, where $\rho(x) \approx u(x)$ is constant in time, we obtain 
-
-\begin{equation}
-u_t  = - u_{xx} - u_{xxxx} - \frac{1}{2}\left(\rho(x)u\right)_x.
-\end{equation}
-
-This equation is not stable, so the schemes will not be stable, as we will see in the analysis. Still, an interesting result is attained to the bound of $k/h^4$ in the explicit scheme.  
-
-\subsection*{Stability analysis of implicit scheme}
-
 Stability analysis of non-linear differential equations is not an easy task. Many of the methods used for stability analysis require a linear pde. Since the KS-equation is stiff, it is not easy to find a good approximation for the non-linear term, $\frac{1}{2}(u^2)_x$, since it stabilizes the solution. One opportunity is to substitute 
 
 \begin{align*}
 \frac{1}{2}(u^2)_x \approx \frac{1}{2}(\rho(x)u)_x
-\end{align*}
+\end{align*} 
 
-such that $\rho(x)$ is not dependent on time. Choosing $\rho(x) = f(x,0)$, where $f(x,0) = U^0$, we obtain the linearized scheme where $R$ is the matrix representing $\rho(x)$:
+such that $\rho(x)$ is not dependent on time. 
+
+Von Neumann stability analysis is a method based on Fourier decomposition of numerical error, and is used to check the stability of linear pde's. 
+
+
+\subsection*{Stability analysis of implicit scheme}
+
+ 
+Choosing $\rho(x) = f(x,0) = U^0$, we obtain the linearized scheme where $R$ is the matrix representing $\rho(x)$:
 
 
 \begin{align*}
-\left( I + \frac{k}{h^2}A + \frac{k}{h^4}A^2\right) U^{n+1} = \left( I - \frac{k}{h^2}A - \frac{k}{h^4}A^2 - \frac{k}{4h} DR \right)U^{n},
+\left( I + \frac{k}{2h^2}A + \frac{k}{2h^4}A^2\right) U^{n+1} = \left( I - \frac{k}{2h^2}A - \frac{k}{2h^4}A^2 - \frac{k}{4h} DR \right)U^{n},
 \end{align*}
 %
 %which written out becomes
@@ -68,7 +66,11 @@ The Von Neumann's stability criterion claims there is a constant $\mu \ge 0$ suc
 |\xi |^2 \le \left(\frac{1+k/8}{1-k/8}\right)^2 + k\frac{rh^2}{4(1-k/8)^2},
 \end{align*}
 
- so the method is not stable. This is expected, since the linearized KS-equation is unstable in numerical experiments. Using an averaging over time, $\rho(x) = (U^T-U^0)/2$, 
+so the method is not stable. This is expected, since the linearized KS-equation is unstable in numerical experiments. 
+
+Using an averaging over time, $\rho(x) = (U^{N_0}-U^0)/2$, where $U^{N_0}$ represents the solution after $N_0$ iterations, we observed a solution slightly more similar to the solution from the non-linear scheme, but also here we observed a non-stability.
+ 
+Numerically, it seems that stability for the implicit scheme only is dependent on $k$. This hypothesis is strengthened by the fact that when $h$ tends to zero, the bound for $k$ converges from below to $k \approx 1/3$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -102,7 +104,7 @@ Let $q = \sin^2\left(\frac{\beta h}{2}\right)$ and assume that $(1 \le 16rq^2 \l
 
 
 \begin{align*}
-\psi = \left| 1+4rh^2q -16rq^2\right| \le \left| 1-16rq^2\right| \le 1 \underset{0\le x\le 1}{\implies} \left(1/16 \le r \le 1/8 \right)
+\psi = \left| 1+4rh^2q -16rq^2\right| \le \left| 1-16rq^2\right| \le 1 \underset{0\le q\le 1}{\implies} \left(1/16 \le r \le 1/8 \right)
 \end{align*} 
 
 \begin{align*}
@@ -121,7 +123,7 @@ Under the assumptions above, we have not shown stability, since $\mu$ is $h$-dep
 \centering
 \includegraphics[scale=0.5]
 {../PDFs/FE_Exp/linear_explicit.pdf}
-\caption{Surface plot of u(x,t) on the linearized explicit scheme. The method is unstable for all $r$.}
+\caption{Surface plot of $u(x,t)$ on the linearized explicit scheme. The method is unstable for all $r$.}
 \label{fig:lin_exp}
 \end{figure}
 
