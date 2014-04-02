@@ -12,9 +12,9 @@ M = 2^7;
 h = L/(M);
 x = 0:h:32*pi-h;
 
-N = 5000;
-k = 0.01;
-T = 5;
+N = 100000;
+k = 0.001;
+% T = 5;
 % N_time = T/k;
 
 r = k/(h^4)
@@ -36,18 +36,11 @@ B = (k/(h^2)) * spdiags([e e -2*e e e], diagVecB, M, M);
 diagVecD_R = [-M+1 -1 1 M-1];
 D = (k/(2*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD_R, M, M);
 
-% D = spdiags([1*e -1*e 1*e -1*e], diagVecD_R, M, M)*D;
-% diagVecD = [-M+1 -1 1 M-1];
-% D = (k/(4*h)) * spdiags([1*e -1*e 1*e -1*e], diagVecD, M, M);
 
-
-% spectral_radius = max(abs(eig(C1)));
-
-
-
+% 
 % Testing out: U(x,0) = -2*U_xx - U_xxxx
-% rho = 1/(2^7)*cos(x/16).*(1 + 4*sin(x/16)) - 1/(2^16)*cos(x/16).*(1+16*sin(x/16));
-% R = spdiags(rho', 0, M, M);
+rho = 1/(2^7)*cos(x/16).*(1 + 4*sin(x/16)) - 1/(2^16)*cos(x/16).*(1+16*sin(x/16));
+R = spdiags(rho', 0, M, M);
 % 
 
 
@@ -63,13 +56,7 @@ R = spdiags(R_diag, 0, M, M);
 C = (eye(M) - A - B); 
 
 E = full(D*R);
-% plot(eig(E), '*');
 
-% C1 = (eye(M)-A-B-D);
-% C2 = (eye(M)-A-B);
-eigen_C = (eig(C));
-% plot(eig(C2), '*')
-% spec_C2 = max(abs(eig(C2)));
 % 
 % 
 for n = 1:N-1

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  1 APR 2014 17:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  2 APR 2014 10:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -160,7 +160,11 @@ Package caption Info: float package is loaded.
 Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
 \c@subfigure=\count102
 \c@subtable=\count103
-) (./report.aux)
+) (./report.aux
+
+LaTeX Warning: Label `fig:runTime' multiply defined.
+
+)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -175,8 +179,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
-
-(/usr/lib/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/lib/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count104
 \scratchdimen=\dimen121
@@ -295,12 +298,26 @@ File: PDFs/IMEX/comp_num_ref_t100.pdf Graphic file (type pdf)
 Package pdftex.def Info: PDFs/IMEX/comp_num_ref_t100.pdf used on input line 70.
 
 (pdftex.def)             Requested size: 247.32475pt x 185.49356pt.
-) (./stability.tex [4 <./PDFs/IMEX/comp_num_ref_t100.pdf>]
+
+<PDFs/running_time3.pdf, id=102, 643.40375pt x 485.815pt>
+File: PDFs/running_time3.pdf Graphic file (type pdf)
+
+<use PDFs/running_time3.pdf>
+Package pdftex.def Info: PDFs/running_time3.pdf used on input line 83.
+(pdftex.def)             Requested size: 257.35693pt x 194.32256pt.
+ [4 <./PDFs/IMEX/comp_num_ref_t100.pdf>]
+<PDFs/error_compare.pdf, id=110, 592.2125pt x 430.60875pt>
+File: PDFs/error_compare.pdf Graphic file (type pdf)
+
+<use PDFs/error_compare.pdf>
+Package pdftex.def Info: PDFs/error_compare.pdf used on input line 91.
+(pdftex.def)             Requested size: 236.8808pt x 172.24043pt.
+) (./stability.tex [5 <./PDFs/running_time3.pdf> <./PDFs/error_compare.pdf>]
 Overfull \hbox (37.71664pt too wide) in paragraph at lines 27--27
 [] 
  []
 
-[5]
+[6]
 Overfull \hbox (6.30435pt too wide) in paragraph at lines 81--81
 [] 
  []
@@ -322,7 +339,7 @@ Overfull \hbox (43.6981pt too wide) in paragraph at lines 46--49
 Fall[]MS[]Comp[]Sci.pdf,
  []
 
-
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 51--54
 []\OT1/cmr/m/n/10 Mehrdad Lakestani and Mehdi De-hghan, Febru-
  []
@@ -345,7 +362,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--54
 082,
  []
 
-[6]
+
 Underfull \hbox (badness 10000) in paragraph at lines 56--60
 []\OT1/cmr/m/n/10 Marjan Ud-din and Sar-dar Ali, Jan-uary 2013, \OT1/cmr/m/it/1
 0 RBF-
@@ -374,16 +391,16 @@ Underfull \hbox (badness 6625) in paragraph at lines 62--65
 tr/fulltext/u2/a228590.pdf,
  []
 
-[7] (./report.aux)
+[8] (./report.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3632 strings out of 493308
- 53511 string characters out of 6140929
- 122129 words of memory out of 5000000
- 7027 multiletter control sequences out of 15000+600000
+ 3644 strings out of 493308
+ 53777 string characters out of 6140929
+ 122176 words of memory out of 5000000
+ 7036 multiletter control sequences out of 15000+600000
  13394 words of font info for 52 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,11n,38p,672b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -403,10 +420,10 @@ ype1/public/amsfonts/cm/cmsy10.pfb></usr/lib/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy7.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb></usr/lib/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msbm10.pfb>
-Output written on report.pdf (7 pages, 1044471 bytes).
+Output written on report.pdf (8 pages, 1053490 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 188 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

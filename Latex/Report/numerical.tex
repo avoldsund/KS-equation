@@ -62,7 +62,7 @@ Because \eqref{KSeq} has no analytical solution, we constructed a reference solu
         \caption{Comparison of the error between the reference solution and the numerical approximation for different $h$-values. Reference solution: $h = 0.025$, $k = 0.006$. Blue color shows low error, while red shows high error.}\label{fig:errPlots}
 \end{figure}
 
-As we can see, the error decreases when the $h$-value is decreased. A plot of the reference solution vs. our numerical solution, figure \ref{fig:errTime}, explains in a good way why some points have higher error than others. At the points where the reference solution and the numerical solution are out of phase, the error will naturally be large. Worth noting is the low error at the two parallel lines, $x \thickapprox 25$ and $x \thickapprox 75$, which can also be seen in figure \ref{fig:errPlots}. This means a worst case error will be the sum of the amplitudes of the solutions, and this tends to happen.
+As we can see, the error decreases when the $h$-value is decreased. A plot of the reference solution vs. our numerical solution, figure \ref{fig:errTime}, explains in a good way why some points have higher error than others. At the points where the reference solution and the numerical solution are out of phase, the error will naturally be large.This means a worst case error will be the sum of the amplitudes of the solutions, and this tends to happen. Worth noting is the low error at the two parallel lines, $x \thickapprox 25$ and $x \thickapprox 75$, which can also be seen in figure \ref{fig:errPlots}. 
 
 \begin{figure}[H]
 \centering
@@ -71,3 +71,25 @@ As we can see, the error decreases when the $h$-value is decreased. A plot of th
 \caption{Plot of $u(x,0)$ for the reference solution and the numerical solution}
 \label{fig:errTime}
 \end{figure}
+
+
+\subsection*{Running time}
+
+The implicit and explicit scheme both have negative and positive properties. While the explicit scheme is about 10 times faster than the implicit scheme, as shown in Figure \ref{fig:runTime}, it is has a restriction on the time step. In addition, it seems that the error is larger in the explicit scheme than the implicit scheme, independent on the number of time steps. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]
+{PDFs/running_time3.pdf}
+\caption{Running time of the two schemes as a function of time steps $N$}
+\label{fig:runTime}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]
+{PDFs/error_compare.pdf}
+\caption{Running time of the two schemes as a function of time steps $N$}
+\label{fig:runTime}
+\end{figure}
+
