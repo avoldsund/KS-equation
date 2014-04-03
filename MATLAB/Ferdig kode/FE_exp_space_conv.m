@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-
 function [error_norm h_p] = FE_exp_space_conv
-=======
-function error_norm = FE_exp_space_conv
->>>>>>> 69e181fd6c2b5fb0f8c2108a257366d08dc5f654
+
 % Implementation of the Kuramoto-Sivashinsky equation
 % u_t + u_xxxx + u_xx + uu_x = 0
 % Central differences in space, forwards in time
@@ -16,45 +12,24 @@ function error_norm = FE_exp_space_conv
 f = @(x) cos(x/16).*(1+sin(x/16));
 
 global Ms hs
-<<<<<<< HEAD
 L = 32*pi;
 Ms = 2^11;
 hs = L/Ms;
-
-k = 0.001;
-xx = 0:hs:L-hs;
-N = 50000;
-T = N*k;
-%size(x0)
-
-
-yy = ref_sol(k,T,xx);
-
-
-min = 7;
-max = 10;
-=======
-
-% Constants
-L = 32*pi;
+k = 0.0001;
 T = 10;
-% N = 2^14;
-% k = T/N;
-k = 10^(-4);
 N = T/k;
-y = 0:hs:L-hs;
+xs = 0:hs:L-hs;
 
 % Reference solution
-Ms = 2^10;
-hs = L/Ms;
-yy = ref_sol(k,T,y);
+
+yy = ref_sol(k,T,xs);
 
 disp('done')
 
 % Parameters for for loop
 min = 6;
 max = 9;
->>>>>>> 69e181fd6c2b5fb0f8c2108a257366d08dc5f654
+
 num = max-min+1;
 error_norm = zeros(num,1);
 h_p = zeros(num,1);
@@ -63,51 +38,26 @@ h_p = zeros(num,1);
 for j = min:max
     j
     M = 2^j;
-    h = L/(M);
-    %k/(h^2) <= 0.0026 for convergence
+    h = L/M;
     x = 0:h:L-h;
-
-<<<<<<< HEAD
     
-
-=======
->>>>>>> 69e181fd6c2b5fb0f8c2108a257366d08dc5f654
     % Creating the U-matrix and inserting boundary condition
     U = zeros(M, N);
+    size(U)
+    size(x)
     U(:,1) = f(x');
 
     % Construction of matrices for U(n+1) = (I - A - B)*U(n) - D*(U(n)).^2 
-
     A = k/(h^2)*second_order_matrix(M);
     B = k/(h^4)*second_order_matrix(M)*second_order_matrix(M);
     D = k/(4*h)*first_order_central_matrix(M);
     
-<<<<<<< HEAD
-    F = (speye(M)+A/2+B/2);
-    G = (speye(M)-A/2-B/2);
-    
-    % Iteration over time
-    for n = 1:N
-%         U(:,n+1) = (eye(M)-A-B)*U(:,n) - D*(U(:,n).^2);
-        U(:,n+1) = F\G*(U(:,n)) - F\D*(U(:,n).^2);
-=======
-%     F = (speye(M)+A+B);
-%     G = (speye(M)-A-B);
-    
     % Iteration over time
     for n = 1:N
         U(:,n+1) = (eye(M)-A-B)*U(:,n) - D*(U(:,n).^2);
-%         U(:,n+1) = F\G*(U(:,n)) - F\D*(U(:,n).^2);
->>>>>>> 69e181fd6c2b5fb0f8c2108a257366d08dc5f654
     end
     
-    
-    % error compared to reference solution
-%     error = zeros(1,M);
-%     for i = 0:M-1
-%         error(i+1) = U(i+1,N) - yy((Ms)/(M)*i+1,N);
-%     end
-    error = (yy(1:Ms/M:Ms,N)-U(:,N+1));
+    error = (yy(1:Ms/M:Ms,N)-U(:,N));
     error_norm(j-min+1) = norm(error, Inf);
     h_p(j-min+1) = h;
 end
