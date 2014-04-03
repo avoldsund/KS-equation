@@ -12,10 +12,10 @@ global M k h N
 L = 32*pi;
 M = 2^10+1;
 M_sol = M;
-h = L/(M+1);
+h = L/(M);
 k = 0.0001;
 x0 = 0:h:L;
-N = 100000;
+N = 1000;
 T = N*k;
 %size(x0)
 y0 = f(x0(2:end));
