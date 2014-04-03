@@ -4,7 +4,7 @@ f = @(x) cos(x/16).*(1+sin(x/16));
 
 global Ms hs L N k
 
-Ms = 2^7;
+Ms = 2^12;
 M = Ms;
 
 L = 32*pi;
@@ -12,17 +12,17 @@ L = 32*pi;
 hs = (32*pi)/(Ms);
 h = hs;
 x = 0:h:L-h;
-k = 0.03;
+k = 0.3;
 N = 1000;
 T = N*k;
 %T = 20;
 %N = ceil(T/k);
-r = k/h^4
+% r = k/h^4
 
-y0 = f(x);
-options=odeset('AbsTol',1e-3,'RelTol',1e-3);
-[tt,yy] = ode15s('funcKS',0:k:T,y0,options);
-yy = yy';
+% y0 = f(x);
+% options=odeset('AbsTol',1e-3,'RelTol',1e-3);
+% [tt,yy] = ode15s('funcKS',0:k:T,y0,options);
+% yy = yy';
 
 U = zeros(M,N);
 U(:,1) = f(x);
@@ -49,15 +49,17 @@ D = k/(4*h)*D;
 
 F = (eye(M)+A+B);
 G = (eye(M)-A-B);
+det(F)
+
+% % Time step N iterations:
+% for n = 1:N-1
+%     U(:,n+1) = F\G*(U(:,n)) - F\D*(U(:,n).^2);
+%     error(:,n+1) = abs(yy(:,n+1)-U(:,n+1));
+% end
 
 
-% Time step N iterations:
-for n = 1:N-1
-    U(:,n+1) = F\G*(U(:,n)) - F\D*(U(:,n).^2);
-    error(:,n+1) = abs(yy(:,n+1)-U(:,n+1));
-end
 
-norm(error)
+% norm(error)
 % figure
 % err = abs(yy(:,N)-U(:,N));
 % plot(err, 'r');

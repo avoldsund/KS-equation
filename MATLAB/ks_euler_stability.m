@@ -61,9 +61,9 @@ E = full(D*R);
 
 % 
 % 
-for n = 1:N-1
-    U_R(:,n+1) = (eye(M) - A - B)*U_R(:,n) - 0.5*D*R*U_R(:,n);
-end
+% for n = 1:N-1
+%     U_R(:,n+1) = (eye(M) - A - B)*U_R(:,n) - 0.5*D*R*U_R(:,n);
+% end
 
 % 
 % C2 = (eye(M) - A - B - D*R);

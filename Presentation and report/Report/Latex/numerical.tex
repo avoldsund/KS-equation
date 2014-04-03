@@ -80,6 +80,24 @@ As we can see, the error decreases when the $h$-value is decreased, which is exp
 \subsubsection{Explicit}
 From the analysis, the explicit scheme is consistent, and the local truncation error is $O(k + h^2)$. It is therefore expected that the rate of convergence is 1 in time, and 2 in space. Figure (FIGURE HERE) confirm that the order of convergence is 2 in space. However, showing that the order of convergence is 1 in time is not so easy. The constraint $k/h^4 < \frac{1}{8}$ we got from the analysis of the linearized explicit scheme makes it close to impossible. When checking convergence in time, it is important to let the step length in space, $h$, be very small, so the error in space is minimized. This leads to the use of incredibly small step lengths in time. In our attempt at proving the convergence, the infinity norm was constant, with no improvement in the error.
 
+
+\begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.52\textwidth}
+                \includegraphics[width=\textwidth]{../PDFs/FE_Exp/FE_exp_space_conv.pdf}
+                \caption{Convergence in space of order 2}
+                \label{fig:convSpace}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.52\textwidth}
+                \includegraphics[width=\textwidth]{../PDFs/IMEX/conv_space_IMEX_T50.pdf}
+                \caption{Convergence in time of order 1}
+                \label{fig:convTime}
+        \end{subfigure}
+        \caption{Comparison of the error between the reference solution and the numerical approximation for different $h$-values. Reference solution: $h = 0.025$, $k = 0.006$. Notice that the }\label{fig:convergence}
+\end{figure}
+
 \subsubsection{Implicit}
 The analysis for the implicit scheme had convergence 2 in space, and 1 in time, as well. It was much easier showing the convergence here, because it's numerically stable. In the two plots one can see that it coincides with the analysis.
 
@@ -101,10 +119,14 @@ The analysis for the implicit scheme had convergence 2 in space, and 1 in time, 
 \end{figure}
 
 
+
+
 \subsection{Running time}
 In the implementations of both the implicit and the explicit scheme all matrices were implemented using the spdiags-function in MATLAB, which creates sparse band matrices. This is memory efficient, as MATLAB only stores the non-zero elements and their indices. In addition to this, the operations are more computationally efficient than operations on full matrices. \cite{sparse}
 
 To solve the system \eqref{implDiff}, the backslash operator in MATLAB was used. This is possibly the best way to solve a linear system in MATLAB.  In a linear equation $Ax = b$, the backslash operator runs a number of tests to check the structure of the matrix $A$. I.e. if the matrix is sparse and banded, a banded solver is run.
+
+The matrix $\left( I + \frac{k}{2h^2}A + \frac{k}{2h^4}A^2\right)$ from \eqref{implDiff} is a symmetric circular matrix, which is a special kind of Toeplitz matrix where each element is rotated one element to the right relative to the preceding row vector. The advantage of this is that it can be diagonalized by a discrete Fourier transform, such that the implicit scheme can be solved using fast Fourier transform in MATLAB.
 
 The implicit and explicit scheme both have negative and positive properties. While the explicit scheme is about 10 times faster than the implicit scheme, as shown in Figure \ref{fig:runTime}, it has a restriction on the time step that makes it very hard to work with. In addition, it seems that the error is larger in the explicit scheme than the implicit scheme, independent of the number of time steps.
 

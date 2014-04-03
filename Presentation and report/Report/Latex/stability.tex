@@ -70,7 +70,8 @@ so the method is not stable. This is expected, since the linearized KS-equation 
 
 Using an averaging over time, $\rho(x) = (U^{N_0}-U^0)/2$, where $U^{N_0}$ represents the solution after $N_0$ iterations, we observed a solution slightly more similar to the solution from the non-linear scheme, but also here we observed a non-stability.
  
-Numerically, it seems that stability for the implicit scheme only is dependent on $k$. This hypothesis is strengthened by the fact that when $h$ tends to zero, the bound for $k$ converges from below to $k \approx 1/3$.
+Numerically, it seems that the implicit scheme stops running when $k$ is too large. As $h$ tends to zero, the 
+ This hypothesis is strengthened by the fact that when $h$ tends to zero, the bound for $k$ converges from below to 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
