@@ -106,7 +106,9 @@ In the implementations of both the implicit and the explicit scheme all matrices
 
 To solve the system \eqref{implDiff}, the backslash operator in MATLAB was used. This is possibly the best way to solve a linear system in MATLAB.  In a linear equation $Ax = b$, the backslash operator runs a number of tests to check the structure of the matrix $A$. I.e. if the matrix is sparse and banded, a banded solver is run.
 
-The implicit and explicit scheme both have negative and positive properties. While the explicit scheme is about 10 times faster than the implicit scheme, as shown in Figure \ref{fig:runTime}, it has a restriction on the time step that makes it very hard to work with. In addition, it seems that the error is larger in the explicit scheme than the implicit scheme, independent of the number of time steps.
+The implicit and explicit scheme both have negative and positive properties. While the explicit scheme is about 10 times faster than the implicit scheme, as shown in figure \ref{fig:runTime}, it has a restriction on the time step that makes it very hard to work with. In addition, it seems that the error is larger in the explicit scheme than the implicit scheme, independent of the number of time steps. This is illustrated in figure \ref{fig:errComp}.
+
+
 
 \begin{figure}[H]
 \centering
@@ -121,5 +123,5 @@ The implicit and explicit scheme both have negative and positive properties. Whi
 \includegraphics[scale=0.4]
 {../PDFs/Comparisons/error_compare.pdf}
 \caption{Global error of the two schemes as a function of time steps $N$}
-\label{fig:runTime}
+\label{fig:errComp}
 \end{figure}

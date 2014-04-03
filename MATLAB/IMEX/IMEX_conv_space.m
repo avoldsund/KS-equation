@@ -16,8 +16,8 @@ T = N*k;
 yy = ref_sol(k,T,xx);
 
 % M values increasing by a factor 2: 2^j
-min = 6;
-max = 9;
+min = 7;
+max = 10;
 num = max-min+1;
 error_norm = zeros(num,1);
 h_p = zeros(num,1);
