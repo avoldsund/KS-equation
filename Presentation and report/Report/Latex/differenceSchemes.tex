@@ -18,10 +18,11 @@ U^{n+1} = (I - \frac{k}{h^2}A - \frac{k}{h^4}A^2)U^n - \frac{k}{4h}D(U^{n}\odot 
 
 \subsection{Implicit-explicit method}
 Applying the trapezoidal rule to all linear terms gives a Crank-Nicolson-type method which is implicit-explicit. The nonlinear term is the same as in the explicit method \eqref{explDiff}.
-\begin{align*}
+\begin{align}
+\label{implDiff}
 (I + \frac{k}{2h^2}A + \frac{k}{2h^4}A^2)U^{n+1}
 = (I - \frac{k}{2h^2}A - \frac{k}{2h^4}A^2)U^n - \frac{k}{4h}D(U^{n}\odot U^n)
-\end{align*}
+\end{align}
 
 %abv
 

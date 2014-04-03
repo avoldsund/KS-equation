@@ -41,11 +41,11 @@ v_{m \pm 1}^n = (u_m^n)^2 \pm 2hu_m^n\partial_xu_m^n + \frac{h^2}{2}\partial_x^2
 
 By the derivations above, we have the following discretizations with errors in space:
 \begin{align*}
-u_{xx} = \frac{\delta^2 u}{h^2} - \frac{h^2}{12}\partial_{x}^2u_m^n + O(h^3) \\
+u_{xx} = \frac{\delta^2 u}{h^2} - \frac{h^2}{12}\partial_{x}^2u_m^n + O(h^4) \\
 u_{xxxx} = \frac{\delta^4 u}{h^4} - \frac{h^2}{6}\partial_{x}^6u_m^n + O(h^4) \\
-uu_{x} = \frac{\mu \delta u^2}{2h} - \frac{h^3}{12}\partial_{x}^3(u_m^n)^2 + O(h^5) \\
+uu_{x} = \frac{\mu \delta u^2}{2h} - \frac{h^2}{12}\partial_{x}^3(u_m^n)^2 + O(h^4) \\
 \end{align*}
-That is, each term gives a contribution of $O(h)$ to the local truncation error.
+That is, each term gives a contribution of $O(h^2)$ to the local truncation error.
 
 For the explicit method, forward difference was used to discretize in time:
 \begin{align*}
