@@ -1,19 +1,19 @@
 \subsection{Initial conditions}
-In the solution of the KS-equation periodic boundary conditions was implemented, i.e. $u(0,t) = u(L,t)$, as well as $L$-periodic initial conditions. A common initial condition used in several other reports was
+In the solution of the KS-equation periodic boundary conditions was implemented, i.e. $u(0,t) = u(L,t)$, as well as $L$-periodic initial conditions. A common initial condition used in several other reports is
 
 \begin{equation}
 \label{initialCondition}
 u(x,0) = \cos(\frac{x}{16})(1 + \sin(\frac{x}{16}),
 \end{equation}
 
-where $x = [0, 32\pi]$ was the space-interval. Another initial condition tested was the initial condition
+where $x = [0, 32\pi]$ is the space-interval. Another initial condition was also tested
 
 \begin{equation}
 \label{initialCondition2}
 u(x,0) = \frac{1}{\sqrt{2}} \sin(x) - \frac{1}{8}\sin(2x),
 \end{equation}
 
-where the space-interval was $x = [0, 2\pi]$ which worked well. The L-periodic initial conditions is customarily taken \cite{periodicInitial} to satisfy
+with the space-interval $x = [0, 2\pi]$, which worked well. The L-periodic initial conditions are customarily taken \cite{periodicInitial} to satisfy
 
 \begin{equation}
 \int_0^L\! f(x)\,\textrm{d}x = 0,
@@ -24,8 +24,8 @@ which both \eqref{initialCondition} and \eqref{initialCondition2} satisfy. The s
 As the Kuramoto-Sivashinsky equation does not have an analytical solution, a reference solution was implemented using the ODE15s-solver in Matlab. This solver is especially good for solving stiff differential equations, and it uses an implicit method. ODE15s use a semi-discretized version of our scheme, where it is discretized in space, but not in time. Hence the length of the time steps varies. The time steps are small when the solution changes rapidly, and larger when the changes in the solution are small. Because the solution is needed at given times to be able to compare it with our schemes, we specify the time vector. That does not mean that the solver takes a step length $k$, but rather that it gives us the solution at the times with the same accuracy as the computed time points. \cite{ode15s}
 
 
-\subsection{Plots of the function}
-The IMEX method produced figure \ref{fig:surface}. It is easy to see that the solution is chaotic,
+\subsection{Results from the IMEX-scheme}
+The IMEX method produced figure \ref{fig:surface}. It is easy to see that the solution is chaotic, and the figure shows in a good way that small variations in space leads to large variations in the solution $u(x,t)$.
 
 \begin{figure}[H]
 \centering
