@@ -1,15 +1,15 @@
 \subsection{Explicit method}
-The KS-equation can be approximated by using central differences in space, and forward differences in time, also known as the Euler's method. Notice that the mean operator was used on the nonlinear term to avoid half space steps.    The nonlinear term has also been rewritten from $uu_x$ to $\frac{1}{2}(u^2)_x$.
+The KS-equation can be approximated by using central differences in space, and forward differences in time, also known as the Euler's method. Notice that the mean operator was used on the nonlinear term to avoid half space steps.    The nonlinear term has also been rewritten from $uu_x$ to $\frac{1}{2}(u^2)_x$. The following discretizations,
 \begin{equation*}
 \begin{aligned}
 u_t &\approx \frac{\Delta u}{k} = \frac{u^{n+1}-u^n}{k} \\
 u_{xx} &\approx \frac{\delta^2 u}{h^2} = \frac{u_{m+1}-2u_{m}+u_{m-1}}{h^2} = \frac{1}{h^2}Au \\
 u_{xxxx} &\approx \frac{\delta^4 u}{h^4} = \frac{u_{m+2}-4u_{m+1}+6u_m-4u_{m-1}+u_{m-2}}{h^4} = \frac{1}{h^4}A^2u\\
-(u^2)_{x} &\approx \frac{\mu \delta u^2}{h} = \frac{(u_{m+1})^2-(u_{m-1})^2}{2h} = \frac{1}{2h}D\\
+(u^2)_{x} &\approx \frac{\mu \delta u^2}{h} = \frac{(u_{m+1})^2-(u_{m-1})^2}{2h} = \frac{1}{2h}D,\\
 \end{aligned}
 \end{equation*}
 
-which leads to an explicit scheme
+lead to an explicit scheme:
 
 \begin{equation}
 \label{explDiff}
