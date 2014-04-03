@@ -8,7 +8,7 @@ Stability analysis of non-linear differential equations is not an easy task. Man
 
 such that $\rho(x)$ is not dependent on time. 
 
-Von Neumann stability analysis is a method based on Fourier decomposition of numerical error, and is used to check the stability of linear pde's. 
+Von Neumann stability analysis is a method based on Fourier decomposition of numerical error, and is used to check the stability of linear pde's. The Von Neumann's stability criterion claims there is a constant $\mu \ge 0$ such that $|\xi| \le 1+ \mu k$ where $\mu$ is independent on both $h$ and $k$.
 
 
 \subsection*{Stability analysis of implicit scheme}
@@ -60,24 +60,23 @@ Choosing $\rho(x) = f(x,0) = U^0$, we obtain the linearized scheme where $R$ is 
 
 
 
-The Von Neumann's stability criterion claims there is a constant $\mu \ge 0$ such that $|\xi| \le 1+ \mu k$ where $\mu$ is independent on both $h$ and $k$. This is not the case in our analysis, as 
+Using the Von Neumann's stability analysis on the linearized scheme, we get 
 
 \begin{align*}
 |\xi |^2 \le \left(\frac{1+k/8}{1-k/8}\right)^2 + k\frac{rh^2}{4(1-k/8)^2},
 \end{align*}
 
-so the method is not stable. This is expected, since the linearized KS-equation is unstable in numerical experiments. 
+which does not fulfill the stability criterion, so the method is not stable. This is expected, since the linearized scheme is unstable in numerical experiments. 
 
 Using an averaging over time, $\rho(x) = (U^{N_0}-U^0)/2$, where $U^{N_0}$ represents the solution after $N_0$ iterations, we observed a solution slightly more similar to the solution from the non-linear scheme, but also here we observed a non-stability.
  
-Numerically, it seems that the implicit scheme stops running when $k$ is too large. As $h$ tends to zero, the 
- This hypothesis is strengthened by the fact that when $h$ tends to zero, the bound for $k$ converges from below to 
+Numerically, it seems that the implicit scheme stops running when $k$ is too large. As $h$ tends to zero, the $k$-value converges from below to the bound $k \approx 1/3$. The reason for this is that when solving the linear system, the determinant is calculated to infinity due to machine precision, and the inverse of the matrix becomes the zero-matrix. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Stability analysis of explicit scheme}
 
-The explicit scheme is stable when $k < r \cdot h^4$. Let us now use Von Neumann stability analysis on the explicit scheme with the same $\rho(x) = U^0$:
+The explicit scheme is stable when $k < r \cdot h^4$. Let us now use Von Neumann stability analysis on the linearized explicit scheme with the same $\rho(x) = U^0$:
 
 
 \begin{align*}
@@ -90,7 +89,7 @@ U^{n+1} = \left(I - \frac{k}{h^2}A - \frac{k}{h^4}A^2 - \frac{k}{4h} DR\right)U^
  - \frac{k}{4h}(e^{i\beta h}e^{i\beta h} - e^{-i\beta h}e^{-i\beta h})\\
 \end{align*}
 
-Let $r = k/h^4$ as before.
+Let $r = k/h^4$.
 
 \begin{align*}
 |\xi |^2 &= (1-4rh^2(\cos(\beta h)-1)-2r(3-4\cos(\beta h)+\cos(2\beta h)))^2 + k\frac{rh^2}{4}\sin^2(2\beta h) \\
@@ -101,8 +100,7 @@ We want $|\xi| \le 1+ \mu k$, so we need
 \begin{align*}
 \psi = |1+4rh^2\sin^2\left(\frac{\beta h}{2}\right)-16r\sin^4\left(\frac{\beta h}{2}\right)| \le 1 + \tilde{\mu}k.
 \end{align*}
-Let $q = \sin^2\left(\frac{\beta h}{2}\right)$ and assume that $(1 \le 16rq^2 \le 2)$ and $(0 \le 4rh^2q \le 1)$
-
+Let $q = \sin^2\left(\frac{\beta h}{2}\right)$ and assume that $(1 \le 16rq^2 \le 2)$ and $(0 \le 4rh^2q \le 1)$.
 
 \begin{align*}
 \psi = \left| 1+4rh^2q -16rq^2\right| \le \left| 1-16rq^2\right| \le 1 \underset{0\le q\le 1}{\implies} \left(1/16 \le r \le 1/8 \right)
@@ -115,8 +113,7 @@ Let $q = \sin^2\left(\frac{\beta h}{2}\right)$ and assume that $(1 \le 16rq^2 \l
 &\le 1 + k\frac{h^2}{32}
 \end{align*}
 
-Under the assumptions above, we have not shown stability, since $\mu$ is $h$-dependent. This is not surprising, since the linear solution is unstable in experiments, as shown in figure \ref{fig:lin_exp}. Still, the upper bound for $r$ is an interesting result, as it corresponds to the experimental bound for the explicit scheme. For approximately $k/h^4 \le 1/8$ the explicit scheme provides a stable solution. 
-
+Under the assumptions above, we have not shown stability, since $\mu$ is $h$-dependent. The linear solution is unstable in experiments, as shown in figure \ref{fig:lin_exp}, so the analysis is consistent with the numerical experiments. Still, the upper bound for $r$ is an interesting result, as it corresponds to the experimental bound for the explicit scheme. For approximately $k/h^4 \le 1/8$ the explicit scheme provides a stable solution. 
 
 
 
