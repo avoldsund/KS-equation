@@ -39,8 +39,8 @@ for j = low:high
     
     % Iteration over time
     for n = 1:N
-%         U(:,n+1) = (eye(M)-A-B)*U(:,n) - D*(U(:,n).^2);
-        U(:,n+1) = F\G*(U(:,n)) - F\D*(U(:,n).^2);
+        U(:,n+1) = (eye(M)-A-B)*U(:,n) - D*(U(:,n).^2);
+%         U(:,n+1) = F\G*(U(:,n)) - F\D*(U(:,n).^2);
     end
     
     
