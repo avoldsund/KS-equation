@@ -9,20 +9,20 @@ L = 32*pi;
 % 
 
 
-M = 2^7;
+M = 2^8;
 h = L/M;
-k = 0.001;
+k = 0.0001;
 Ms = 2^10;
 hs = L/Ms;
 y = 0:hs:L-hs;
-iter = 20;
+iter = 5;
 
 N_j = zeros(iter,1);
 e_e = zeros(iter,1);
 e_i = zeros(iter,1);
 
 for j = 1:iter
-    N = 5000*j;
+    N = 10000*j;
 
     x = 0:h:L-h;
     T = k*N;
