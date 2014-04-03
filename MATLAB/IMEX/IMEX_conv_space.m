@@ -54,10 +54,10 @@ end
 
 % Loglog-plot of the error
 figure
-loglog(h_p, error_norm, 'ro-', h_p, h_p, 'b', h_p, h_p.^2, 'g');
-xlabel('Log of the space steps h')
-ylabel('Log of the error norm')
-title('Loglog-plot of the error norm')
-legend('Infinity-norm','Slope 1','location','SouthEast')
+loglog(h_p, error_norm, 'ro-', h_p, h_p.^2, 'g');
+xlabel('Space step h')
+ylabel('Error norm')
+title('Implicit scheme - Convergence in space')
+legend('error(h)','slope 1','location','SouthEast')
     
 end

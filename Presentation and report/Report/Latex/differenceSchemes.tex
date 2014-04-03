@@ -9,7 +9,7 @@ u_{xxxx} &\approx \frac{\delta^4 u}{h^4} = \frac{u_{m+2}-4u_{m+1}+6u_m-4u_{m-1}+
 \end{aligned}
 \end{equation*}
 
-which leads to the system
+which leads to an explicit scheme
 
 \begin{equation}
 \label{explDiff}
@@ -17,7 +17,7 @@ U^{n+1} = (I - \frac{k}{h^2}A - \frac{k}{h^4}A^2)U^n - \frac{k}{4h}D(U^{n}\odot 
 \end{equation}
 
 \subsection{Implicit-explicit method}
-The explicit method require very small time steps for an acceptable precision in space, so an alternative is to look at the Crank-Nicolson's formula. Applying the trapezoidal rule to all linear terms gives a Crank-Nicolson-type method which is implicit-explicit. The nonlinear term is approximated to be the same as in the explicit method \eqref{explDiff}.
+The explicit method require very small time steps for an acceptable precision in space, so for better stability it is an option to look at the Crank-Nicolson's formula. Applying the trapezoidal rule to all linear terms gives a Crank-Nicolson-type method which is implicit-explicit. The nonlinear term is approximated to be the same as in the explicit method \eqref{explDiff}.
 \begin{align}
 \label{implDiff}
 (I + \frac{k}{2h^2}A + \frac{k}{2h^4}A^2)U^{n+1}
