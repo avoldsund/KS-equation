@@ -47,26 +47,26 @@ It is possible to see two parallel lines where the solution is symmetric in an i
 
 Although the lines are parallel from time $t = [0,100]$, this ends after a time $t \thickapprox 250$, and it becomes even more chaotic.
 
-To see exactly how well our numerical solution is compared to the reference solution, we plotted the error between them. Low values for $k$ and $h$ were used, typically $k = 0.006$ and $h = 0.025$. This produced figure \ref{fig:errPlots}.
+To see exactly how well our numerical solution is compared to the reference solution, we plotted the error between them. Low values for $k$ and $h$ were used for the reference solution, in this case $k = 0.006$ and $h = 0.025$. This produced figure \ref{fig:errPlots}.
 
 \begin{figure}[H]
         \centering
         \begin{subfigure}[b]{0.52\textwidth}
-                \includegraphics[width=\textwidth]{../PDFs/IMEX/error_num_ref_t100_3rd.pdf}
-                \caption{Numerical solution, $h = 0.785$}
+                \includegraphics[width=\textwidth]{../PDFs/IMEX/errPlot_worst.pdf}
+                \caption{Error plot of reference vs. numerical, $h = 0.785$ for numerical solution.}
                 \label{fig:highError}
         \end{subfigure}%
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
           %(or a blank line to force the subfigure onto a new line)
         \begin{subfigure}[b]{0.52\textwidth}
                 \includegraphics[width=\textwidth]{../PDFs/IMEX/error_num_ref_t100_1st.pdf}
-                \caption{Numerical solution, $h = 0.098$}
+                \caption{Error plot of reference vs. numerical, $h = 0.098$ for numerical solution.}
                 \label{fig:lowError}
         \end{subfigure}
         \caption{Comparison of the error between the reference solution and the numerical approximation for different $h$-values. Reference solution: $h = 0.025$, $k = 0.006$. Blue color shows low error, while red shows high error.}\label{fig:errPlots}
 \end{figure}
 
-As we can see, the error decreases when the $h$-value is decreased. A plot of the reference solution vs. our numerical solution, figure \ref{fig:errTime}, explains in a good way why some points have higher error than others. At the points where the reference solution and the numerical solution are out of phase, the error will naturally be large.This means a worst case error will be the sum of the amplitudes of the solutions, and this tends to happen. Worth noting is the low error at the two parallel lines, $x \thickapprox 25$ and $x \thickapprox 75$, which can also be seen in figure \ref{fig:errPlots}. 
+As we can see, the error decreases when the $h$-value is decreased, which is expected. A plot of the reference solution vs. our numerical solution at a given time $t$, figure \ref{fig:errTime}, explains in a good way why some points have higher error than others. At the points where the reference solution and the numerical solution are "out of phase", the error will naturally be large. This means a worst case error will be the sum of the amplitudes of the solutions, and this tends to happen in the chaotic areas. Worth noting is the low error at the two parallel lines, $x \thickapprox 25$ and $x \thickapprox 75$, which can also be seen in figure \ref{fig:errPlots}. 
 
 \begin{figure}[H]
 \centering
