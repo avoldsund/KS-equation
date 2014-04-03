@@ -1,5 +1,5 @@
 \subsection{Explicit method}
-The KS-equation can be approximated by using central differences in space, and forward differences in time. Notice that the mean operator was used on the nonlinear term to avoid half space steps.    The nonlinear term has also been rewritten from $uu_x$ to $\frac{1}{2}(u^2)_x$.
+The KS-equation can be approximated by using central differences in space, and forward differences in time, also known as the Euler's method. Notice that the mean operator was used on the nonlinear term to avoid half space steps.    The nonlinear term has also been rewritten from $uu_x$ to $\frac{1}{2}(u^2)_x$.
 \begin{equation*}
 \begin{aligned}
 u_t &\approx \frac{\Delta u}{k} = \frac{u^{n+1}-u^n}{k} \\
@@ -17,8 +17,7 @@ U^{n+1} = (I - \frac{k}{h^2}A - \frac{k}{h^4}A^2)U^n - \frac{k}{4h}D(U^{n}\odot 
 \end{equation}
 
 \subsection{Implicit-explicit method}
-Since the explicit scheme based on 
-Applying the trapezoidal rule to all linear terms gives a Crank-Nicolson-type method which is implicit-explicit. The nonlinear term is the same as in the explicit method \eqref{explDiff}.
+The explicit method require very small time steps for an acceptable precision in space, so an alternative is to look at the Crank-Nicolson's formula. Applying the trapezoidal rule to all linear terms gives a Crank-Nicolson-type method which is implicit-explicit. The nonlinear term is approximated to be the same as in the explicit method \eqref{explDiff}.
 \begin{align}
 \label{implDiff}
 (I + \frac{k}{2h^2}A + \frac{k}{2h^4}A^2)U^{n+1}

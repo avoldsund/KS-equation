@@ -106,6 +106,8 @@ In the implementations of both the implicit and the explicit scheme all matrices
 
 To solve the system \eqref{implDiff}, the backslash operator in MATLAB was used. This is possibly the best way to solve a linear system in MATLAB.  In a linear equation $Ax = b$, the backslash operator runs a number of tests to check the structure of the matrix $A$. I.e. if the matrix is sparse and banded, a banded solver is run.
 
+The matrix $\left( I + \frac{k}{2h^2}A + \frac{k}{2h^4}A^2\right)$ from \eqref{implDiff} is a symmetric circular matrix, which is a special kind of Toeplitz matrix where each element is rotated one element to the right relative to the preceding row vector. The advantage of this is that it can be diagonalized by a discrete Fourier transform, such that the implicit scheme can be solved using fast Fourier transform in MATLAB.
+
 The implicit and explicit scheme both have negative and positive properties. While the explicit scheme is about 10 times faster than the implicit scheme, as shown in figure \ref{fig:runTime}, it has a restriction on the time step that makes it very hard to work with. In addition, it seems that the error is larger in the explicit scheme than the implicit scheme, independent of the number of time steps. This is illustrated in figure \ref{fig:errComp}.
 
 
