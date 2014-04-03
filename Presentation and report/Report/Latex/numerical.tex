@@ -91,7 +91,7 @@ From the analysis, the explicit scheme is consistent, and the local truncation e
 %        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
 %          %(or a blank line to force the subfigure onto a new line)
 %        \begin{subfigure}[b]{0.52\textwidth}
-%                \includegraphics[width=\textwidth]{../PDFs/FE_Exp/--expTime--.pdf}
+%                \includegraphics[width=\textwidth]{../PDFs/FE_Exp/FE_exp_time_conv.pdf}
 %                \caption{Convergence in time of order 1}
 %                \label{fig:convTime}
 %        \end{subfigure}
@@ -102,22 +102,22 @@ From the analysis, the explicit scheme is consistent, and the local truncation e
 The analysis for the implicit scheme had convergence 2 in space, and 1 in time, as well. It was much easier showing the convergence here, because it's numerically stable. In the two plots one can see that it coincides with the analysis.
 
 % IMPLICIT CONVERGENCE PLOT
-\begin{figure}[H]
-        \centering
-        \begin{subfigure}[b]{0.52\textwidth}
-                \includegraphics[width=\textwidth]{../PDFs/IMEX/IMEX_space_conv.pdf}
-                \caption{Convergence in space of order 2}
-                \label{fig:convSpace}
-        \end{subfigure}%
-        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
-          %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.52\textwidth}
-                \includegraphics[width=\textwidth]{../PDFs/IMEX/IMEX_time_conv.pdf}
-                \caption{Convergence in time of order 1}
-                \label{fig:convTime}
-        \end{subfigure}
-        \caption{Comparison of the error between the reference solution and the numerical approximation for different $h$-values. Reference solution: $h = 0.025$, $k = 0.006$. Notice that the }\label{fig:convergence}
-\end{figure}
+%\begin{figure}[H]
+%        \centering
+%        \begin{subfigure}[b]{0.52\textwidth}
+%                \includegraphics[width=\textwidth]{../PDFs/IMEX/--impSpace--.pdf}
+%                \caption{Convergence in space of order 2}
+%                \label{fig:convSpace}
+%        \end{subfigure}%
+%        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+%          %(or a blank line to force the subfigure onto a new line)
+%        \begin{subfigure}[b]{0.52\textwidth}
+%                \includegraphics[width=\textwidth]{../PDFs/IMEX/--impTime--.pdf}
+%                \caption{Convergence in time of order 1}
+%                \label{fig:convTime}
+%        \end{subfigure}
+%        \caption{Comparison of the error between the reference solution and the numerical approximation for different $h$-values. Reference solution: $h = 0.025$, $k = 0.006$. Notice that the }\label{fig:convergence}
+%\end{figure}
 
 
 
