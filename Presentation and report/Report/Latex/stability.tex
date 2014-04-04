@@ -1,5 +1,3 @@
-
-
 Stability analysis of non-linear differential equations is not an easy task. Many of the methods used for stability analysis require a linear pde. Since the KS-equation is stiff, it is not easy to find a good approximation for the non-linear term, $\frac{1}{2}(u^2)_x$, since it stabilizes the solution. One opportunity is to substitute 
 
 \begin{align*}
@@ -8,10 +6,10 @@ Stability analysis of non-linear differential equations is not an easy task. Man
 
 such that $\rho(x)$ is not dependent on time. 
 
-Von Neumann stability analysis is a method based on Fourier decomposition of numerical error, and is used to check the stability of linear pde's. The Von Neumann's stability criterion claims there is a constant $\mu \ge 0$ such that $|\xi| \le 1+ \mu k$ where $\mu$ is independent on both $h$ and $k$.
+Von Neumann stability analysis is a method based on Fourier decomposition of numerical error, and is used to check the stability of linear pde's. The Von Neumann's stability criterion claims there is a constant $\mu \ge 0$ such that $|\xi| \le 1+ \mu k$ where $\mu$ is independent of both $h$ and $k$.
 
 
-\subsection*{Stability analysis of implicit scheme}
+\subsection{Stability analysis of implicit scheme}
 
  
 Choosing $\rho(x) = f(x,0) = U^0$, we obtain the linearized scheme where $R$ is the matrix representing $\rho(x)$:
@@ -66,15 +64,15 @@ Using the Von Neumann's stability analysis on the linearized scheme, we get
 |\xi |^2 \le \left(\frac{1+k/8}{1-k/8}\right)^2 + k\frac{rh^2}{4(1-k/8)^2},
 \end{align*}
 
-which does not fulfill the stability criterion, so the method is not stable. This is expected, since the linearized scheme is unstable in numerical experiments. 
+which does not fulfill the stability criterion. Hence the method is not stable. This is expected, since the linearized scheme is unstable in numerical experiments. 
 
-Using an averaging over time, $\rho(x) = (U^{N_0}-U^0)/2$, where $U^{N_0}$ represents the solution after $N_0$ iterations, we observed a solution slightly more similar to the solution from the non-linear scheme, but also here we observed a non-stability.
+Using an averaging over time, $\rho(x) = (U^{N_k}-U^0)/2$, where $U^{N_k}$ represents the solution after $N_k$ iterations, we observed a solution slightly more similar to the solution from the non-linear scheme, but we  observed that this scheme was unstable as well.
  
-Numerically, it seems that the implicit scheme stops running when $k$ is too large. As $h$ tends to zero, the $k$-value converges from below to the bound $k \approx 1/3$. The reason for this is that when solving the linear system, the determinant is calculated to infinity due to machine precision, and the inverse of the matrix becomes the zero-matrix. 
+Numerically, it seems that the implicit scheme becomes unstable when $k$ is too large. As $h$ tends to zero, the $k$-value approaches $\frac{1}{3}$, and gives an upper bound for the $k$-value. The reason for this is that when solving the linear system, the determinant is calculated to infinity due to machine precision, and the inverse of the matrix becomes the zero-matrix. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Stability analysis of explicit scheme}
+\subsection{Stability analysis of explicit scheme}
 
 The explicit scheme is stable when $k < r \cdot h^4$. Let us now use Von Neumann stability analysis on the linearized explicit scheme with the same $\rho(x) = U^0$:
 
