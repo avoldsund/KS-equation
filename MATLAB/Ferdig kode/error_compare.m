@@ -12,17 +12,17 @@ L = 32*pi;
 M = 2^8;
 h = L/M;
 k = 0.0001;
-Ms = 2^10;
+Ms = 2^11;
 hs = L/Ms;
 y = 0:hs:L-hs;
-iter = 5;
+iter = 20;
 
 N_j = zeros(iter,1);
 e_e = zeros(iter,1);
 e_i = zeros(iter,1);
 
 for j = 1:iter
-    N = 10000*j;
+    N = 5000*j;
 
     x = 0:h:L-h;
     T = k*N;
