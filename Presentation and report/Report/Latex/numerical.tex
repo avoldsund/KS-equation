@@ -120,22 +120,22 @@ To solve the system \eqref{implDiff}, the backslash operator in MATLAB was used.
 
 The matrix $\left( I + \frac{k}{2h^2}A + \frac{k}{2h^4}A^2\right)$ from \eqref{implDiff} is a symmetric circular matrix, which is a special kind of Toeplitz matrix where each element is rotated one element to the right relative to the preceding row vector. The advantage of this is that it can be diagonalized by a discrete Fourier transform, such that the implicit scheme can be solved using fast Fourier transform in MATLAB.
 
-The implicit and explicit scheme both have negative and positive properties. While the explicit scheme is about 10 times faster than the implicit scheme, as shown in Figure \ref{fig:runTime}, it has a restriction on the time step that makes it very hard to work with. In addition, it seems that the error is larger in the explicit scheme than the implicit scheme, independent of the number of time steps.
+The implicit and explicit scheme both have negative and positive properties. While the explicit scheme is about 10 times faster than the implicit scheme, as shown in Figure \ref{fig:runTime}, it has a restriction on the time step that makes it very hard to work with. In addition, it seems that the error is larger in the explicit scheme than the implicit scheme. This can be seen in figure \ref{fig:global}.
 
 \begin{figure}[H]
         \centering
         \begin{subfigure}[b]{0.52\textwidth}
                 \includegraphics[width=\textwidth]{../PDFs/Comparisons/running_time3.pdf}
-                \caption{Running time of the two schemes as a function of time steps $N$}
+                \caption{Running time of the two methods as a function of time steps $N$}
                 \label{fig:runTime}
         \end{subfigure}%
         ~
         \begin{subfigure}[b]{0.52\textwidth}
-                \includegraphics[width=\textwidth]{../PDFs/Comparisons/error_compare.pdf}
-                \caption{Global error of the two schemes as a function of time steps $N$}
-                \label{fig:solImp}
+                \includegraphics[width=\textwidth]{../PDFs/Comparisons/Global_error_long.pdf}
+                \caption{Global error of the two methods as a function of time steps $N$}
+                \label{fig:global}
         \end{subfigure}
-        \caption{Comparisons of the explicit method and the IMEX-method.}
+        \caption{Global error: Explicit method vs IMEX-method.}
         \label{fig:runTimeN}
 \end{figure}
 

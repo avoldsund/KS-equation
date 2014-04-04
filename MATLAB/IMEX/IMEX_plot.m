@@ -1,6 +1,4 @@
 function [] = IMEX_plot()
-profile ON
-tic
 % Function to plot different plots
 
 % The function ref_sol needs the global variables to work
@@ -10,18 +8,18 @@ L = 32*pi;
 %f = @(x) (1/sqrt(2)) * sin(x) - (1/8)*sin(2*x);
 %L = 2*pi;
 
-
-M = 2^8;
+%M = 2^9;
+M = 2^10;
 h = L/M;
 x = 0:h:L-h;
 
-N = 2^12;
+N = 2^13;
 T = 100;
 k = T/N;
 t = k*(0:N);
 
 %Reference solution: Must be included for error plots!
-Ms = 2^8;  %number of points in reference sol.
+Ms = 2^12;  %number of points in reference sol.
 hs = L/Ms;
 x_ref = 0:hs:L-hs;
 U_ref = ref_sol(k,T,x_ref);
@@ -78,12 +76,16 @@ end
 %  error = abs(U_ref(1:Ms/M:Ms,:) - U);
 %  [err_c, t_c, x_c] = compress(t, x, error, 1000, 1000);
 %  mesh(x_c, t_c, err_c')
+%  set(gca, 'CLim', [0, 4.3525])
+%  colorbar
 %  titleStr = sprintf('Error plot: approximate solution (h = %0.3f) vs reference solution (h = %0.3f). k = %0.3f.',h,hs,k);
 %  title(titleStr)
 %  ylabelStr = sprintf('Time = %d',T)
 %  ylabel(ylabelStr)
 %  xlabel('Space [0, 32*pi]')
 %  axis([0 L 0 T])
+%  max(max(error))
+%  max(error)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Comparison of the reference solution and the numerical approx. at time T
@@ -96,7 +98,5 @@ end
 % ylabel(ylabelStr)
 % axis([0 32*pi -4 4])
 % legend('Reference solution', 'Numerical solution')
-profile OFF
-profile viewer
-toc
+
 end
